@@ -52,6 +52,11 @@
     </content_rating>
 
     <releases>
+        <release version="2.1.2" date="2022-02-03">
+            <p>Fixed compatibility issues with patch repositories</p>
+            <p>Added latest.log file generation, changed log files naming</p>
+            <p>Fixed Chinese voice data installation</p>
+        </release>
         <release version="2.1.1" date="2022-01-31">
             <p>Fixed patch applying issue</p>
         </release>
