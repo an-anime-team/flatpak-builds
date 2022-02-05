@@ -1,5 +1,6 @@
 {
     "only-arches": [
         "x86_64"
-    ]
+    ],
+    "end-of-life": "We decided to move An Anime Game Launcher's flatpak to our own remote in order to avoid potential issues. Please see the project's GitLab page for instructions on how to switch."
 }
