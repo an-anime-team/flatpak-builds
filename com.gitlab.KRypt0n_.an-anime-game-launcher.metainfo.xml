@@ -52,6 +52,14 @@
     </content_rating>
 
     <releases>
+        <release version="2.1.3" date="2022-02-06">
+            <p>Fixed 100% CPU usage lock on Discord RPC</p>
+            <p>Reworked a bit "Enhancements" settings view</p>
+            <p>Added borderless windows option</p>
+            <p>Added "Use terminal" option to run the wine command in a separate terminal window</p>
+            <p>Added Futex2 option for Wine synchronization settings</p>
+            <p>Fixed DXVK.apply() compatibility with Wine-GE 7.*</p>
+        </release>
         <release version="2.1.2" date="2022-02-03">
             <p>Fixed compatibility issues with patch repositories</p>
             <p>Added latest.log file generation, changed log files naming</p>
