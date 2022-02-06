@@ -1,1 +1,0 @@
-We decided to move An Anime Game Launcher's flatpak to our own remote in order to avoid potential issues. Please see the [project's GitLab page](https://gitlab.com/KRypt0n_/an-anime-game-launcher/) for instructions on how to switch.
