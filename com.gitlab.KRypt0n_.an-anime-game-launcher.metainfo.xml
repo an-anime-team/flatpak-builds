@@ -52,6 +52,14 @@
     </content_rating>
 
     <releases>
+        <release version="2.1.5" date="2022-02-16">
+            <p>Reworked patch downloading mechanism to reduce notabug's pain</p>
+            <p>Fixed patch applying issue</p>
+        </release>
+        <release version="2.1.4" date="2022-02-16">
+            <p>Added new wine versions</p>
+            <p>Fixed localization issues</p>
+        </release>
         <release version="2.1.3" date="2022-02-06">
             <p>Fixed 100% CPU usage lock on Discord RPC</p>
             <p>Reworked a bit "Enhancements" settings view</p>
