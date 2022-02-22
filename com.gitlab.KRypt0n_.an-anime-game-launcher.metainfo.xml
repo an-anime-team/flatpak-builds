@@ -52,6 +52,12 @@
     </content_rating>
 
     <releases>
+        <release version="2.2.0" date="2022-02-22">
+            <p>Added Chinese game version support</p>
+            <p>Added game files verification and repairing feature</p>
+            <p>Added .hdiff files processing</p>
+            <p>Added analytics window</p>
+        </release>
         <release version="2.1.5" date="2022-02-16">
             <p>Reworked patch downloading mechanism to reduce notabug's pain</p>
             <p>Fixed patch applying issue</p>
