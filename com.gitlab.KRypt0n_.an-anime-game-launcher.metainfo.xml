@@ -52,6 +52,14 @@
     </content_rating>
 
     <releases>
+    	<release version="2.2.1" date="2022-03-09">
+			<description>
+				<p>Added Japanese translations</p>
+				<p>Fixed issues with Italian translations</p>
+				<p>Added Patch section to the settings menu</p>
+				<p>Added lots of new wine versions</p>
+			</description>
+    	</release>
         <release version="2.2.0" date="2022-02-22">
         	<description>
 	            <p>Added Chinese game version support</p>
