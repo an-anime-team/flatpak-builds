@@ -1,6 +1,6 @@
 app-id: com.gitlab.KRypt0n_.an-anime-game-launcher
 runtime: org.gnome.Platform
-runtime-version: "41"
+runtime-version: "42"
 sdk: org.gnome.Sdk
 separate-locales: false
 command: com.gitlab.KRypt0n_.an-anime-game-launcher
@@ -28,8 +28,6 @@ cleanup:
   - "*.a"
 
 modules:
-  - shared-modules/libappindicator/libappindicator-gtk3-12.10.json
-
   - name: xdelta3
     buildsystem: autotools
     sources:
@@ -97,6 +95,53 @@ modules:
         url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.9.5.tar.xz
         sha256: a4bea37ecb9a3fb5c0c8ef18c2f7eeaf8ccbcfec91f72f3bccfc6bf72a3e3902
 
+  - name: libayatana-appindicator
+    buildsystem: cmake
+    config-opts:
+      - -DENABLE_BINDINGS_VALA=OFF
+      - -DENABLE_BINDINGS_MONO=OFF
+    sources:
+      - type: archive
+        url: https://github.com/AyatanaIndicators/libayatana-appindicator/archive/refs/tags/0.5.90.tar.gz
+        sha256: 15319ca7fda90c6bd85311bbe83eefe1e322de32df2c7f5174b0d5a7537c27b4
+    modules:
+      - name: libayatana-indicator
+        buildsystem: cmake
+        sources:
+          - type: archive
+            url: https://github.com/AyatanaIndicators/libayatana-indicator/archive/refs/tags/0.9.1.tar.gz
+            sha256: 15a8844265067652c06242736ece682622d73cedcccdf1c171ce27fba70ba689
+        modules: 
+          - name: ayatana-ido
+            buildsystem: cmake
+            sources:
+              - type: archive
+                url: https://github.com/AyatanaIndicators/ayatana-ido/archive/refs/tags/0.9.1.tar.gz
+                sha256: e663e14675b3ac6474b886541fa367d07a57b476a9c8600b4b2db019734d96d6
+            modules:
+              - name: libdbusmenu
+                buildsystem: autotools
+                build-options:
+                  cflags: -Wno-error
+                  env:
+                    HAVE_VALGRIND_FALSE: '#'
+                    HAVE_VALGRIND_TRUE: ''
+                config-opts:
+                  - --disable-static
+                  - --disable-gtk-doc
+                  - --enable-introspection=no
+                  - --disable-vala
+                  - --disable-dumper
+                  - --disable-tests
+                  - --with-gtk=3
+                sources:
+                  - type: archive
+                    url: https://launchpad.net/libdbusmenu/16.04/16.04.0/+download/libdbusmenu-16.04.0.tar.gz
+                    sha256: b9cc4a2acd74509435892823607d966d424bd9ad5d0b00938f27240a1bfa878a
+                modules:
+                  - "shared-modules/intltool/intltool-0.51.json"
+
+
   - name: an-anime-game-launcher
     buildsystem: simple
     build-commands:
@@ -114,8 +159,8 @@ modules:
       - install -Dm644 -t ${FLATPAK_DEST}/share/metainfo com.gitlab.KRypt0n_.an-anime-game-launcher.metainfo.xml
     sources:
       - type: file
-        url: https://gitlab.com/KRypt0n_/an-anime-game-launcher/uploads/f2653f2d8c469594a93128e013471404/An_Anime_Game_Launcher.AppImage
-        sha256: 5a96d800626556176f6a175bfcb12b730f072c7744af67af8789a465949a5188
+        url: https://gitlab.com/KRypt0n_/an-anime-game-launcher/uploads/dfcaf7808a0bad2a66db3651b97346d0/An_Anime_Game_Launcher.AppImage
+        sha256: 02eafe26f1e245d22d4eb2b914fdbe9d58cbca7e586c3e08b35683ba552f6912
       - type: file
         path: com.gitlab.KRypt0n_.an-anime-game-launcher.png
       - type: file

@@ -52,6 +52,14 @@
     </content_rating>
 
     <releases>
+    	<release version="2.2.2" date="2022-03-30">
+			<description>
+				<p>Fixed xlua.dll repairing when the patch was applied</p>
+				<p>Fixed resahde-shaders-git package compatibility</p>
+				<p>Updated DXVK and Wine versions</p>
+				<p>This update brings new Neutralino's version that's dependent on the new package libayatana-appindicator</p>
+			</description>
+    	</release>
     	<release version="2.2.1" date="2022-03-09">
 			<description>
 				<p>Added Japanese translations</p>
