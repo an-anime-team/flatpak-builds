@@ -20,6 +20,20 @@ Now the only thing remaining is to install the launcher
 flatpak install launcher.moe com.gitlab.KRypt0n_.an-anime-game-launcher
 ```
 
+## Uninstall
+
+To uninstall the launcher including all the files run the following
+
+```
+flatpak uninstall --delete-data com.gitlab.KRypt0n_.an-anime-game-launcher
+```
+
+or to keep the files simply run
+
+```
+flatpak uninstall com.gitlab.KRypt0n_.an-anime-game-launcher
+```
+
 ## Additional configuration
 
 ### /etc/hosts
