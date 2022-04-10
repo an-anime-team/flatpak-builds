@@ -141,6 +141,15 @@ modules:
                 modules:
                   - "shared-modules/intltool/intltool-0.51.json"
 
+  - name: reshade-shaders
+    buildsystem: simple
+    build-commands:
+      - install -Dm644 -t "${FLATPAK_DEST}/share/reshade/shaders" Shaders/*
+      - install -Dm644 -t "${FLATPAK_DEST}/share/reshade/textures" Textures/*
+    sources:
+      - type: git
+        url: https://github.com/crosire/reshade-shaders.git
+        branch: master
 
   - name: an-anime-game-launcher
     buildsystem: simple
@@ -156,7 +165,7 @@ modules:
       - install -Dm755 "com.gitlab.KRypt0n_.an-anime-game-launcher.sh" "${FLATPAK_DEST}/bin/com.gitlab.KRypt0n_.an-anime-game-launcher"
       - desktop-file-install --dir="${FLATPAK_DEST}/share/applications" --remove-key=X-AppImage-Version --set-key=Exec --set-value=com.gitlab.KRypt0n_.an-anime-game-launcher --set-key=Icon --set-value=com.gitlab.KRypt0n_.an-anime-game-launcher squashfs-root/an-anime-game-launcher.desktop
 
-      - install -Dm644 -t ${FLATPAK_DEST}/share/metainfo com.gitlab.KRypt0n_.an-anime-game-launcher.metainfo.xml
+      - install -Dm644 -t "${FLATPAK_DEST}/share/metainfo" com.gitlab.KRypt0n_.an-anime-game-launcher.metainfo.xml
     sources:
       - type: file
         url: https://gitlab.com/KRypt0n_/an-anime-game-launcher/uploads/dfcaf7808a0bad2a66db3651b97346d0/An_Anime_Game_Launcher.AppImage

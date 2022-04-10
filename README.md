@@ -49,13 +49,21 @@ flatpak override --env=NO_BLOCK_PROXY=true com.gitlab.KRypt0n_.an-anime-game-lau
 To use MangoHud, install the MangoHud Flatpak extension:
 
 ```
-flatpak install flathub org.freedesktop.Platform.VulkanLayer.MangoHud
+flatpak install flathub org.freedesktop.Platform.VulkanLayer.MangoHud//21.08
 ```
 
 By default, the MangoHud configuration is stored at `~/.var/app/com.gitlab.KRypt0n_.an-anime-game-launcher/config/MangoHud/MangoHud.conf`. To use the config file from the host system instead, run this command:
 
 ```
 flatpak override --filesystem=xdg-config/MangoHud:ro com.gitlab.KRypt0n_.an-anime-game-launcher
+```
+
+### Shaders
+
+To use shaders, install the vkBasalt Flatpak extension:
+
+```
+flatpak install flathub org.freedesktop.Platform.VulkanLayer.vkBasalt//21.08
 ```
 
 ### Discord RPC
