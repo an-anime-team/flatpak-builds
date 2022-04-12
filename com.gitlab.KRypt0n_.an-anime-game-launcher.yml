@@ -141,7 +141,6 @@ modules:
                 modules:
                   - "shared-modules/intltool/intltool-0.51.json"
 
-
   - name: an-anime-game-launcher
     buildsystem: simple
     build-commands:
@@ -159,8 +158,8 @@ modules:
       - install -Dm644 -t ${FLATPAK_DEST}/share/metainfo com.gitlab.KRypt0n_.an-anime-game-launcher.metainfo.xml
     sources:
       - type: file
-        url: https://gitlab.com/KRypt0n_/an-anime-game-launcher/uploads/dfcaf7808a0bad2a66db3651b97346d0/An_Anime_Game_Launcher.AppImage
-        sha256: 02eafe26f1e245d22d4eb2b914fdbe9d58cbca7e586c3e08b35683ba552f6912
+        url: https://gitlab.com/KRypt0n_/an-anime-game-launcher/uploads/fac248cf69ca5e4443b976bf3aa109ce/An_Anime_Game_Launcher.AppImage
+        sha256: a97689a920d711c348e8ea9ce20254335492821ccc3a91971e85f42ee94fb114
       - type: file
         path: com.gitlab.KRypt0n_.an-anime-game-launcher.png
       - type: file

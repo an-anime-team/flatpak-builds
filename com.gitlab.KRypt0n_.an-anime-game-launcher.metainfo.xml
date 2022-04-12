@@ -52,6 +52,12 @@
     </content_rating>
 
     <releases>
+		<release version="2.2.3" date="2022-04-12">
+			<description>
+				<p>Added screenshots explorer</p>
+				<p>Added --run-game option to run the game automatically</p>
+			</description>
+		</release>
     	<release version="2.2.2" date="2022-03-30">
 			<description>
 				<p>Fixed xlua.dll repairing when the patch was applied</p>
