@@ -141,6 +141,33 @@ modules:
                 modules:
                   - "shared-modules/intltool/intltool-0.51.json"
 
+  - name: EasyTerm
+    buildsystem: simple
+    build-commands:
+      - python3 setup.py install --prefix=/app --root=/
+      - rm /app/bin/easyterm.py # We don't need this file, we install a custom executable later
+    sources:
+      - type: git
+        url: https://github.com/bottlesdevs/EasyTerm
+        tag: 0.1.8
+        commit: 7677c93e865735ebf7125262e071218794ab6e70
+        x-checker-data:
+          type: json
+          url: https://api.github.com/repos/bottlesdevs/EasyTerm/releases/latest
+          tag-query: .tag_name
+          version-query: .tag_name
+          timestamp-query: .published_at
+    modules:
+      - name: vte
+        buildsystem: meson
+        config-opts:
+          - -Ddocs=false
+          - -Dvapi=false
+        sources:
+          - type: archive
+            url: https://gitlab.gnome.org/GNOME/vte/-/archive/0.66.2/vte-0.66.2.tar.gz
+            sha256: a486e389e3d16f903ed6f27d9513c2a44bff5945a12af4fcfe48ce00992c42ab
+
   - name: an-anime-game-launcher
     buildsystem: simple
     build-commands:
@@ -149,6 +176,8 @@ modules:
 
       - install -dm755 "${FLATPAK_DEST}/bin" "${FLATPAK_DEST}/lib/an-anime-game-launcher"
       - cp -r squashfs-root/an-anime-game-launcher squashfs-root/public squashfs-root/resources.neu "${FLATPAK_DEST}/lib/an-anime-game-launcher"
+
+      - install -Dm755 term.py "${FLATPAK_DEST}/bin/gnome-terminal"
 
       - install -Dm644 "squashfs-root/64x64.png" "${FLATPAK_DEST}/share/icons/hicolor/64x64/apps/com.gitlab.KRypt0n_.an-anime-game-launcher.png"
       - install -Dm644 "com.gitlab.KRypt0n_.an-anime-game-launcher.png" "${FLATPAK_DEST}/share/icons/hicolor/256x256/apps/com.gitlab.KRypt0n_.an-anime-game-launcher.png"
@@ -166,3 +195,5 @@ modules:
         path: com.gitlab.KRypt0n_.an-anime-game-launcher.sh
       - type: file
         path: com.gitlab.KRypt0n_.an-anime-game-launcher.metainfo.xml
+      - type: file
+        path: term.py
