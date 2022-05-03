@@ -52,6 +52,14 @@
     </content_rating>
 
     <releases>
+		<release version="2.3.2" date="2022-05-03">
+			<description>
+				<p>Added compatibility with appindicator (at least we all hope so)</p>
+				<p>Fixed issue with empty runners/dxvk list</p>
+				<p>Now screenshots explorer button hides along with settings</p>
+				<p>Also now fps unlocker doesn't make launcher stay visible</p>
+			</description>
+		</release>
 		<release version="2.3.1" date="2022-04-14">
 			<description>
 				<p>This is a hotfix release that fixes several issues with screenshots explorer and config.yaml generation</p>
