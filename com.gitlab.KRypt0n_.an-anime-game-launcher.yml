@@ -1,199 +1,202 @@
 app-id: com.gitlab.KRypt0n_.an-anime-game-launcher
 runtime: org.gnome.Platform
-runtime-version: "42"
+runtime-version: '42'
 sdk: org.gnome.Sdk
 separate-locales: false
 command: com.gitlab.KRypt0n_.an-anime-game-launcher
 rename-desktop-file: an-anime-game-launcher.desktop
 finish-args:
-  - --share=network
-  - --share=ipc
-  - --socket=x11 # Not fallback-x11, because while the launcher supports Wayland, Wine doesn't (yet)
-  - --socket=wayland
-  - --socket=pulseaudio
-  - --filesystem=xdg-run/app/com.discordapp.Discord:create
-  - --talk-name=org.freedesktop.Notifications
-  - --device=all # Controllers
+- --share=network
+- --share=ipc
+- --socket=x11   # Not fallback-x11, because while the launcher supports Wayland, Wine doesn't (yet)
+- --socket=wayland
+- --socket=pulseaudio
+- --filesystem=xdg-run/app/com.discordapp.Discord:create
+- --talk-name=org.freedesktop.Notifications
+- --device=all   # Controllers
 
 cleanup:
-  - /include
-  - /lib/pkgconfig
-  - /man
-  - /share/doc
-  - /share/gtk-doc
-  - /share/man
-  - /share/pkgconfig
-  - /share/vala
-  - "*.la"
-  - "*.a"
+- /include
+- /lib/pkgconfig
+- /man
+- /share/doc
+- /share/gtk-doc
+- /share/man
+- /share/pkgconfig
+- /share/vala
+- '*.la'
+- '*.a'
 
 modules:
-  - name: xdelta3
-    buildsystem: autotools
-    sources:
-      - type: archive
-        url: https://github.com/jmacd/xdelta/archive/refs/tags/v3.1.0.tar.gz
-        sha256: 7515cf5378fca287a57f4e2fee1094aabc79569cfe60d91e06021a8fd7bae29d
-        strip-components: 2
-      - type: shell
-        commands:
-          - aclocal
-          - autoreconf --install
-          - libtoolize
-          - autoconf
-          - autoheader
-          - automake --add-missing
-          - automake
+- name: xdelta3
+  buildsystem: autotools
+  sources:
+  - type: archive
+    url: https://github.com/jmacd/xdelta/archive/refs/tags/v3.1.0.tar.gz
+    sha256: 7515cf5378fca287a57f4e2fee1094aabc79569cfe60d91e06021a8fd7bae29d
+    strip-components: 2
+  - type: shell
+    commands:
+    - aclocal
+    - autoreconf --install
+    - libtoolize
+    - autoconf
+    - autoheader
+    - automake --add-missing
+    - automake
 
-  - name: cabextract
-    buildsystem: autotools
-    sources:
-      - type: archive
-        url: https://www.cabextract.org.uk/cabextract-1.9.1.tar.gz
-        sha256: afc253673c8ef316b4d5c29cc4aa8445844bee14afffbe092ee9469405851ca7
+- name: cabextract
+  buildsystem: autotools
+  sources:
+  - type: archive
+    url: https://www.cabextract.org.uk/cabextract-1.9.1.tar.gz
+    sha256: afc253673c8ef316b4d5c29cc4aa8445844bee14afffbe092ee9469405851ca7
 
-  # The launcher uses ping to check if certain domains are blocked, so we need to install it
-  - name: ping
-    buildsystem: meson
-    config-opts:
-      - -DBUILD_ARPING=false
-      - -DBUILD_CLOCKDIFF=false
-      - -DBUILD_PING=true
-      - -DBUILD_TRACEPATH=false
-      - -DBUILD_MANS=false
-      - -DSKIP_TESTS=true
-    sources:
-      - type: archive
-        url: https://github.com/iputils/iputils/archive/refs/tags/20211215.tar.gz
-        sha256: b6f67fc705490673ff4471d006221b4a2f1b1180b929d9fefd771352621ccedf
+# The launcher uses ping to check if certain domains are blocked, so we need to install it
+- name: ping
+  buildsystem: meson
+  config-opts:
+  - -DBUILD_ARPING=false
+  - -DBUILD_CLOCKDIFF=false
+  - -DBUILD_PING=true
+  - -DBUILD_TRACEPATH=false
+  - -DBUILD_MANS=false
+  - -DSKIP_TESTS=true
+  sources:
+  - type: archive
+    url: https://github.com/iputils/iputils/archive/refs/tags/20211215.tar.gz
+    sha256: b6f67fc705490673ff4471d006221b4a2f1b1180b929d9fefd771352621ccedf
 
-  # copy/pasted from bottles
-  - name: gamemode
-    buildsystem: meson
-    config-opts: &gamemode_opts
-      - -Dwith-systemd=false
-      - -Dwith-daemon=false
-      - -Dwith-examples=false
-      - -Dwith-util=false
-      - -Dwith-sd-bus-provider=no-daemon
-    sources: &gamemode_sources
-      - type: archive
-        url: https://github.com/FeralInteractive/gamemode/releases/download/1.6.1/gamemode-1.6.1.tar.xz
-        sha256: 10c2a3f142eae472f5a09e42616e38c666c05b25ca3e61e562a543bb3fda66c5
-  - name: gamemoderun
-    buildsystem: simple
-    build-commands:
-      - install -Dm755 data/gamemoderun -t /app/bin
-    sources: *gamemode_sources
+# copy/pasted from bottles
+- name: gamemode
+  buildsystem: meson
+  config-opts:
+  - -Dwith-systemd=false
+  - -Dwith-daemon=false
+  - -Dwith-examples=false
+  - -Dwith-util=false
+  - -Dwith-sd-bus-provider=no-daemon
+  sources: &gamemode_sources
+  - type: archive
+    url: https://github.com/FeralInteractive/gamemode/releases/download/1.6.1/gamemode-1.6.1.tar.xz
+    sha256: 10c2a3f142eae472f5a09e42616e38c666c05b25ca3e61e562a543bb3fda66c5
+- name: gamemoderun
+  buildsystem: simple
+  build-commands:
+  - install -Dm755 data/gamemoderun -t /app/bin
+  sources: *gamemode_sources
 
-  - name: git
-    buildsystem: autotools
-    config-opts:
-      - --without-tcltk
-    sources:
-      - type: archive
-        url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.9.5.tar.xz
-        sha256: a4bea37ecb9a3fb5c0c8ef18c2f7eeaf8ccbcfec91f72f3bccfc6bf72a3e3902
+- name: git
+  buildsystem: autotools
+  config-opts:
+  - --without-tcltk
+  sources:
+  - type: archive
+    url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.9.5.tar.xz
+    sha256: a4bea37ecb9a3fb5c0c8ef18c2f7eeaf8ccbcfec91f72f3bccfc6bf72a3e3902
 
-  - name: libayatana-appindicator
+- name: libayatana-appindicator
+  buildsystem: cmake
+  config-opts:
+  - -DENABLE_BINDINGS_VALA=OFF
+  - -DENABLE_BINDINGS_MONO=OFF
+  sources:
+  - type: archive
+    url: https://github.com/AyatanaIndicators/libayatana-appindicator/archive/refs/tags/0.5.90.tar.gz
+    sha256: 15319ca7fda90c6bd85311bbe83eefe1e322de32df2c7f5174b0d5a7537c27b4
+  modules:
+  - name: libayatana-indicator
     buildsystem: cmake
-    config-opts:
-      - -DENABLE_BINDINGS_VALA=OFF
-      - -DENABLE_BINDINGS_MONO=OFF
     sources:
+    - type: archive
+      url: https://github.com/AyatanaIndicators/libayatana-indicator/archive/refs/tags/0.9.1.tar.gz
+      sha256: 15a8844265067652c06242736ece682622d73cedcccdf1c171ce27fba70ba689
+    modules:
+    - name: ayatana-ido
+      buildsystem: cmake
+      sources:
       - type: archive
-        url: https://github.com/AyatanaIndicators/libayatana-appindicator/archive/refs/tags/0.5.90.tar.gz
-        sha256: 15319ca7fda90c6bd85311bbe83eefe1e322de32df2c7f5174b0d5a7537c27b4
-    modules:
-      - name: libayatana-indicator
-        buildsystem: cmake
-        sources:
-          - type: archive
-            url: https://github.com/AyatanaIndicators/libayatana-indicator/archive/refs/tags/0.9.1.tar.gz
-            sha256: 15a8844265067652c06242736ece682622d73cedcccdf1c171ce27fba70ba689
-        modules: 
-          - name: ayatana-ido
-            buildsystem: cmake
-            sources:
-              - type: archive
-                url: https://github.com/AyatanaIndicators/ayatana-ido/archive/refs/tags/0.9.1.tar.gz
-                sha256: e663e14675b3ac6474b886541fa367d07a57b476a9c8600b4b2db019734d96d6
-            modules:
-              - name: libdbusmenu
-                buildsystem: autotools
-                build-options:
-                  cflags: -Wno-error
-                  env:
-                    HAVE_VALGRIND_FALSE: '#'
-                    HAVE_VALGRIND_TRUE: ''
-                config-opts:
-                  - --disable-static
-                  - --disable-gtk-doc
-                  - --enable-introspection=no
-                  - --disable-vala
-                  - --disable-dumper
-                  - --disable-tests
-                  - --with-gtk=3
-                sources:
-                  - type: archive
-                    url: https://launchpad.net/libdbusmenu/16.04/16.04.0/+download/libdbusmenu-16.04.0.tar.gz
-                    sha256: b9cc4a2acd74509435892823607d966d424bd9ad5d0b00938f27240a1bfa878a
-                modules:
-                  - "shared-modules/intltool/intltool-0.51.json"
-
-  - name: EasyTerm
-    buildsystem: simple
-    build-commands:
-      - python3 setup.py install --prefix=/app --root=/
-      - rm /app/bin/easyterm.py # We don't need this file, we install a custom executable later
-    sources:
-      - type: git
-        url: https://github.com/bottlesdevs/EasyTerm
-        tag: 0.1.8
-        commit: 7677c93e865735ebf7125262e071218794ab6e70
-        x-checker-data:
-          type: json
-          url: https://api.github.com/repos/bottlesdevs/EasyTerm/releases/latest
-          tag-query: .tag_name
-          version-query: .tag_name
-          timestamp-query: .published_at
-    modules:
-      - name: vte
-        buildsystem: meson
+        url: https://github.com/AyatanaIndicators/ayatana-ido/archive/refs/tags/0.9.1.tar.gz
+        sha256: e663e14675b3ac6474b886541fa367d07a57b476a9c8600b4b2db019734d96d6
+      modules:
+      - name: libdbusmenu
+        buildsystem: autotools
+        build-options:
+          cflags: -Wno-error
+          env:
+            HAVE_VALGRIND_FALSE: '#'
+            HAVE_VALGRIND_TRUE: ''
         config-opts:
-          - -Ddocs=false
-          - -Dvapi=false
+        - --disable-static
+        - --disable-gtk-doc
+        - --enable-introspection=no
+        - --disable-vala
+        - --disable-dumper
+        - --disable-tests
+        - --with-gtk=3
         sources:
-          - type: archive
-            url: https://github.com/GNOME/vte/archive/refs/tags/0.66.2.tar.gz
-            sha256: a486e389e3d16f903ed6f27d9513c2a44bff5945a12af4fcfe48ce00992c42ab
+        - type: archive
+          url: https://launchpad.net/libdbusmenu/16.04/16.04.0/+download/libdbusmenu-16.04.0.tar.gz
+          sha256: b9cc4a2acd74509435892823607d966d424bd9ad5d0b00938f27240a1bfa878a
+        modules:
+        - shared-modules/intltool/intltool-0.51.json
 
-  - name: an-anime-game-launcher
-    buildsystem: simple
-    build-commands:
-      - chmod +x An_Anime_Game_Launcher.AppImage
-      - ./An_Anime_Game_Launcher.AppImage --appimage-extract
-
-      - install -dm755 "${FLATPAK_DEST}/bin" "${FLATPAK_DEST}/lib/an-anime-game-launcher"
-      - cp -r squashfs-root/an-anime-game-launcher squashfs-root/public squashfs-root/resources.neu "${FLATPAK_DEST}/lib/an-anime-game-launcher"
-
-      - install -Dm755 term.py "${FLATPAK_DEST}/bin/gnome-terminal"
-
-      - install -Dm644 "squashfs-root/64x64.png" "${FLATPAK_DEST}/share/icons/hicolor/64x64/apps/com.gitlab.KRypt0n_.an-anime-game-launcher.png"
-      - install -Dm644 "com.gitlab.KRypt0n_.an-anime-game-launcher.png" "${FLATPAK_DEST}/share/icons/hicolor/256x256/apps/com.gitlab.KRypt0n_.an-anime-game-launcher.png"
-      - install -Dm755 "com.gitlab.KRypt0n_.an-anime-game-launcher.sh" "${FLATPAK_DEST}/bin/com.gitlab.KRypt0n_.an-anime-game-launcher"
-      - desktop-file-install --dir="${FLATPAK_DEST}/share/applications" --remove-key=X-AppImage-Version --set-key=Exec --set-value=com.gitlab.KRypt0n_.an-anime-game-launcher --set-key=Icon --set-value=com.gitlab.KRypt0n_.an-anime-game-launcher squashfs-root/an-anime-game-launcher.desktop
-
-      - install -Dm644 -t ${FLATPAK_DEST}/share/metainfo com.gitlab.KRypt0n_.an-anime-game-launcher.metainfo.xml
+- name: EasyTerm
+  buildsystem: simple
+  build-commands:
+  - python3 setup.py install --prefix=/app --root=/
+  - rm /app/bin/easyterm.py     # We don't need this file, we install a custom executable later
+  sources:
+  - type: git
+    url: https://github.com/bottlesdevs/EasyTerm
+    tag: 0.1.8
+    commit: 7677c93e865735ebf7125262e071218794ab6e70
+    x-checker-data:
+      type: json
+      url: https://api.github.com/repos/bottlesdevs/EasyTerm/releases/latest
+      tag-query: .tag_name
+      version-query: .tag_name
+      timestamp-query: .published_at
+  modules:
+  - name: vte
+    buildsystem: meson
+    config-opts:
+    - -Ddocs=false
+    - -Dvapi=false
     sources:
-      - type: file
-        url: https://gitlab.com/an-anime-team/an-anime-game-launcher/uploads/003620e21b2d8d70385bac8f2a862846/An_Anime_Game_Launcher.AppImage
-        sha256: acceaf06684386adca48b66cff776d29c867a527bf6d23a314aead6594ac0c0c
-      - type: file
-        path: com.gitlab.KRypt0n_.an-anime-game-launcher.png
-      - type: file
-        path: com.gitlab.KRypt0n_.an-anime-game-launcher.sh
-      - type: file
-        path: com.gitlab.KRypt0n_.an-anime-game-launcher.metainfo.xml
-      - type: file
-        path: term.py
+    - type: archive
+      url: https://github.com/GNOME/vte/archive/refs/tags/0.66.2.tar.gz
+      sha256: a486e389e3d16f903ed6f27d9513c2a44bff5945a12af4fcfe48ce00992c42ab
+
+- name: an-anime-game-launcher
+  buildsystem: simple
+  build-commands:
+  - chmod +x An_Anime_Game_Launcher.AppImage
+  - ./An_Anime_Game_Launcher.AppImage --appimage-extract
+
+  - install -dm755 "${FLATPAK_DEST}/bin" "${FLATPAK_DEST}/lib/an-anime-game-launcher"
+  - cp -r squashfs-root/an-anime-game-launcher squashfs-root/public squashfs-root/resources.neu
+    "${FLATPAK_DEST}/lib/an-anime-game-launcher"
+
+  - install -Dm755 term.py "${FLATPAK_DEST}/bin/gnome-terminal"
+
+  - install -Dm644 "squashfs-root/64x64.png" "${FLATPAK_DEST}/share/icons/hicolor/64x64/apps/com.gitlab.KRypt0n_.an-anime-game-launcher.png"
+  - install -Dm644 "com.gitlab.KRypt0n_.an-anime-game-launcher.png" "${FLATPAK_DEST}/share/icons/hicolor/256x256/apps/com.gitlab.KRypt0n_.an-anime-game-launcher.png"
+  - install -Dm755 "com.gitlab.KRypt0n_.an-anime-game-launcher.sh" "${FLATPAK_DEST}/bin/com.gitlab.KRypt0n_.an-anime-game-launcher"
+  - desktop-file-install --dir="${FLATPAK_DEST}/share/applications" --remove-key=X-AppImage-Version
+    --set-key=Exec --set-value=com.gitlab.KRypt0n_.an-anime-game-launcher --set-key=Icon
+    --set-value=com.gitlab.KRypt0n_.an-anime-game-launcher squashfs-root/an-anime-game-launcher.desktop
+
+  - install -Dm644 -t ${FLATPAK_DEST}/share/metainfo com.gitlab.KRypt0n_.an-anime-game-launcher.metainfo.xml
+  sources:
+  - type: file
+    url: https://gitlab.com/an-anime-team/an-anime-game-launcher/uploads/88f073c0a961e054b91bac68126c0e13/An_Anime_Game_Launcher.AppImage
+    sha256: 3afeb10f6227e1534bdcfb01df5100bea8858d99b94358db473c98c315eae903
+  - type: file
+    path: com.gitlab.KRypt0n_.an-anime-game-launcher.png
+  - type: file
+    path: com.gitlab.KRypt0n_.an-anime-game-launcher.sh
+  - type: file
+    path: com.gitlab.KRypt0n_.an-anime-game-launcher.metainfo.xml
+  - type: file
+    path: term.py
