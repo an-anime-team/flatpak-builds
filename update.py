@@ -68,7 +68,7 @@ if(latestRelease['tag'] > currentFlatpakRelease.attrib['version']):
         
         appimageRegex = re.compile('/uploads/[\da-f]+/An_Anime_Game_Launcher.AppImage', re.MULTILINE)
         appimageUrl = appimageRegex.search(descriptionMarkdown).group(0)
-        appimageUrl = f'https://gitlab.com/KRypt0n_/an-anime-game-launcher{appimageUrl}'
+        appimageUrl = f'https://gitlab.com/an-anime-team/an-anime-game-launcher{appimageUrl}'
         
         print(f'Calculating SHA256...', end='', flush=True)
         appimageResponse = requests.get(appimageUrl)
