@@ -50,6 +50,13 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+    <release version="2.3.4" date="2022-05-31">
+      <description>
+        <p>Fixed voice packages version identification. It wasn't working because our lovely company decided to change files naming scheme</p>
+        <p>Hidden "apply patch" button from the settings when this button can't even apply it because it doesn't exist</p>
+        <p>Changed default wine version to `Wine-GE-Proton 7-16`</p>
+      </description>
+    </release>
     <release version="2.3.3" date="2022-05-27">
       <description>
         <p>Fixed processing of patch repo failures
