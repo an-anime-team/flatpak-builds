@@ -50,6 +50,14 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+    <release version="2.3.5" date="2022-06-01">
+      <description>
+        <p>Fixed patches applying. You may need to clear your cache before/after applying it</p>
+        <p>Added dxvk async versions</p>
+        <p>Added `clear cache` button to settings</p>
+        <p>Fixed `Wine-GE-Proton 7-16` downloading link</p>
+      </description>
+    </release>
     <release version="2.3.4" date="2022-05-31">
       <description>
         <p>Fixed voice packages version identification. It wasn't working because our lovely company decided to change files naming scheme</p>
