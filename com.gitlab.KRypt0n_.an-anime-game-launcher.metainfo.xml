@@ -50,6 +50,14 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+    <release version="2.3.6" date="2022-07-14">
+      <description>
+        <p>Fixed voice packages versioning, and thus updating</p>
+        <p>Added automatic changes applying and outdated files removing during voice packages updating</p>
+        <p>Added new DXVK and wine versions</p>
+        <p>Updated German, French and Chinese localizations</p>
+      </description>
+    </release>
     <release version="2.3.5" date="2022-06-01">
       <description>
         <p>Fixed patches applying. You may need to clear your cache before/after applying it</p>
