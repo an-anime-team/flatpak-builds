@@ -50,6 +50,13 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+    <release version="2.3.7" date="2022-07-29">
+      <description>
+        <p>Fixed Chinese API</p>
+        <p>Allow to use --rungame</p>
+        <p>added ETA to file integrity</p>
+      </description>
+    </release>
     <release version="2.3.6" date="2022-07-14">
       <description>
         <p>Fixed voice packages versioning, and thus updating</p>
