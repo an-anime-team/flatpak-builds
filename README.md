@@ -1,4 +1,4 @@
-# An Anime Game Launcher Flatpak
+# An Anime Game Launcher GTK Flatpak
 
 ## Installation
 
@@ -17,7 +17,7 @@ flatpak remote-add --if-not-exists launcher.moe https://gol.launcher.moe/gol.lau
 Now the only thing remaining is to install the launcher
 
 ```sh
-flatpak install launcher.moe com.gitlab.KRypt0n_.an-anime-game-launcher
+flatpak install launcher.moe moe.launcher.an-anime-game-launcher-gtk
 ```
 
 ## Uninstall
@@ -25,13 +25,13 @@ flatpak install launcher.moe com.gitlab.KRypt0n_.an-anime-game-launcher
 To uninstall the launcher including all the files run the following
 
 ```sh
-flatpak uninstall --delete-data com.gitlab.KRypt0n_.an-anime-game-launcher
+flatpak uninstall --delete-data moe.launcher.an-anime-game-launcher-gtk
 ```
 
 or to keep the files simply run
 
 ```sh
-flatpak uninstall com.gitlab.KRypt0n_.an-anime-game-launcher
+flatpak uninstall moe.launcher.an-anime-game-launcher-gtk
 ```
 
 ## Additional configuration
@@ -47,10 +47,10 @@ mkdir -p $GAME_PATH/prefix $GAME_PATH/game $GAME_PATH/temp
 Then, grant the flatpak permission to access these paths:
 
 ```sh
-flatpak override --user --filesystem=$GAME_PATH com.gitlab.KRypt0n_.an-anime-game-launcher
+flatpak override --user --filesystem=$GAME_PATH moe.launcher.an-anime-game-launcher-gtk
 ```
 
-Finally, edit the launcher's config file in `~/.var/app/com.gitlab.KRypt0n_.an-anime-game-launcher/data/anime-game-launcher/config.yaml` to point to the new paths: (replace the existing `folders:` section)
+Finally, edit the launcher's config file in `~/.var/app/moe.launcher.an-anime-game-launcher-gtk/data/anime-game-launcher/config.toml` to point to the new paths: (replace the existing `folders:` section)
 
 ```yaml
 folders:
@@ -66,7 +66,7 @@ Then, start the launcher and install the game.
 Unlike the other packages, the flatpak does _not_ require you to edit /etc/hosts. By default, logging and the optional proxy/cdn servers are blocked. If you want to unblock the optional servers, set the `NO_BLOCK_PROXY` environment variable:
 
 ```sh
-flatpak override --env=NO_BLOCK_PROXY=true com.gitlab.KRypt0n_.an-anime-game-launcher
+flatpak override --env=NO_BLOCK_PROXY=true moe.launcher.an-anime-game-launcher-gtk
 ```
 
 ### MangoHud
@@ -77,20 +77,20 @@ To use MangoHud, install the MangoHud Flatpak extension:
 flatpak install flathub org.freedesktop.Platform.VulkanLayer.MangoHud
 ```
 
-By default, the MangoHud configuration is stored at `~/.var/app/com.gitlab.KRypt0n_.an-anime-game-launcher/config/MangoHud/MangoHud.conf`. To use the config file from the host system instead, run this command:
+By default, the MangoHud configuration is stored at `~/.var/app/moe.launcher.an-anime-game-launcher-gtk/config/MangoHud/MangoHud.conf`. To use the config file from the host system instead, run this command:
 
 ```sh
-flatpak override --filesystem=xdg-config/MangoHud:ro com.gitlab.KRypt0n_.an-anime-game-launcher
+flatpak override --filesystem=xdg-config/MangoHud:ro moe.launcher.an-anime-game-launcher-gtk
 ```
 
 ### Discord RPC
 
-Discord RPC should work out of the box if Discord is also installed as Flatpak. Currently, non-Flatpak Discord isn't supported
+Discord RPC Currently isn't supported on the GTK version
 
 ### GameMode
 
 GameMode should work out of the box. If you have MangoHud configured to show GameMode status, this won't work due to an [issue with MangoHud](https://github.com/flightlessmango/MangoHud/issues/685). As a workaround, you can run this command:
 
 ```sh
-flatpak override --talk-name=com.feralinteractive.GameMode com.gitlab.KRypt0n_.an-anime-game-launcher
+flatpak override --talk-name=com.feralinteractive.GameMode moe.launcher.an-anime-game-launcher-gtk
 ```
