@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<!-- Copyright 2022 Laurin Neff --><component type="desktop-application">
-  <id>com.gitlab.KRypt0n_.an-anime-game-launcher</id>
+<component type="desktop-application">
+  <!-- Copyright 2022 Laurin Neff -->
+  <id>moe.launcher.an-anime-game-launcher-gtk</id>
   <name>An Anime Game Launcher</name>
   <summary>Play your favorite anime game on Linux</summary>
   <summary xml:lang="de">Spielen Sie Ihr Lieblings-Anime-Spiel auf Linux</summary>
@@ -27,15 +28,15 @@
   <developer_name>An Anime Team</developer_name>
   <screenshots>
     <screenshot>
-      <image>https://gitlab.com/KRypt0n_/an-anime-game-launcher/-/raw/main/repository/pics/launcher-main.png</image>
+      <image>https://gitlab.com/an-anime-team/an-anime-game-launcher/-/raw/main/repository/pics/launcher-main.png</image>
     </screenshot>
     <screenshot>
-      <image>https://gitlab.com/KRypt0n_/an-anime-game-launcher/-/raw/main/repository/pics/launcher-settings.png</image>
+      <image>https://gitlab.com/an-anime-team/an-anime-game-launcher/-/raw/main/repository/pics/launcher-settings.png</image>
     </screenshot>
   </screenshots>
-  <launchable type="desktop-id">com.gitlab.KRypt0n_.an-anime-game-launcher.desktop</launchable>
-  <url type="homepage">https://gitlab.com/KRypt0n_/an-anime-game-launcher</url>
-  <url type="bugtracker">https://gitlab.com/KRypt0n_/an-anime-game-launcher/-/issues</url>
+  <launchable type="desktop-id">moe.launcher.an-anime-game-launcher-gtk.desktop</launchable>
+  <url type="homepage">https://gitlab.com/an-anime-team/alternatives/an-anime-game-launcher-gtk</url>
+  <url type="bugtracker">https://gitlab.com/an-anime-team/alternatives/an-anime-game-launcher-gtk/-/issues</url>
   <project_license>GPL-3.0-or-later</project_license>
   <metadata_license>CC0-1.0</metadata_license>
   <categories>

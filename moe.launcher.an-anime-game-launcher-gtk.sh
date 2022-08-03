@@ -1,9 +1,10 @@
 #!/bin/sh
 
 # Discord RPC
-for i in {0..9}; do
-    test -S $XDG_RUNTIME_DIR/discord-ipc-$i || ln -sf {app/com.discordapp.Discord,$XDG_RUNTIME_DIR}/discord-ipc-$i;
-done
+# commented for now since the rust launcher doesn't support it yet
+#for i in {0..9}; do
+#    test -S $XDG_RUNTIME_DIR/discord-ipc-$i || ln -sf {app/com.discordapp.Discord,$XDG_RUNTIME_DIR}/discord-ipc-$i;
+#done
 
 # Modify /etc/hosts to block logging servers
 # This is possible because /etc is a writable tmpfs in flatpak
@@ -33,5 +34,4 @@ EOF
     fi
 fi
 
-cd /app/lib/an-anime-game-launcher
-exec ./an-anime-game-launcher "$@"
+exec anime-game-launcher "$@"
