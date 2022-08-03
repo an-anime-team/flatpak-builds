@@ -34,4 +34,6 @@ EOF
     fi
 fi
 
+export PATH=$PATH:/app/utils/bin
+
 exec anime-game-launcher "$@"

@@ -2,20 +2,29 @@ app-id: moe.launcher.an-anime-game-launcher-gtk
 runtime: org.gnome.Platform
 runtime-version: '42'
 add-extensions:
- org.gnome.Platform.Compat.i386:
-   directory: lib/i386-linux-gnu
-   version: '42'
- org.freedesktop.Platform.GL32:
-   directory: lib/i386-linux-gnu/GL
-   version: '1.4'
-   versions: 21.08;1.4
-   subdirectories: true
-   no-autodownload: true
-   autodelete: false
-   add-ld-path: lib
-   merge-dirs: vulkan/icd.d;glvnd/egl_vendor.d;OpenCL/vendors;lib/dri;lib/d3d;vulkan/explicit_layer.d;vulkan/implicit_layer.d
-   download-if: active-gl-driver
-   enable-if: active-gl-driver
+  com.valvesoftware.Steam.Utility:
+    subdirectories: true
+    directory: utils
+    version: stable
+    versions: stable;beta;test
+    add-ld-path: lib
+    merge-dirs: bin
+    no-autodownload: true
+    autodelete: true
+  org.gnome.Platform.Compat.i386:
+    directory: lib/i386-linux-gnu
+    version: '42'
+  org.freedesktop.Platform.GL32:
+    directory: lib/i386-linux-gnu/GL
+    version: '1.4'
+    versions: 21.08;1.4
+    subdirectories: true
+    no-autodownload: true
+    autodelete: false
+    add-ld-path: lib
+    merge-dirs: vulkan/icd.d;glvnd/egl_vendor.d;OpenCL/vendors;lib/dri;lib/d3d;vulkan/explicit_layer.d;vulkan/implicit_layer.d
+    download-if: active-gl-driver
+    enable-if: active-gl-driver
 sdk: org.gnome.Sdk
 sdk-extensions:
 - org.freedesktop.Sdk.Extension.rust-stable
@@ -145,6 +154,8 @@ modules:
       --set-key=Exec --set-value=moe.launcher.an-anime-game-launcher-gtk
       --set-key=Icon --set-value=moe.launcher.an-anime-game-launcher-gtk
       scripts/appimage/anime-game-launcher.desktop
+  
+  - mkdir -p /app/utils/
   sources:
   - type: git
     url: https://gitlab.com/an-anime-team/alternatives/an-anime-game-launcher-gtk
