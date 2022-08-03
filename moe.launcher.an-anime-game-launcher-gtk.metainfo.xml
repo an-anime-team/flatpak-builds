@@ -2,7 +2,7 @@
 <component type="desktop-application">
   <!-- Copyright 2022 Laurin Neff -->
   <id>moe.launcher.an-anime-game-launcher-gtk</id>
-  <name>An Anime Game Launcher</name>
+  <name>An Anime Game Launcher GTK</name>
   <summary>Play your favorite anime game on Linux</summary>
   <summary xml:lang="de">Spielen Sie Ihr Lieblings-Anime-Spiel auf Linux</summary>
   <summary xml:lang="ru">Играйте в вашу любимую аниме-игру на линуксе</summary>
@@ -10,21 +10,21 @@
   <summary xml:lang="it">Gioca al tuo gioco anime preferito su Linux</summary>
   <summary xml:lang="hu">Játssz a kedvenc játékoddal Linux-on!</summary>
   <description>
-    <p>An Anime Game Launcher is an unofficial launcher for a certain video game that handles setting up Wine, installing the game, and patching it to work on Linux.</p>
+    <p>An Anime Game Launcher GTK is an unofficial launcher for a certain video game that handles setting up Wine, installing the game, and patching it to work on Linux.</p>
   </description>
   <description xml:lang="de">
-    <p>An Anime Game Launcher ist ein inoffizieller Launcher für ein bestimmtes Videospiel, welcher die Einrichtung von Wine, die Installation des Spiels und das Patchen, dass es unter Linux läuft, übernimmt.</p>
+    <p>An Anime Game Launcher GTK ist ein inoffizieller Launcher für ein bestimmtes Videospiel, welcher die Einrichtung von Wine, die Installation des Spiels und das Patchen, dass es unter Linux läuft, übernimmt.</p>
   </description>
   <description xml:lang="ru">
-    <p>An Anime Game Launcher - это неофициальный лаунчер для определённой видео-игры, который настраивает Wine, устанавливает игру и применяет дополнительные патчи для предоставления возможности её работы на линуксе.</p>
+    <p>An Anime Game Launcher GTK - это неофициальный лаунчер для определённой видео-игры, который настраивает Wine, устанавливает игру и применяет дополнительные патчи для предоставления возможности её работы на линуксе.</p>
   </description>
   <description xml:lang="es">
     <p>Launcher de un Juego de Anime es un launcher no oficial para cierto videojuego. Se encarga de configurar Wine, instalar el juego, y parchearlo para que funcione en Linux.</p>
   </description>
   <description xml:lang="it">
-    <p>An Anime Game Launcher è un launcher non ufficiale per un certo videogioco anime che gestisce e configura automaticamente Wine, l'installazione e patching del gioco per farlo funzionare su Linux.</p>
+    <p>An Anime Game Launcher GTK è un launcher non ufficiale per un certo videogioco anime che gestisce e configura automaticamente Wine, l'installazione e patching del gioco per farlo funzionare su Linux.</p>
   </description>
-  <description xml:lang="hu">Az Anime Game Launcher egy nem-hivatalos launcher egy bizonyos videójátékhoz amely helyetted beállítja a Wine-t, telepíti a játékot, és alkalmazza a Linux patch-et hozzá.</description>
+  <description xml:lang="hu">Az Anime Game Launcher GTK egy nem-hivatalos launcher egy bizonyos videójátékhoz amely helyetted beállítja a Wine-t, telepíti a játékot, és alkalmazza a Linux patch-et hozzá.</description>
   <developer_name>An Anime Team</developer_name>
   <screenshots>
     <screenshot>
