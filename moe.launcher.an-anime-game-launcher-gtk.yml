@@ -150,7 +150,7 @@ modules:
   sources:
   - type: git
     url: https://gitlab.com/an-anime-team/alternatives/an-anime-game-launcher-gtk
-    tag: 1.0.0-rc2
+    tag: &aagl_tag 1.0.0-rc2
   - type: file
     path: moe.launcher.an-anime-game-launcher-gtk.sh
   - cargo-sources.json
@@ -173,6 +173,6 @@ modules:
   sources:
   - type: git
     url: https://gitlab.com/an-anime-team/alternatives/an-anime-game-launcher-gtk
-    tag: 1.0.0-rc2
+    tag: *aagl_tag
   - type: file
     path: moe.launcher.an-anime-game-launcher-gtk.metainfo.xml
