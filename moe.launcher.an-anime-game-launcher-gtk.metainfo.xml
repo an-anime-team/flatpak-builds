@@ -28,10 +28,10 @@
   <developer_name>An Anime Team</developer_name>
   <screenshots>
     <screenshot>
-      <image>https://gitlab.com/an-anime-team/an-anime-game-launcher/-/raw/main/repository/pics/launcher-main.png</image>
+      <image>https://gitlab.com/an-anime-team/alternatives/an-anime-game-launcher-gtk/-/raw/main/repository/pictures/main.png</image>
     </screenshot>
     <screenshot>
-      <image>https://gitlab.com/an-anime-team/an-anime-game-launcher/-/raw/main/repository/pics/launcher-settings.png</image>
+      <image>https://gitlab.com/an-anime-team/alternatives/an-anime-game-launcher-gtk/-/raw/main/repository/pictures/settings.png</image>
     </screenshot>
   </screenshots>
   <launchable type="desktop-id">moe.launcher.an-anime-game-launcher-gtk.desktop</launchable>
@@ -51,7 +51,11 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
-    <!-- will populate later -->
+    <release version="1.0.0-rc1" date="2022-08-04">
+      <description>
+        <p>Initial stable release</p>
+      </description>
+    </release>
   </releases>
   <update_contact>laurin at laurinneff dot ch</update_contact>
 </component>

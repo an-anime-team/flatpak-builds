@@ -147,13 +147,27 @@ modules:
   - cp target/release/anime-game-launcher /app/bin/anime-game-launcher
   - cp moe.launcher.an-anime-game-launcher-gtk.sh /app/bin/moe.launcher.an-anime-game-launcher-gtk
   - chmod +x /app/bin/moe.launcher.an-anime-game-launcher-gtk
+  sources:
+  - type: git
+    url: https://gitlab.com/an-anime-team/alternatives/an-anime-game-launcher-gtk
+    tag: 1.0.0-rc1
+  - type: file
+    path: moe.launcher.an-anime-game-launcher-gtk.sh
+  - cargo-sources.json
 
-  - mkdir -p /app/share/icons/hicolor/256x256/apps/
-  - cp scripts/appimage/icon.png /app/share/icons/hicolor/256x256/apps/moe.launcher.an-anime-game-launcher-gtk.png
+# not included in aagl so the launcher doesn't have to be rebuilt every time the metadata is changed
+- name: metadata
+  buildsystem: simple
+  build-commands:
+  - mkdir -p /app/share/icons/hicolor/512x512/apps/
+  - cp assets/images/icon.png /app/share/icons/hicolor/512x512/apps/moe.launcher.an-anime-game-launcher-gtk.png
   - desktop-file-install --dir=/app/share/applications
       --set-key=Exec --set-value=moe.launcher.an-anime-game-launcher-gtk
       --set-key=Icon --set-value=moe.launcher.an-anime-game-launcher-gtk
       scripts/appimage/anime-game-launcher.desktop
+  
+  - mkdir -p /app/share/metainfo/
+  - cp moe.launcher.an-anime-game-launcher-gtk.metainfo.xml /app/share/metainfo/
   
   - mkdir -p /app/utils/
   sources:
@@ -161,7 +175,4 @@ modules:
     url: https://gitlab.com/an-anime-team/alternatives/an-anime-game-launcher-gtk
     tag: 1.0.0-rc1
   - type: file
-    path: moe.launcher.an-anime-game-launcher-gtk.sh
-  - type: file
     path: moe.launcher.an-anime-game-launcher-gtk.metainfo.xml
-  - cargo-sources.json
