@@ -51,18 +51,14 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
-    <release version="1.0.0-rc2" date="2022-08-04">
+    <release version="1.0.0" date="2022-08-07">
       <description>
-        <p>Fixed available space checking issues</p>
-        <p>Added patch folder selection during initial setup</p>
-        <p>Disabled mangohud if gamescope is enabled</p>
-        <p>Added voice packages selection during initial setup</p>
-        <p>Improved work with configuration file which now can be automatically filled by default values if some of them are missing</p>
-      </description>
-    </release>
-    <release version="1.0.0-rc1" date="2022-08-03">
-      <description>
-        <p>Initial stable release</p>
+        <p>Added new wine versions</p>
+        <p>Fixed DXVK applying with spaces in paths</p>
+        <p>Added Chinese game version support</p>
+        <p>Added "borderless" and "virtual desktop" settings</p>
+        <p>Added separate FSR setting for gamescope</p>
+        <p>Removed use of 32bit wine binaries</p>
       </description>
     </release>
   </releases>

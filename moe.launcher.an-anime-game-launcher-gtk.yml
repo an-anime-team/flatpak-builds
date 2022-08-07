@@ -11,26 +11,9 @@ add-extensions:
     merge-dirs: bin
     no-autodownload: true
     autodelete: true
-  org.gnome.Platform.Compat.i386:
-    directory: lib/i386-linux-gnu
-    version: '42'
-  org.freedesktop.Platform.GL32:
-    directory: lib/i386-linux-gnu/GL
-    version: '1.4'
-    versions: 21.08;1.4
-    subdirectories: true
-    no-autodownload: true
-    autodelete: false
-    add-ld-path: lib
-    merge-dirs: vulkan/icd.d;glvnd/egl_vendor.d;OpenCL/vendors;lib/dri;lib/d3d;vulkan/explicit_layer.d;vulkan/implicit_layer.d
-    download-if: active-gl-driver
-    enable-if: active-gl-driver
 sdk: org.gnome.Sdk
 sdk-extensions:
 - org.freedesktop.Sdk.Extension.rust-stable
-- org.gnome.Sdk.Compat.i386
-- org.freedesktop.Sdk.Extension.toolchain-i386
-separate-locales: false
 command: moe.launcher.an-anime-game-launcher-gtk
 rename-desktop-file: anime-game-launcher.desktop
 finish-args:
@@ -43,7 +26,6 @@ finish-args:
 - --talk-name=org.freedesktop.Notifications
 - --device=all   # Controllers
 - --allow=devel  # This seems to fix issues related to the game not launching and i don't know how
-- --allow=multiarch
 
 build-options:
   append-path: /usr/lib/sdk/rust-stable/bin
@@ -91,23 +73,6 @@ modules:
   - type: archive
     url: https://github.com/FeralInteractive/gamemode/releases/download/1.6.1/gamemode-1.6.1.tar.xz
     sha256: 10c2a3f142eae472f5a09e42616e38c666c05b25ca3e61e562a543bb3fda66c5
-- name: gamemode-i386
-  build-options: &compat-i386-build-options
-    # Make sure 32-bit dependencies are first on pkg-config search path
-    prepend-pkg-config-path: /app/lib32/pkgconfig:/usr/lib/i386-linux-gnu/pkgconfig
-    # Add /app/lib32 to linker search path for modules without pkg-config
-    ldflags: -L/app/lib32
-    # Add the cross-compiler to PATH
-    prepend-path: /usr/lib/sdk/toolchain-i386/bin
-    # Tell the build systems to use the cross-compiler for compilation
-    env:
-      CC: i686-unknown-linux-gnu-gcc
-      CXX: i686-unknown-linux-gnu-g++
-    # Tell the build systems to install libraries to /app/lib32
-    libdir: /app/lib32
-  buildsystem: meson
-  config-opts: *gamemode_opts
-  sources: *gamemode_sources
 - name: gamemoderun
   buildsystem: simple
   build-commands:
@@ -118,22 +83,23 @@ modules:
   buildsystem: autotools
   config-opts:
   - --without-tcltk
+  post-install:
+  - rm -rf /app/share/gitweb
+  - find /app/libexec/git-core/
+      -type f
+      -not -name git -and 
+      -not -name git-rev-parse -and 
+      -not -name git-remote -and
+      -not -name git-remote-https -and
+      -not -name git-fetch -and
+      -not -name git-reset -and
+      -not -name git-clone
+      -delete
+  #- rm -f /app/bin/git-*
   sources:
   - type: archive
     url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.9.5.tar.xz
     sha256: a4bea37ecb9a3fb5c0c8ef18c2f7eeaf8ccbcfec91f72f3bccfc6bf72a3e3902
-
-- name: i386-stuff
-  buildsystem: simple
-  build-commands:
-  - mkdir -p /app/lib/i386-linux-gnu
-  - mkdir -p /app/lib/debug/lib/i386-linux-gnu
-  - mkdir -p /app/lib/i386-linux-gnu/GL
-  - install -Dm644 ld.so.conf /app/etc/ld.so.conf
-  sources:
-  - type: file
-    dest-filename: ld.so.conf
-    url: data:/app/lib32%0A/app/lib/i386-linux-gnu%0A
 
 - name: aagl
   buildsystem: simple
@@ -150,7 +116,7 @@ modules:
   sources:
   - type: git
     url: https://gitlab.com/an-anime-team/alternatives/an-anime-game-launcher-gtk
-    tag: &aagl_tag 1.0.0-rc2
+    tag: &aagl_tag 1.0.0
   - type: file
     path: moe.launcher.an-anime-game-launcher-gtk.sh
   - cargo-sources.json
