@@ -51,6 +51,13 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+    <release version="1.0.1" date="2022-08-18">
+      <description>
+        <p>Fixed some settings</p>
+        <p>Fixed name of the data folder for the Chinese version</p>
+        <p>Added --run-game option</p>
+      </description>
+    </release>
     <release version="1.0.0" date="2022-08-07">
       <description>
         <p>Added new wine versions</p>
