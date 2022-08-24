@@ -51,6 +51,13 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+    <release version="1.0.2" date="2022-08-24">
+      <description>
+        <p>Fixed voice packages updates</p>
+        <p>Added new wine versions and made FSync default wine sync option</p>
+        <p>fixed Polish LANG value</p>
+      </description>
+    </release>
     <release version="1.0.1" date="2022-08-18">
       <description>
         <p>Fixed some settings</p>
