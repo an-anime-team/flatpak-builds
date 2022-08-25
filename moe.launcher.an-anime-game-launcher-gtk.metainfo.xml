@@ -51,6 +51,12 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+    <release version="1.0.3" date="2022-08-25">
+      <description>
+        <p>Fixed an issue related to the patch folder</p>
+        <p>Reworked components download during initial setup</p>
+      </description>
+    </release>
     <release version="1.0.2" date="2022-08-24">
       <description>
         <p>Fixed voice packages updates</p>
