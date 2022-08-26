@@ -16,10 +16,6 @@ jobs:
       options: --privileged
     steps:
     - uses: actions/checkout@v3
-    - name: Up Deps and Install intltool
-      run: |
-        sudo apt update
-        sudo apt install -y intltool
     - uses: bilelmoussaoui/flatpak-github-actions/flatpak-builder@v4
       name: "Build"
       with:
