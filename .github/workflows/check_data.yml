@@ -1,4 +1,4 @@
-name: Check for updates
+name: Check for updates [RUST]
 
 on:
   workflow_dispatch:
