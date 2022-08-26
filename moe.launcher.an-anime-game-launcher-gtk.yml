@@ -1,6 +1,6 @@
 app-id: moe.launcher.an-anime-game-launcher-gtk
 runtime: org.gnome.Platform
-runtime-version: '42'
+runtime-version: "42"
 add-extensions:
   com.valvesoftware.Steam.Utility:
     subdirectories: true
@@ -13,132 +13,145 @@ add-extensions:
     autodelete: true
 sdk: org.gnome.Sdk
 sdk-extensions:
-- org.freedesktop.Sdk.Extension.rust-stable
+  - org.freedesktop.Sdk.Extension.rust-stable
 command: moe.launcher.an-anime-game-launcher-gtk
 rename-desktop-file: anime-game-launcher.desktop
 finish-args:
-- --share=network
-- --share=ipc
-- --socket=x11   # Not fallback-x11, because while the launcher supports Wayland, Wine doesn't (yet)
-- --socket=wayland
-- --socket=pulseaudio
-- --filesystem=xdg-run/app/com.discordapp.Discord:create
-- --talk-name=org.freedesktop.Notifications
-- --device=all   # Controllers
-- --allow=devel  # This seems to fix issues related to the game not launching and i don't know how
+  - --share=network
+  - --share=ipc
+  - --socket=x11 # Not fallback-x11, because while the launcher supports Wayland, Wine doesn't (yet)
+  - --socket=wayland
+  - --socket=pulseaudio
+  - --filesystem=xdg-run/app/com.discordapp.Discord:create
+  - --talk-name=org.freedesktop.Notifications
+  - --device=all # Controllers
+  - --allow=devel # This seems to fix issues related to the game not launching and i don't know how
 
 build-options:
   append-path: /usr/lib/sdk/rust-stable/bin
 
 cleanup:
-- /include
-- /lib/pkgconfig
-- /man
-- /share/doc
-- /share/gtk-doc
-- /share/man
-- /share/pkgconfig
-- /share/vala
-- '*.la'
-- '*.a'
+  - /include
+  - /lib/pkgconfig
+  - /man
+  - /share/doc
+  - /share/gtk-doc
+  - /share/man
+  - /share/pkgconfig
+  - /share/vala
+  - "*.la"
+  - "*.a"
 
 modules:
-- name: xdelta3
-  buildsystem: autotools
-  sources:
-  - type: archive
-    url: https://github.com/jmacd/xdelta/archive/refs/tags/v3.1.0.tar.gz
-    sha256: 7515cf5378fca287a57f4e2fee1094aabc79569cfe60d91e06021a8fd7bae29d
-    strip-components: 2
-  - type: shell
-    commands:
-    - aclocal
-    - autoreconf --install
-    - libtoolize
-    - autoconf
-    - autoheader
-    - automake --add-missing
-    - automake
+  - name: xdelta3
+    buildsystem: autotools
+    sources:
+      - type: archive
+        url: https://github.com/jmacd/xdelta/archive/refs/tags/v3.1.0.tar.gz
+        sha256: 7515cf5378fca287a57f4e2fee1094aabc79569cfe60d91e06021a8fd7bae29d
+        strip-components: 2
+        x-checker-data:
+          type: anitya
+          project-id: 5177
+          url-template: https://github.com/jmacd/xdelta/archive/refs/tags/v$version.tar.gz
+      - type: shell
+        commands:
+          - aclocal
+          - autoreconf --install
+          - libtoolize
+          - autoconf
+          - autoheader
+          - automake --add-missing
+          - automake
 
-# copy/pasted from bottles
-- name: gamemode
-  buildsystem: meson
-  config-opts: &gamemode_opts
-  - -Dwith-systemd=false
-  - -Dwith-daemon=false
-  - -Dwith-examples=false
-  - -Dwith-util=false
-  - -Dwith-sd-bus-provider=no-daemon
-  sources: &gamemode_sources
-  - type: archive
-    url: https://github.com/FeralInteractive/gamemode/releases/download/1.6.1/gamemode-1.6.1.tar.xz
-    sha256: 10c2a3f142eae472f5a09e42616e38c666c05b25ca3e61e562a543bb3fda66c5
-- name: gamemoderun
-  buildsystem: simple
-  build-commands:
-  - install -Dm755 data/gamemoderun -t /app/bin
-  sources: *gamemode_sources
+  # copy/pasted from bottles
+  - name: gamemode
+    buildsystem: meson
+    config-opts: &gamemode_opts
+      - -Dwith-systemd=false
+      - -Dwith-daemon=false
+      - -Dwith-examples=false
+      - -Dwith-util=false
+      - -Dwith-sd-bus-provider=no-daemon
+    sources: &gamemode_sources
+      - type: archive
+        url: https://github.com/FeralInteractive/gamemode/releases/download/1.6.1/gamemode-1.6.1.tar.xz
+        sha256: 10c2a3f142eae472f5a09e42616e38c666c05b25ca3e61e562a543bb3fda66c5
+        x-checker-data:
+          type: json
+          url: https://api.github.com/repos/FeralInteractive/gamemode/releases/latest
+          version-query: .tag_name
+          url-query: .tarball_url
+  - name: gamemoderun
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 data/gamemoderun -t /app/bin
+    sources: *gamemode_sources
 
-- name: git
-  buildsystem: autotools
-  config-opts:
-  - --without-tcltk
-  post-install:
-  - rm -rf /app/share/gitweb
-  - find /app/libexec/git-core/
-      -type f
-      -not -name git -and 
-      -not -name git-rev-parse -and 
-      -not -name git-remote -and
-      -not -name git-remote-https -and
-      -not -name git-fetch -and
-      -not -name git-reset -and
-      -not -name git-clone
-      -delete
-  #- rm -f /app/bin/git-*
-  sources:
-  - type: archive
-    url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.9.5.tar.xz
-    sha256: a4bea37ecb9a3fb5c0c8ef18c2f7eeaf8ccbcfec91f72f3bccfc6bf72a3e3902
+  - name: git
+    buildsystem: autotools
+    config-opts:
+      - --without-tcltk
+    post-install:
+      - rm -rf /app/share/gitweb
+      - find /app/libexec/git-core/
+        -type f
+        -not -name git -and
+        -not -name git-rev-parse -and
+        -not -name git-remote -and
+        -not -name git-remote-https -and
+        -not -name git-fetch -and
+        -not -name git-reset -and
+        -not -name git-clone
+        -delete
+    #- rm -f /app/bin/git-*
+    sources:
+      - type: archive
+        url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.9.5.tar.xz
+        sha256: a4bea37ecb9a3fb5c0c8ef18c2f7eeaf8ccbcfec91f72f3bccfc6bf72a3e3902
+        x-checker-data:
+          type: anitya
+          project-id: 5350
+          url-template: https://mirrors.edge.kernel.org/pub/software/scm/git/git-$version.tar.xz
 
-- name: aagl
-  buildsystem: simple
-  build-options:
-    env:
-      CARGO_HOME: ./cargo
-  build-commands:
-  - cargo --offline fetch --manifest-path Cargo.toml --verbose
-  - cargo --offline build --release --verbose
+  - name: aagl
+    buildsystem: simple
+    build-options:
+      env:
+        CARGO_HOME: ./cargo
+    build-commands:
+      - cargo --offline fetch --manifest-path Cargo.toml --verbose
+      - cargo --offline build --release --verbose
 
-  - cp target/release/anime-game-launcher /app/bin/anime-game-launcher
-  - cp moe.launcher.an-anime-game-launcher-gtk.sh /app/bin/moe.launcher.an-anime-game-launcher-gtk
-  - chmod +x /app/bin/moe.launcher.an-anime-game-launcher-gtk
-  sources:
-  - type: git
-    url: https://gitlab.com/an-anime-team/alternatives/an-anime-game-launcher-gtk
-    tag: &aagl_tag 1.0.3
-  - type: file
-    path: moe.launcher.an-anime-game-launcher-gtk.sh
-  - cargo-sources.json
+      - cp target/release/anime-game-launcher /app/bin/anime-game-launcher
+      - cp moe.launcher.an-anime-game-launcher-gtk.sh /app/bin/moe.launcher.an-anime-game-launcher-gtk
+      - chmod +x /app/bin/moe.launcher.an-anime-game-launcher-gtk
+    sources:
+      - type: git
+        url: https://gitlab.com/an-anime-team/alternatives/an-anime-game-launcher-gtk
+        tag: &aagl_tag 1.0.3
+      - type: file
+        path: moe.launcher.an-anime-game-launcher-gtk.sh
+      - cargo-sources.json
 
-# not included in aagl so the launcher doesn't have to be rebuilt every time the metadata is changed
-- name: metadata
-  buildsystem: simple
-  build-commands:
-  - mkdir -p /app/share/icons/hicolor/512x512/apps/
-  - cp assets/images/icon.png /app/share/icons/hicolor/512x512/apps/moe.launcher.an-anime-game-launcher-gtk.png
-  - desktop-file-install --dir=/app/share/applications
-      --set-key=Exec --set-value=moe.launcher.an-anime-game-launcher-gtk
-      --set-key=Icon --set-value=moe.launcher.an-anime-game-launcher-gtk
-      scripts/appimage/anime-game-launcher.desktop
-  
-  - mkdir -p /app/share/metainfo/
-  - cp moe.launcher.an-anime-game-launcher-gtk.metainfo.xml /app/share/metainfo/
-  
-  - mkdir -p /app/utils/
-  sources:
-  - type: git
-    url: https://gitlab.com/an-anime-team/alternatives/an-anime-game-launcher-gtk
-    tag: *aagl_tag
-  - type: file
-    path: moe.launcher.an-anime-game-launcher-gtk.metainfo.xml
+  # not included in aagl so the launcher doesn't have to be rebuilt every time the metadata is changed
+  - name: metadata
+    buildsystem: simple
+    build-commands:
+      - mkdir -p /app/share/icons/hicolor/512x512/apps/
+      - cp assets/images/icon.png /app/share/icons/hicolor/512x512/apps/moe.launcher.an-anime-game-launcher-gtk.png
+      - desktop-file-install --dir=/app/share/applications
+        --set-key=Exec --set-value=moe.launcher.an-anime-game-launcher-gtk
+        --set-key=Icon --set-value=moe.launcher.an-anime-game-launcher-gtk
+        scripts/appimage/anime-game-launcher.desktop
+
+      - mkdir -p /app/share/metainfo/
+      - cp moe.launcher.an-anime-game-launcher-gtk.metainfo.xml /app/share/metainfo/
+
+      - mkdir -p /app/utils/
+    sources:
+      - type: git
+        url: https://gitlab.com/an-anime-team/alternatives/an-anime-game-launcher-gtk
+        tag: *aagl_tag
+      - type: file
+        path: moe.launcher.an-anime-game-launcher-gtk.metainfo.xml
