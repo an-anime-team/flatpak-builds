@@ -1,6 +1,6 @@
 app-id: moe.launcher.an-anime-game-launcher-gtk
 runtime: org.gnome.Platform
-runtime-version: "42"
+runtime-version: '42'
 add-extensions:
   com.valvesoftware.Steam.Utility:
     subdirectories: true
@@ -39,8 +39,8 @@ cleanup:
   - /share/man
   - /share/pkgconfig
   - /share/vala
-  - "*.la"
-  - "*.a"
+  - '*.la'
+  - '*.a'
 
 modules:
   - name: xdelta3
@@ -67,7 +67,7 @@ modules:
   # copy/pasted from bottles
   - name: gamemode
     buildsystem: meson
-    config-opts: &gamemode_opts
+    config-opts:
       - -Dwith-systemd=false
       - -Dwith-daemon=false
       - -Dwith-examples=false
@@ -75,8 +75,8 @@ modules:
       - -Dwith-sd-bus-provider=no-daemon
     sources: &gamemode_sources
       - type: archive
-        url: https://github.com/FeralInteractive/gamemode/releases/download/1.6.1/gamemode-1.6.1.tar.xz
-        sha256: 10c2a3f142eae472f5a09e42616e38c666c05b25ca3e61e562a543bb3fda66c5
+        url: https://api.github.com/repos/FeralInteractive/gamemode/tarball/1.7
+        sha256: 57ce73ba605d1cf12f8d13725006a895182308d93eba0f69f285648449641803
         x-checker-data:
           type: json
           url: https://api.github.com/repos/FeralInteractive/gamemode/releases/latest
@@ -94,21 +94,14 @@ modules:
       - --without-tcltk
     post-install:
       - rm -rf /app/share/gitweb
-      - find /app/libexec/git-core/
-        -type f
-        -not -name git -and
-        -not -name git-rev-parse -and
-        -not -name git-remote -and
-        -not -name git-remote-https -and
-        -not -name git-fetch -and
-        -not -name git-reset -and
-        -not -name git-clone
-        -delete
+      - find /app/libexec/git-core/ -type f -not -name git -and -not -name git-rev-parse
+        -and -not -name git-remote -and -not -name git-remote-https -and -not -name
+        git-fetch -and -not -name git-reset -and -not -name git-clone -delete
     #- rm -f /app/bin/git-*
     sources:
       - type: archive
-        url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.9.5.tar.xz
-        sha256: a4bea37ecb9a3fb5c0c8ef18c2f7eeaf8ccbcfec91f72f3bccfc6bf72a3e3902
+        url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.37.2.tar.xz
+        sha256: 1c3d9c821c4538e7a6dac30a4af8bd8dcfe4f651f95474c526b52f83406db003
         x-checker-data:
           type: anitya
           project-id: 5350
@@ -140,10 +133,8 @@ modules:
     build-commands:
       - mkdir -p /app/share/icons/hicolor/512x512/apps/
       - cp assets/images/icon.png /app/share/icons/hicolor/512x512/apps/moe.launcher.an-anime-game-launcher-gtk.png
-      - desktop-file-install --dir=/app/share/applications
-        --set-key=Exec --set-value=moe.launcher.an-anime-game-launcher-gtk
-        --set-key=Icon --set-value=moe.launcher.an-anime-game-launcher-gtk
-        scripts/appimage/anime-game-launcher.desktop
+      - desktop-file-install --dir=/app/share/applications --set-key=Exec --set-value=moe.launcher.an-anime-game-launcher-gtk
+        --set-key=Icon --set-value=moe.launcher.an-anime-game-launcher-gtk scripts/appimage/anime-game-launcher.desktop
 
       - mkdir -p /app/share/metainfo/
       - cp moe.launcher.an-anime-game-launcher-gtk.metainfo.xml /app/share/metainfo/
