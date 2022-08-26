@@ -1,0 +1,30 @@
+name: Build and Push Flatpaks
+
+on:
+  push:
+    branches: [ "master" ]
+    paths: com.gitlab.KRypt0n_.an-anime-game-launcher.yml
+      
+  workflow_dispatch:
+
+jobs:
+  flatpak:
+    name: "Flatpak"
+    runs-on: ubuntu-latest
+    container:
+      image: bilelmoussaoui/flatpak-github-actions:gnome-40
+      options: --privileged
+    steps:
+    - uses: actions/checkout@v3
+    - uses: bilelmoussaoui/flatpak-github-actions/flatpak-builder@v4
+      name: "Build"
+      with:
+        bundle: anime-game.flatpak
+        manifest-path: com.gitlab.KRypt0n_.an-anime-game-launcher.yml
+        cache-key: flatpak-builder-${{ github.sha }}
+    - uses: bilelmoussaoui/flatpak-github-actions/flat-manager@v3
+      name: "Deploy"
+      with:
+        repository: stable
+        flat-manager-url: ${{ secrets.REPO_URL }}
+        token: ${{ secrets.REPO_TOKEN }}
