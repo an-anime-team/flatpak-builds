@@ -1,6 +1,6 @@
 app-id: com.gitlab.KRypt0n_.an-anime-game-launcher
 runtime: org.gnome.Platform
-runtime-version: "42"
+runtime-version: '42'
 sdk: org.gnome.Sdk
 separate-locales: false
 command: com.gitlab.KRypt0n_.an-anime-game-launcher
@@ -25,8 +25,8 @@ cleanup:
   - /share/man
   - /share/pkgconfig
   - /share/vala
-  - "*.la"
-  - "*.a"
+  - '*.la'
+  - '*.a'
 
 modules:
   - name: xdelta3
@@ -92,8 +92,8 @@ modules:
       - -Dwith-sd-bus-provider=no-daemon
     sources: &gamemode_sources
       - type: archive
-        url: https://github.com/FeralInteractive/gamemode/releases/download/1.6.1/gamemode-1.6.1.tar.xz
-        sha256: 10c2a3f142eae472f5a09e42616e38c666c05b25ca3e61e562a543bb3fda66c5
+        url: https://api.github.com/repos/FeralInteractive/gamemode/tarball/1.7
+        sha256: 57ce73ba605d1cf12f8d13725006a895182308d93eba0f69f285648449641803
         x-checker-data:
           type: json
           url: https://api.github.com/repos/FeralInteractive/gamemode/releases/latest
@@ -112,8 +112,8 @@ modules:
       - --without-tcltk
     sources:
       - type: archive
-        url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.9.5.tar.xz
-        sha256: a4bea37ecb9a3fb5c0c8ef18c2f7eeaf8ccbcfec91f72f3bccfc6bf72a3e3902
+        url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.37.2.tar.xz
+        sha256: 1c3d9c821c4538e7a6dac30a4af8bd8dcfe4f651f95474c526b52f83406db003
         x-checker-data:
           type: anitya
           project-id: 5350
@@ -126,8 +126,8 @@ modules:
       - -DENABLE_BINDINGS_MONO=OFF
     sources:
       - type: archive
-        url: https://github.com/AyatanaIndicators/libayatana-appindicator/archive/refs/tags/0.5.90.tar.gz
-        sha256: 15319ca7fda90c6bd85311bbe83eefe1e322de32df2c7f5174b0d5a7537c27b4
+        url: https://github.com/AyatanaIndicators/libayatana-appindicator/archive/refs/tags/0.5.91.tar.gz
+        sha256: 52eb5d0c0de07177833e50fbaee592dcb3939e96c6b789921e2a8caf40a1ed26
         x-checker-data:
           type: anitya
           project-id: 18446
@@ -148,8 +148,8 @@ modules:
             buildsystem: cmake
             sources:
               - type: archive
-                url: https://github.com/AyatanaIndicators/ayatana-ido/archive/refs/tags/0.9.1.tar.gz
-                sha256: e663e14675b3ac6474b886541fa367d07a57b476a9c8600b4b2db019734d96d6
+                url: https://github.com/AyatanaIndicators/ayatana-ido/archive/refs/tags/0.9.2.tar.gz
+                sha256: b166e7a160458e4a71f6086d2e4e97e18cf1ac584231a4b9f1f338914203884c
                 x-checker-data:
                   type: anitya
                   project-id: 18445
@@ -160,8 +160,8 @@ modules:
                 build-options:
                   cflags: -Wno-error
                   env:
-                    HAVE_VALGRIND_FALSE: "#"
-                    HAVE_VALGRIND_TRUE: ""
+                    HAVE_VALGRIND_FALSE: '#'
+                    HAVE_VALGRIND_TRUE: ''
                 config-opts:
                   - --disable-static
                   - --disable-gtk-doc
@@ -187,8 +187,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/bottlesdevs/EasyTerm
-        tag: 0.1.8
-        commit: 7677c93e865735ebf7125262e071218794ab6e70
+        tag: 0.2.0
+        commit: 6fbeab0470df55aeab141a45763147440b2f0290
         x-checker-data:
           type: json
           url: https://api.github.com/repos/bottlesdevs/EasyTerm/releases/latest
@@ -203,8 +203,8 @@ modules:
           - -Dvapi=false
         sources:
           - type: archive
-            url: https://github.com/GNOME/vte/archive/refs/tags/0.66.2.tar.gz
-            sha256: a486e389e3d16f903ed6f27d9513c2a44bff5945a12af4fcfe48ce00992c42ab
+            url: https://download.gnome.org/sources/vte/0.68/vte-0.68.0.tar.xz
+            sha256: 13e7d4789ca216a33780030d246c9b13ddbfd04094c6316eea7ff92284dd1749
             x-checker-data:
               type: gnome
               name: vte
