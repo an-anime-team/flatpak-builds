@@ -11,11 +11,12 @@ jobs:
   flatpak:
     name: "Flatpak"
     runs-on: ubuntu-22.04
-    container:
-      image: bilelmoussaoui/flatpak-github-actions:gnome-42
-      options: --privileged
     steps:
     - uses: actions/checkout@v3
+    - name: Install Deps
+      run: |
+        sudo apt update
+        sudo apt install -y curl gnupg appstream file flatpak flatpak-builder build-essential intltool
     - uses: bilelmoussaoui/flatpak-github-actions/flatpak-builder@v4
       name: "Build"
       with:
