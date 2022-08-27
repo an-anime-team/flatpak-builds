@@ -1,0 +1,33 @@
+name: Build and Push GTK Flatpak
+
+on:
+  push:
+    branches: [ "rust-launcher" ]
+    paths: moe.launcher.an-anime-game-launcher-gtk.yml
+      
+  workflow_dispatch:
+
+jobs:
+  flatpak:
+    name: "Flatpak"
+    runs-on: ubuntu-22.04
+    container:
+      image: bilelmoussaoui/flatpak-github-actions:gnome-42
+      options: --privileged
+    steps:
+    - uses: actions/checkout@v3
+    - name: Install Deps
+      run: |
+        dnf install -y gtk4-devel gtk4 libadwaita  
+    - uses: bilelmoussaoui/flatpak-github-actions/flatpak-builder@v4
+      name: "Build"
+      with:
+        bundle: anime-game.flatpak
+        manifest-path: moe.launcher.an-anime-game-launcher-gtk.yml
+        cache-key: flatpak-builder-${{ github.sha }}
+    - uses: bilelmoussaoui/flatpak-github-actions/flat-manager@v3
+      name: "Deploy"
+      with:
+        repository: stable
+        flat-manager-url: ${{ secrets.REPO_URL }}
+        token: ${{ secrets.REPO_TOKEN }}
