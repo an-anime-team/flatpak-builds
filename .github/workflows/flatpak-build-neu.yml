@@ -16,7 +16,8 @@ jobs:
     - name: Install Deps
       run: |
         sudo apt update
-        sudo apt install -y curl gnupg appstream file flatpak flatpak-builder build-essential intltool
+        sudo apt install -y curl gnupg appstream file flatpak flatpak-builder build-essential intltool fuse
+        sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
     - uses: bilelmoussaoui/flatpak-github-actions/flatpak-builder@v4
       name: "Build"
       with:
