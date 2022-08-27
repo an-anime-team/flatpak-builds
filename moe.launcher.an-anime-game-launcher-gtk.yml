@@ -75,8 +75,8 @@ modules:
       - -Dwith-sd-bus-provider=no-daemon
     sources: &gamemode_sources
       - type: archive
-        url: https://api.github.com/repos/FeralInteractive/gamemode/tarball/1.7
-        sha256: 57ce73ba605d1cf12f8d13725006a895182308d93eba0f69f285648449641803
+        url: https://github.com/FeralInteractive/gamemode/releases/download/1.7/gamemode-1.7.tar.xz
+        sha256: c1860f76f1d4c0d6e3965e52de21c824f24791049946da728da50f0c63748389
         x-checker-data:
           type: json
           url: https://api.github.com/repos/FeralInteractive/gamemode/releases/latest
