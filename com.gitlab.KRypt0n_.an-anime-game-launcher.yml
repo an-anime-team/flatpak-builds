@@ -95,11 +95,10 @@ modules:
         url: https://github.com/FeralInteractive/gamemode/releases/download/1.7/gamemode-1.7.tar.xz
         sha256: c1860f76f1d4c0d6e3965e52de21c824f24791049946da728da50f0c63748389
         x-checker-data:
-          type: json
-          url: https://api.github.com/repos/FeralInteractive/gamemode/releases/latest
-          version-query: .tag_name
-          url-query: .tarball_url
-
+          type: anitya
+          project-id: 17410
+          url-template: https://github.com/FeralInteractive/gamemode/releases/download/$version/gamemode-$version.tar.xz
+          
   - name: gamemoderun
     buildsystem: simple
     build-commands:
