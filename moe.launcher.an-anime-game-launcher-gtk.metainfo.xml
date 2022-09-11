@@ -51,6 +51,15 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+    <release version="1.0.4" date="2022-09-11">
+      <description>
+        <p>Fixed ability to use system wine to run the game</p>
+        <p>Now launcher continues downloading of partially downloaded files</p>
+        <p>Now launcher loads currently applied DXVK version from the wine prefix files</p>
+        <p>Added initial updates pre-downloading support</p>
+        <p>Various minor changes in UI and code</p>
+      </description>
+    </release>
     <release version="1.0.3" date="2022-08-25">
       <description>
         <p>Fixed an issue related to the patch folder</p>
