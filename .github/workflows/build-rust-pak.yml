@@ -25,7 +25,7 @@ jobs:
     - uses: bilelmoussaoui/flatpak-github-actions/flatpak-builder@v4
       name: "Build"
       with:
-        bundle: anime-game.flatpak
+        bundle: moe.launcher.an-anime-game-launcher-gtk.flatpak
         manifest-path: moe.launcher.an-anime-game-launcher-gtk.yml
         cache-key: flatpak-builder-${{ github.sha }}
     - uses: bilelmoussaoui/flatpak-github-actions/flat-manager@v3
