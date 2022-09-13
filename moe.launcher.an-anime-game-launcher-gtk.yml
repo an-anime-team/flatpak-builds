@@ -121,7 +121,7 @@ modules:
       - chmod +x /app/bin/moe.launcher.an-anime-game-launcher-gtk
     sources:
       - type: git
-        url: https://gitlab.com/an-anime-team/alternatives/an-anime-game-launcher-gtk
+        url: https://github.com/an-anime-team/an-anime-game-launcher-gtk
         tag: &aagl_tag 1.0.4
       - type: file
         path: moe.launcher.an-anime-game-launcher-gtk.sh
