@@ -25,7 +25,7 @@ finish-args:
   - --filesystem=xdg-run/app/com.discordapp.Discord:create
   - --talk-name=org.freedesktop.Notifications
   - --device=all # Controllers
-  - --allow=devel # This seems to fix issues related to the game not launching and i don't know how
+  - --allow=devel
 
 build-options:
   append-path: /usr/lib/sdk/rust-stable/bin
