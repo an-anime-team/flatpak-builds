@@ -142,7 +142,7 @@ modules:
       - mkdir -p /app/utils/
     sources:
       - type: git
-        url: https://gitlab.com/an-anime-team/alternatives/an-anime-game-launcher-gtk
+        url: https://github.com/an-anime-team/an-anime-game-launcher-gtk
         tag: *aagl_tag
       - type: file
         path: moe.launcher.an-anime-game-launcher-gtk.metainfo.xml
