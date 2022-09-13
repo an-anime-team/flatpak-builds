@@ -2,8 +2,11 @@ name: Build and Push GTK Flatpak
 
 on:
   push:
-    branches: [ "rust-launcher" ]
-    paths: moe.launcher.an-anime-game-launcher-gtk.yml
+    branches:
+      - 'rust-launcher'
+      - '!master'
+    paths:
+      - 'moe.launcher.an-anime-game-launcher-gtk.yml'
       
   workflow_dispatch:
 
