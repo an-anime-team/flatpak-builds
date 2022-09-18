@@ -51,6 +51,14 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+    <release version="1.1.0" date="2022-09-18">
+      <description>
+        <p>Added support for FPS unlocker</p>
+        <p>Added support for system wine during initial setup</p>
+        <p>Added usage of xdg-portals for folders chooser during initial setup</p>
+        <p>Fixed DXVK applying using system wine</p>
+      </description>
+    </release>
     <release version="1.0.4" date="2022-09-11">
       <description>
         <p>Fixed ability to use system wine to run the game</p>
