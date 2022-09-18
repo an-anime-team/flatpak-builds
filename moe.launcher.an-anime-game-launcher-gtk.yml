@@ -97,7 +97,6 @@ modules:
       - find /app/libexec/git-core/ -type f -not -name git -and -not -name git-rev-parse
         -and -not -name git-remote -and -not -name git-remote-https -and -not -name
         git-fetch -and -not -name git-reset -and -not -name git-clone -delete
-    #- rm -f /app/bin/git-*
     sources:
       - type: archive
         url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.37.3.tar.xz
