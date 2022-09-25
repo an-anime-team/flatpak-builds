@@ -15,10 +15,16 @@ if readlink /etc/hosts > /dev/null; then
     rm /etc/hosts
     cp $original /etc/hosts
     cat <<EOF >> /etc/hosts
+# Global
 # Genshin logging servers (do not remove!)
-0.0.0.0 log-upload-os.mihoyo.com
-0.0.0.0 log-upload-os.hoyoverse.com # Not needed yet, but just to be sure
 0.0.0.0 overseauspider.yuanshen.com
+0.0.0.0 log-upload-os.hoyoverse.com
+0.0.0.0 log-upload-os.mihoyo.com
+
+# China
+# Genshin logging servers (do not remove!)
+0.0.0.0 log-upload.mihoyo.com
+0.0.0.0 uspider.yuanshen.com
 EOF
 
     # If NO_BLOCK_PROXY is set, don't block the proxy/cdn servers
