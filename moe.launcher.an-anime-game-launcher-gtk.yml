@@ -1,6 +1,6 @@
 app-id: moe.launcher.an-anime-game-launcher-gtk
 runtime: org.gnome.Platform
-runtime-version: '42'
+runtime-version: '43'
 add-extensions:
   com.valvesoftware.Steam.Utility:
     subdirectories: true
@@ -121,7 +121,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/an-anime-team/an-anime-game-launcher-gtk
-        tag: &aagl_tag 1.1.0
+        tag: &aagl_tag 1.1.1
       - type: file
         path: moe.launcher.an-anime-game-launcher-gtk.sh
       - cargo-sources.json
