@@ -136,8 +136,8 @@ modules:
         buildsystem: cmake
         sources:
           - type: archive
-            url: https://github.com/AyatanaIndicators/libayatana-indicator/archive/refs/tags/0.9.1.tar.gz
-            sha256: 15a8844265067652c06242736ece682622d73cedcccdf1c171ce27fba70ba689
+            url: https://github.com/AyatanaIndicators/libayatana-indicator/archive/refs/tags/0.9.2.tar.gz
+            sha256: e38546cdd160573d1ba6819bd33fdeee0aabc67c0a08d709d582d85f3868ee64
             x-checker-data:
               type: anitya
               project-id: 18447
@@ -202,8 +202,8 @@ modules:
           - -Dvapi=false
         sources:
           - type: archive
-            url: https://download.gnome.org/sources/vte/0.68/vte-0.68.0.tar.xz
-            sha256: 13e7d4789ca216a33780030d246c9b13ddbfd04094c6316eea7ff92284dd1749
+            url: https://download.gnome.org/sources/vte/0.70/vte-0.70.0.tar.xz
+            sha256: 93e0dd4a1bc2a7a1a62da64160a274cce456976ea1567d98591da96e2d265ae6
             x-checker-data:
               type: gnome
               name: vte
