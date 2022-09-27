@@ -18,10 +18,12 @@ jobs:
       image: fedora:37
       options: --privileged
     steps:
-    - name: Install Deps
+    - name: Install Deps and Setup environment
       run: |
-        dnf install -y flatpak gtk4-devel gtk4 libadwaita git curl openssl-devel rust cargo xorg-x11-server-Xvfb flatpak-builder
+        dnf install -y wget flatpak gtk4-devel gtk4 libadwaita git curl openssl-devel rust cargo xorg-x11-server-Xvfb flatpak-builder python3-aiohttp python3-tenacity python3-gobject
         flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+        wget https://raw.githubusercontent.com/flatpak/flat-manager/master/flat-manager-client -O /usr/bin/flat-manager-client
+        chmod +x /usr/bin/flat-manager-client
     - uses: actions/checkout@v3
       with:
         ref: rust-launcher
