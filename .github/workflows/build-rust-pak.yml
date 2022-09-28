@@ -15,16 +15,19 @@ jobs:
     name: "Flatpak"
     runs-on: ubuntu-22.04
     container:
-      image: bilelmoussaoui/flatpak-github-actions:gnome-43
+      image: fedora:37
       options: --privileged
     steps:
+    - name: Install Deps and Setup environment
+      run: |
+        dnf install -y wget flatpak gtk4-devel gtk4 libadwaita git curl openssl-devel rust cargo xorg-x11-server-Xvfb flatpak-builder python3-aiohttp python3-tenacity python3-gobject
+        flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+        wget https://raw.githubusercontent.com/flatpak/flat-manager/master/flat-manager-client -O /usr/bin/flat-manager-client
+        chmod +x /usr/bin/flat-manager-client
     - uses: actions/checkout@v3
       with:
         ref: rust-launcher
         submodules: true
-    - name: Install Deps
-      run: |
-        dnf install -y gtk4-devel gtk4 libadwaita  
     - uses: bilelmoussaoui/flatpak-github-actions/flatpak-builder@v4
       name: "Build"
       with:
