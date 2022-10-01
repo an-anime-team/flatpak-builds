@@ -2978,15 +2978,15 @@
     },
     {
         "type": "file",
-        "url": "https://static.crates.io/crates/wincompatlib/wincompatlib-0.1.0.crate",
-        "sha256": "0fb138cb8c6312731e7385e4500a2491be768ff4c8cfc04544dcc9227533f250",
+        "url": "https://static.crates.io/crates/wincompatlib/wincompatlib-0.1.2.crate",
+        "sha256": "34cd4c8511402616780eeb46726ca69ad958c4ba123398389ce306552428b715",
         "dest": "cargo/vendor",
-        "dest-filename": "wincompatlib-0.1.0.crate"
+        "dest-filename": "wincompatlib-0.1.2.crate"
     },
     {
         "type": "file",
-        "url": "data:%7B%22package%22%3A%20%220fb138cb8c6312731e7385e4500a2491be768ff4c8cfc04544dcc9227533f250%22%2C%20%22files%22%3A%20%7B%7D%7D",
-        "dest": "cargo/vendor/wincompatlib-0.1.0",
+        "url": "data:%7B%22package%22%3A%20%2234cd4c8511402616780eeb46726ca69ad958c4ba123398389ce306552428b715%22%2C%20%22files%22%3A%20%7B%7D%7D",
+        "dest": "cargo/vendor/wincompatlib-0.1.2",
         "dest-filename": ".cargo-checksum.json"
     },
     {
