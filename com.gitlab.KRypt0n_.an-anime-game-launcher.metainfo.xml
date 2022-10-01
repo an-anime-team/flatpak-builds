@@ -27,15 +27,15 @@
   <developer_name>An Anime Team</developer_name>
   <screenshots>
     <screenshot>
-      <image>https://gitlab.com/KRypt0n_/an-anime-game-launcher/-/raw/main/repository/pics/launcher-main.png</image>
+      <image>https://github.com/an-anime-team/an-anime-game-launcher/raw/main/repository/pics/launcher-main.png</image>
     </screenshot>
     <screenshot>
-      <image>https://gitlab.com/KRypt0n_/an-anime-game-launcher/-/raw/main/repository/pics/launcher-settings.png</image>
+      <image>https://github.com/an-anime-team/an-anime-game-launcher/raw/main/repository/pics/launcher-settings.png</image>
     </screenshot>
   </screenshots>
   <launchable type="desktop-id">com.gitlab.KRypt0n_.an-anime-game-launcher.desktop</launchable>
-  <url type="homepage">https://gitlab.com/KRypt0n_/an-anime-game-launcher</url>
-  <url type="bugtracker">https://gitlab.com/KRypt0n_/an-anime-game-launcher/-/issues</url>
+  <url type="homepage">https://github.com/an-anime-team/an-anime-game-launcher</url>
+  <url type="bugtracker">https://github.com/an-anime-team/an-anime-game-launcher/issues</url>
   <project_license>GPL-3.0-or-later</project_license>
   <metadata_license>CC0-1.0</metadata_license>
   <categories>
@@ -50,6 +50,12 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+    <release version="2.4.0" date="2022-10-01">
+      <description>
+        <p>Improved files integrity checking, Launcher will now try to repair files that were unable to be patched via hdiff</p>
+        <p>Progress bar has been updated to improve visibility for the text</p>
+      </description>
+    </release>
     <release version="2.3.9" date="2022-09-28">
       <description>
         <p>changed voice packages versioning algorithm</p>
