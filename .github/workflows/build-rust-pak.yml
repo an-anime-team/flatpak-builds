@@ -24,6 +24,7 @@ jobs:
         flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
         wget https://raw.githubusercontent.com/flatpak/flat-manager/master/flat-manager-client -O /usr/bin/flat-manager-client
         chmod +x /usr/bin/flat-manager-client
+        git config --global protocol.file.allow always
     - uses: actions/checkout@v3
       with:
         ref: rust-launcher
