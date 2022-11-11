@@ -1,0 +1,40 @@
+name: Build and Push Neutralino Flatpak
+
+on:
+  push:
+    branches: [ "master" ]
+    paths: com.gitlab.KRypt0n_.an-anime-game-launcher.yml
+      
+  workflow_dispatch:
+
+jobs:
+  flatpak:
+    name: "Flatpak"
+    runs-on: ubuntu-22.04
+    container:
+      image: fedora:37
+      options: --privileged
+    steps:
+    - name: Install Deps and Setup environment
+      run: |
+        dnf install -y intltool nodejs npm wget flatpak gtk4-devel gtk4 libadwaita git curl openssl-devel xorg-x11-server-Xvfb flatpak-builder python3-aiohttp python3-tenacity python3-gobject
+        flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+        wget https://raw.githubusercontent.com/flatpak/flat-manager/master/flat-manager-client -O /usr/bin/flat-manager-client
+        chmod +x /usr/bin/flat-manager-client
+        git config --global protocol.file.allow always
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        submodules: true
+    - uses: bilelmoussaoui/flatpak-github-actions/flatpak-builder@v4
+      name: "Build"
+      with:
+        bundle: com.gitlab.KRypt0n_.an-anime-game-launcher.flatpak
+        manifest-path: com.gitlab.KRypt0n_.an-anime-game-launcher.yml
+        cache-key: flatpak-builder-${{ github.sha }}
+    - uses: bilelmoussaoui/flatpak-github-actions/flat-manager@v3
+      name: "Deploy"
+      with:
+        repository: stable
+        flat-manager-url: ${{ secrets.REPO_URL }}
+        token: ${{ secrets.REPO_TOKEN }}
