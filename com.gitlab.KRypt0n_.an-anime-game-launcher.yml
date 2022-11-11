@@ -206,6 +206,18 @@ modules:
               type: gnome
               name: vte
               
+  - name: webkitgtk
+    buildsystem: cmake-ninja
+    config-opts:
+      - -DCMAKE_BUILD_TYPE=None
+      - -DPORT=GTK
+      - -DENABLE_BUBBLEWRAP_SANDBOX=OFF
+      - -DENABLE_SPELLCHECK=OFF
+    sources:
+      - type: archive
+        url: https://webkitgtk.org/releases/webkitgtk-2.36.8.tar.xz
+        sha256: 0ad9fb6bf28308fe3889faf184bd179d13ac1b46835d2136edbab2c133d00437
+        
   - name: an-anime-game-launcher
     buildsystem: simple
     build-commands:
