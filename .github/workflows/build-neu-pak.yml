@@ -22,7 +22,6 @@ jobs:
         wget https://raw.githubusercontent.com/flatpak/flat-manager/master/flat-manager-client -O /usr/bin/flat-manager-client
         chmod +x /usr/bin/flat-manager-client
         git config --global protocol.file.allow always
-    steps:
     - uses: actions/checkout@v3
       with:
         submodules: true
