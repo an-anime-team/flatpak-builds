@@ -211,6 +211,8 @@ modules:
     config-opts:
       - -DCMAKE_BUILD_TYPE=None
       - -DPORT=GTK
+      - -DENABLE_BUBBLEWRAP_SANDBOX=OFF
+      - -DENABLE_SPELLCHECK=OFF
     sources:
       - type: archive
         url: https://webkitgtk.org/releases/webkitgtk-2.36.8.tar.xz
