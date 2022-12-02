@@ -74,8 +74,8 @@ modules:
       - -DSKIP_TESTS=true
     sources:
       - type: archive
-        url: https://github.com/iputils/iputils/archive/refs/tags/20211215.tar.gz
-        sha256: b6f67fc705490673ff4471d006221b4a2f1b1180b929d9fefd771352621ccedf
+        url: https://github.com/iputils/iputils/archive/refs/tags/20221126.tar.gz
+        sha256: 745ea711fe06d5c57d470d21acce3c3ab866eb6afb69379a16c6d60b89bd4311
         x-checker-data:
           type: anitya
           project-id: 1395
@@ -205,7 +205,7 @@ modules:
             x-checker-data:
               type: gnome
               name: vte
-        
+
   - name: an-anime-game-launcher
     buildsystem: simple
     build-commands:
