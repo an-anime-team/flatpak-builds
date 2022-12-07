@@ -228,8 +228,8 @@ modules:
       - install -Dm644 -t ${FLATPAK_DEST}/share/metainfo com.gitlab.KRypt0n_.an-anime-game-launcher.metainfo.xml
     sources:
       - type: file
-        url: https://github.com/an-anime-team/an-anime-game-launcher/releases/download/2.4.1/an-anime-game-launcher-2.4.1.AppImage
-        sha256: 9b58cf2d3607ce5119b1c66d589ff98e6998ba202b3f079f09dc9b12a1029edd
+        url: https://github.com/an-anime-team/an-anime-game-launcher/releases/download/2.4.2/an-anime-game-launcher-2.4.2.AppImage
+        sha256: d42b65635920ae850a94b4188e13778c32960b2a22815310aafffd7a3cf5d89c
         dest-filename: An_Anime_Game_Launcher.AppImage
       - type: file
         path: com.gitlab.KRypt0n_.an-anime-game-launcher.png

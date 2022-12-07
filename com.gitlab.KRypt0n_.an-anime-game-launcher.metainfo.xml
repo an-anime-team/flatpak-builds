@@ -50,6 +50,12 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+    <release version="2.4.2" date="2022-12-07">
+      <description>
+        <p>Fixed wrong "repo not available" notification</p>
+        <p>Updated voiceovers sizes, added usage of `.version` file</p>
+      </description>
+    </release>
     <release version="2.4.1" date="2022-11-03">
       <description>
         <p>optimized experience on SteamOS (Steam Deck)</p>
