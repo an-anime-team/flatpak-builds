@@ -51,6 +51,11 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+    <release version="1.2.3" date="2022-12-07">
+      <description>
+        <p>Fix bug with selecting 2.0 DXVK</p>
+      </description>
+    </release>
     <release version="1.2.2" date="2022-12-07">
       <description>
         <p>Fixed redownloading of downloaded files</p>
