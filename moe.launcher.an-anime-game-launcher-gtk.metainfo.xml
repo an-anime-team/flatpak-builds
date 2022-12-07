@@ -51,6 +51,12 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+    <release version="1.2.2" date="2022-12-07">
+      <description>
+        <p>Fixed redownloading of downloaded files</p>
+        <p>Added use of `.version` file for voiceovers to prevent future issues with their updating</p>
+      </description>
+    </release>
     <release version="1.2.1" date="2022-11-02">
       <description>
         <p>Fixed --run-game flag</p>
