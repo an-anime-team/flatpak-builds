@@ -51,6 +51,12 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+    <release version="1.2.4" date="2022-12-25">
+      <description>
+        <p>Fixed issue with an error message when the game's folder is empty</p>
+        <p>Added new options to the fps unlocker</p>
+      </description>
+    </release>
     <release version="1.2.3" date="2022-12-07">
       <description>
         <p>Fix bug with selecting 2.0 DXVK</p>
