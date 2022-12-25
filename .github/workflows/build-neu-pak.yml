@@ -25,13 +25,14 @@ jobs:
     - uses: actions/checkout@v3
       with:
         submodules: true
-    - uses: bilelmoussaoui/flatpak-github-actions/flatpak-builder@v4
+    - uses: flatpak/flatpak-github-actions/flatpak-builder@v5
       name: "Build"
       with:
         bundle: com.gitlab.KRypt0n_.an-anime-game-launcher.flatpak
+        build-bundle: false
         manifest-path: com.gitlab.KRypt0n_.an-anime-game-launcher.yml
         cache-key: flatpak-builder-${{ github.sha }}
-    - uses: bilelmoussaoui/flatpak-github-actions/flat-manager@v3
+    - uses: flatpak/flatpak-github-actions/flat-manager@v5
       name: "Deploy"
       with:
         repository: stable

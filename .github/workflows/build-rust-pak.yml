@@ -29,13 +29,14 @@ jobs:
       with:
         ref: rust-launcher
         submodules: true
-    - uses: bilelmoussaoui/flatpak-github-actions/flatpak-builder@v4
+    - uses: flatpak/flatpak-github-actions/flatpak-builder@v5
       name: "Build"
       with:
         bundle: moe.launcher.an-anime-game-launcher-gtk.flatpak
+        build-bundle: false
         manifest-path: moe.launcher.an-anime-game-launcher-gtk.yml
         cache-key: flatpak-builder-${{ github.sha }}
-    - uses: bilelmoussaoui/flatpak-github-actions/flat-manager@v3
+    - uses: flatpak/flatpak-github-actions/flat-manager@v5
       name: "Deploy"
       with:
         repository: stable
