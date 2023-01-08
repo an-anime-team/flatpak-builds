@@ -12,7 +12,7 @@ jobs:
     name: "Flatpak"
     runs-on: ubuntu-22.04
     container:
-      image: fedora:37
+      image: fedora:35
       options: --privileged
     steps:
     - name: Install Deps and Setup environment
