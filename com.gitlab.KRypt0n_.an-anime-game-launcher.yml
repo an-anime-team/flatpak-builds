@@ -123,8 +123,8 @@ modules:
       - -DENABLE_BINDINGS_MONO=OFF
     sources:
       - type: archive
-        url: https://github.com/AyatanaIndicators/libayatana-appindicator/archive/refs/tags/0.5.91.tar.gz
-        sha256: 52eb5d0c0de07177833e50fbaee592dcb3939e96c6b789921e2a8caf40a1ed26
+        url: https://github.com/AyatanaIndicators/libayatana-appindicator/archive/refs/tags/0.5.92.tar.gz
+        sha256: adedcf160dae7547971d475b42062cab278d54ec075537e6958ffdbf2d996857
         x-checker-data:
           type: anitya
           project-id: 18446
