@@ -109,8 +109,8 @@ modules:
       - --without-tcltk
     sources:
       - type: archive
-        url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.39.1.tar.xz
-        sha256: 40a38a0847b30c371b35873b3afcf123885dd41ea3ecbbf510efa97f3ce5c161
+        url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.39.2.tar.xz
+        sha256: 475f75f1373b2cd4e438706185175966d5c11f68c4db1e48c26257c43ddcf2d6
         x-checker-data:
           type: anitya
           project-id: 5350
@@ -200,8 +200,8 @@ modules:
           - -Dvapi=false
         sources:
           - type: archive
-            url: https://download.gnome.org/sources/vte/0.70/vte-0.70.2.tar.xz
-            sha256: 4d15b4380de3f564d57eabd006389c407c705df5b0c70030fdcc24971a334d80
+            url: https://download.gnome.org/sources/vte/0.70/vte-0.70.3.tar.xz
+            sha256: 9457134a02f3157fca04f7e0d39bdb0f3099be0a3ce82b7139d0c98a80748f23
             x-checker-data:
               type: gnome
               name: vte
