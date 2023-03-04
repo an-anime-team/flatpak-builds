@@ -23,6 +23,8 @@ finish-args:
   - --socket=wayland
   - --socket=pulseaudio
   - --filesystem=xdg-run/app/com.discordapp.Discord:create
+  - --filesystem=/mnt
+  - --filesystem=/run/media
   - --talk-name=org.freedesktop.Notifications
   - --device=all # Controllers
   - --allow=devel # Required to make Wine work
