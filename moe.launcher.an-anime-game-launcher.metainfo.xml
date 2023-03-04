@@ -57,6 +57,14 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+    <release version="3.0.1" date="2023-03-04">
+      <description>
+        <p>Fixed "update background picture" switch</p>
+        <p>Updated core library & sdk</p>
+        <p>Changed game running mechanism</p>
+        <p>Temporarily hidden repair game button</p>
+      </description>
+    </release>
     <release version="3.0.0" date="2023-03-04">
       <description>
         <p>Migrated from Neutralino to GTK4/Relm</p>
