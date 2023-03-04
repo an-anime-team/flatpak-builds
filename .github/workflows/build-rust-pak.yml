@@ -3,7 +3,7 @@ name: Build and Push Flatpak
 on:
   push:
     branches:
-      - '!master'
+      - 'main'
     paths:
       - 'moe.launcher.an-anime-game-launcher.yml'
       
