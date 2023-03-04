@@ -26,7 +26,7 @@ jobs:
         git config --global protocol.file.allow always
     - uses: actions/checkout@v3
       with:
-        ref: rust-launcher
+        ref: main
         submodules: true
     - uses: flatpak/flatpak-github-actions/flatpak-builder@v5
       name: "Build"
