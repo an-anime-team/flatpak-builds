@@ -28,10 +28,16 @@
   <developer_name>An Anime Team</developer_name>
   <screenshots>
     <screenshot>
-      <image>https://github.com/an-anime-team/an-anime-game-launcher/raw/main/repository/pictures/main.png</image>
+      <image>https://raw.githubusercontent.com/an-anime-team/an-anime-game-launcher/main/repository/main-modern.png</image>
     </screenshot>
     <screenshot>
-      <image>https://github.com/an-anime-team/an-anime-game-launcher/raw/main/repository/pictures/settings.png</image>
+      <image>https://raw.githubusercontent.com/an-anime-team/an-anime-game-launcher/main/repository/main-classic.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/an-anime-team/an-anime-game-launcher/main/repository/settings-modern.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/an-anime-team/an-anime-game-launcher/main/repository/settings-classic.png</image>
     </screenshot>
   </screenshots>
   <launchable type="desktop-id">moe.launcher.an-anime-game-launcher.desktop</launchable>
