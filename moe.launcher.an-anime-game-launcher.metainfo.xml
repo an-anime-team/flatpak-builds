@@ -60,7 +60,7 @@
     <release version="3.0.1" date="2023-03-04">
       <description>
         <p>Fixed "update background picture" switch</p>
-        <p>Updated core library & sdk</p>
+        <p>Updated core library &amp; sdk</p>
         <p>Changed game running mechanism</p>
         <p>Temporarily hidden repair game button</p>
       </description>
