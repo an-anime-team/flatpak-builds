@@ -57,6 +57,11 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+    <release version="3.1.1" date="2023-03-06">
+      <description>
+        <p>Fixed bug causing game not to launch</p>
+      </description>
+    </release>
     <release version="3.1.0" date="2023-03-06">
       <description>
         <p>Fixed wine LANG env and broken titlebar behaviour on some DEs</p>
