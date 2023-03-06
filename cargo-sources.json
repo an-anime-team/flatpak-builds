@@ -1041,15 +1041,15 @@
     },
     {
         "type": "file",
-        "url": "https://static.crates.io/crates/fs_extra/fs_extra-1.2.0.crate",
-        "sha256": "2022715d62ab30faffd124d40b76f4134a550a87792276512b18d63272333394",
+        "url": "https://static.crates.io/crates/fs_extra/fs_extra-1.3.0.crate",
+        "sha256": "42703706b716c37f96a77aea830392ad231f44c9e9a67872fa5548707e11b11c",
         "dest": "cargo/vendor",
-        "dest-filename": "fs_extra-1.2.0.crate"
+        "dest-filename": "fs_extra-1.3.0.crate"
     },
     {
         "type": "file",
-        "url": "data:%7B%22package%22%3A%20%222022715d62ab30faffd124d40b76f4134a550a87792276512b18d63272333394%22%2C%20%22files%22%3A%20%7B%7D%7D",
-        "dest": "cargo/vendor/fs_extra-1.2.0",
+        "url": "data:%7B%22package%22%3A%20%2242703706b716c37f96a77aea830392ad231f44c9e9a67872fa5548707e11b11c%22%2C%20%22files%22%3A%20%7B%7D%7D",
+        "dest": "cargo/vendor/fs_extra-1.3.0",
         "dest-filename": ".cargo-checksum.json"
     },
     {
@@ -2029,6 +2029,19 @@
     },
     {
         "type": "file",
+        "url": "https://static.crates.io/crates/open/open-3.2.0.crate",
+        "sha256": "2078c0039e6a54a0c42c28faa984e115fb4c2d5bf2208f77d1961002df8576f8",
+        "dest": "cargo/vendor",
+        "dest-filename": "open-3.2.0.crate"
+    },
+    {
+        "type": "file",
+        "url": "data:%7B%22package%22%3A%20%222078c0039e6a54a0c42c28faa984e115fb4c2d5bf2208f77d1961002df8576f8%22%2C%20%22files%22%3A%20%7B%7D%7D",
+        "dest": "cargo/vendor/open-3.2.0",
+        "dest-filename": ".cargo-checksum.json"
+    },
+    {
+        "type": "file",
         "url": "https://static.crates.io/crates/openssl-probe/openssl-probe-0.1.5.crate",
         "sha256": "ff011a302c396a5197692431fc1948019154afc178baf7d8e37367442a4601cf",
         "dest": "cargo/vendor",
@@ -2155,6 +2168,19 @@
         "type": "file",
         "url": "data:%7B%22package%22%3A%20%227676374caaee8a325c9e7a2ae557f216c5563a171d6997b0ef8a65af35147700%22%2C%20%22files%22%3A%20%7B%7D%7D",
         "dest": "cargo/vendor/password-hash-0.4.2",
+        "dest-filename": ".cargo-checksum.json"
+    },
+    {
+        "type": "file",
+        "url": "https://static.crates.io/crates/pathdiff/pathdiff-0.2.1.crate",
+        "sha256": "8835116a5c179084a830efb3adc117ab007512b535bc1a21c991d3b32a6b44dd",
+        "dest": "cargo/vendor",
+        "dest-filename": "pathdiff-0.2.1.crate"
+    },
+    {
+        "type": "file",
+        "url": "data:%7B%22package%22%3A%20%228835116a5c179084a830efb3adc117ab007512b535bc1a21c991d3b32a6b44dd%22%2C%20%22files%22%3A%20%7B%7D%7D",
+        "dest": "cargo/vendor/pathdiff-0.2.1",
         "dest-filename": ".cargo-checksum.json"
     },
     {

@@ -57,6 +57,14 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+    <release version="3.1.0" date="2023-03-06">
+      <description>
+        <p>Fixed wine LANG env and broken titlebar behaviour on some DEs</p>
+        <p>Added dynamic component loading</p>
+        <p>Added game repairing function</p>
+        <p>Added translations for French and Simplified Chinese</p>
+      </description>
+    </release>
     <release version="3.0.1" date="2023-03-04">
       <description>
         <p>Fixed "update background picture" switch</p>
