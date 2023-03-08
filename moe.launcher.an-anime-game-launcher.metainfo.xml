@@ -57,6 +57,12 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+    <release version="3.1.5" date="2023-03-08">
+      <description>
+        <p>Added Turkish translations</p>
+        <p>Update how launcher handles Proton GE</p>
+      </description>
+    </release>
     <release version="3.1.3" date="2023-03-07">
       <description>
         <p>Added Spanish translations</p>
