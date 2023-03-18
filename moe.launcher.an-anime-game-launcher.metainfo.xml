@@ -57,6 +57,15 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+    <release version="3.2.0" date="2023-03-18">
+      <description>
+        <p>Added wine or dxvk downloading skipping in initial setup if you already downloaded them</p>
+        <p>Fixed components related error on changing default path</p>
+        <p>Fixed "wine not installed" button bug</p>
+        <p>Changed default game and prefix paths</p>
+        <p>Improved Proton-builds compatibility</p>
+      </description>
+    </release>
     <release version="3.1.5" date="2023-03-08">
       <description>
         <p>Added Turkish translations</p>
