@@ -57,6 +57,11 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+    <release version="3.2.1" date="2023-03-18">
+      <description>
+        <p>Fixed DXVK applying on changed default path during initial setup</p>
+      </description>
+    </release>
     <release version="3.2.0" date="2023-03-18">
       <description>
         <p>Added wine or dxvk downloading skipping in initial setup if you already downloaded them</p>
