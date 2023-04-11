@@ -57,6 +57,21 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+    <release version="3.4.0" date="2023-04-11">
+      <p>Added installation migration feature</p>
+      <p>Added game environment switcher</p>
+      <p>Added game edition switcher</p>
+      <p>Added changelog to updated components toast</p>
+      <p>Added wine tools to settings</p>
+      <p>Added preferences search</p>
+      <p>Added new progress bar statuses for applyign hdiff patches and removing outdated files</p>
+      <p>Added automatic 3.5 → 3.6 voiceover files migration related to changed files structure</p>
+      <p>Added whitespaces removing from environment values</p>
+      <p>Improved game repairing feature</p>
+      <p>Replaced curl dependency by native code</p>
+      <p>Replaced static image by spinner in wine / dxvk version selection</p>
+      <p>Made wine / dxvk versions always visible if they're downloaded</p>
+    </release>
     <release version="3.3.0" date="2023-03-24">
       <description>
         <p>Added option to use additional xlua patch</p>
