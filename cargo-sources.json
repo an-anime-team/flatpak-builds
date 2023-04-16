@@ -66,7 +66,7 @@
     {
         "type": "git",
         "url": "https://github.com/an-anime-team/anime-launcher-sdk",
-        "commit": "1d56514b71da92b827ec4162975a12e4bf9b13fc",
+        "commit": "979ca46f5b4ba8961b0effa4e35ba8f8069c9607",
         "dest": "cargo/vendor/anime-launcher-sdk"
     },
     {
@@ -4114,7 +4114,7 @@
     },
     {
         "type": "file",
-        "url": "data:%5Bsource.vendored-sources%5D%0Adirectory%20%3D%20%22cargo/vendor%22%0A%0A%5Bsource.crates-io%5D%0Areplace-with%20%3D%20%22vendored-sources%22%0A%0A%5Bsource.%22https%3A//github.com/an-anime-team/anime-game-core%22%5D%0Agit%20%3D%20%22https%3A//github.com/an-anime-team/anime-game-core%22%0Areplace-with%20%3D%20%22vendored-sources%22%0Atag%20%3D%20%221.7.0%22%0A%0A%5Bsource.%22https%3A//github.com/an-anime-team/anime-launcher-sdk%22%5D%0Agit%20%3D%20%22https%3A//github.com/an-anime-team/anime-launcher-sdk%22%0Areplace-with%20%3D%20%22vendored-sources%22%0Atag%20%3D%20%221.0.1%22%0A",
+        "url": "data:%5Bsource.vendored-sources%5D%0Adirectory%20%3D%20%22cargo/vendor%22%0A%0A%5Bsource.crates-io%5D%0Areplace-with%20%3D%20%22vendored-sources%22%0A%0A%5Bsource.%22https%3A//github.com/an-anime-team/anime-game-core%22%5D%0Agit%20%3D%20%22https%3A//github.com/an-anime-team/anime-game-core%22%0Areplace-with%20%3D%20%22vendored-sources%22%0Atag%20%3D%20%221.7.0%22%0A%0A%5Bsource.%22https%3A//github.com/an-anime-team/anime-launcher-sdk%22%5D%0Agit%20%3D%20%22https%3A//github.com/an-anime-team/anime-launcher-sdk%22%0Areplace-with%20%3D%20%22vendored-sources%22%0Atag%20%3D%20%221.0.2%22%0A",
         "dest": "cargo",
         "dest-filename": "config"
     }
