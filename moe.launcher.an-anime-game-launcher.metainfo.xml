@@ -57,104 +57,137 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+    <release version="3.5.1" date="2023-04-16">
+      <description>
+        <p>Fixed telemetry checking</p>
+      </description>
+    </release>
     <release version="3.5.0" date="2023-04-16">
       <description>
         <p>Added game sandboxing feature</p>
         <p>Added debugger to wine tools</p>
-        <p>Removed fractions displaying in components downloading progress bar</p>
+        <p>Removed fractions
+          displaying in components downloading progress bar</p>
         <p>Moved to upgraded launcher SDK</p>
       </description>
     </release>
     <release version="3.4.1" date="2023-04-12">
       <description>
-        <p>Fixed base game's hdiff patches applying errors caused by 3.6's voiceovers files migration</p>
-        <p>Fixed xlua patch applying</p>
+        <p>Fixed
+          base game's hdiff patches applying errors caused by 3.6's voiceovers files migration</p>
+        <p>Fixed
+          xlua patch applying</p>
         <p>Removed fractions displaying in repairer's progress bar</p>
       </description>
     </release>
     <release version="3.4.0" date="2023-04-11">
       <description>
-        <p>Added installation migration feature</p>
+        <p>Added
+          installation migration feature</p>
         <p>Added game environment switcher</p>
-        <p>Added game edition switcher</p>
+        <p>Added game edition
+          switcher</p>
         <p>Added changelog to updated components toast</p>
         <p>Added wine tools to settings</p>
-        <p>Added preferences search</p>
-        <p>Added new progress bar statuses for applyign hdiff patches and removing outdated files</p>
-        <p>Added automatic 3.5 → 3.6 voiceover files migration related to changed files structure</p>
+        <p>Added
+          preferences search</p>
+        <p>Added new progress bar statuses for applyign hdiff patches and
+          removing outdated files</p>
+        <p>Added automatic 3.5 → 3.6 voiceover files migration related to
+          changed files structure</p>
         <p>Added whitespaces removing from environment values</p>
-        <p>Improved game repairing feature</p>
+        <p>Improved
+          game repairing feature</p>
         <p>Replaced curl dependency by native code</p>
-        <p>Replaced static image by spinner in wine / dxvk version selection</p>
-        <p>Made wine / dxvk versions always visible if they're downloaded</p>
+        <p>Replaced static image
+          by spinner in wine / dxvk version selection</p>
+        <p>Made wine / dxvk versions always visible if
+          they're downloaded</p>
       </description>
     </release>
     <release version="3.3.0" date="2023-03-24">
       <description>
-        <p>Added option to use additional xlua patch</p>
+        <p>Added option to use additional
+          xlua patch</p>
         <p>Added menu option to open wishes history url</p>
-        <p>Fixed downloaded wine version selection on "download wine" button</p>
+        <p>Fixed downloaded wine
+          version selection on "download wine" button</p>
         <p>Fixed game downloading</p>
-        <p>Fixed infinite retries to download some update or patch the game if it failed</p>
+        <p>Fixed infinite
+          retries to download some update or patch the game if it failed</p>
       </description>
     </release>
     <release version="3.2.1" date="2023-03-18">
       <description>
-        <p>Fixed DXVK applying on changed default path during initial setup</p>
+        <p>Fixed
+          DXVK applying on changed default path during initial setup</p>
       </description>
     </release>
     <release version="3.2.0" date="2023-03-18">
       <description>
-        <p>Added wine or dxvk downloading skipping in initial setup if you already downloaded them</p>
-        <p>Fixed components related error on changing default path</p>
+        <p>Added
+          wine or dxvk downloading skipping in initial setup if you already downloaded them</p>
+        <p>Fixed
+          components related error on changing default path</p>
         <p>Fixed "wine not installed" button bug</p>
-        <p>Changed default game and prefix paths</p>
+        <p>Changed
+          default game and prefix paths</p>
         <p>Improved Proton-builds compatibility</p>
       </description>
     </release>
     <release version="3.1.5" date="2023-03-08">
       <description>
-        <p>Added Turkish translations</p>
+        <p>Added
+          Turkish translations</p>
         <p>Update how launcher handles Proton GE</p>
       </description>
     </release>
     <release version="3.1.3" date="2023-03-07">
       <description>
-        <p>Added Spanish translations</p>
+        <p>Added
+          Spanish translations</p>
         <p>Fixed compatibility with GE-Proton</p>
       </description>
     </release>
     <release version="3.1.2" date="2023-03-07">
       <description>
-        <p>Fixed issue with component/wine/dxvk downloading</p>
+        <p>Fixed
+          issue with component/wine/dxvk downloading</p>
         <p>Fixed initial setup window panic</p>
       </description>
     </release>
     <release version="3.1.1" date="2023-03-06">
       <description>
-        <p>Fixed bug causing game not to launch</p>
+        <p>Fixed
+          bug causing game not to launch</p>
       </description>
     </release>
     <release version="3.1.0" date="2023-03-06">
       <description>
-        <p>Fixed wine LANG env and broken titlebar behaviour on some DEs</p>
+        <p>Fixed wine LANG env
+          and broken titlebar behaviour on some DEs</p>
         <p>Added dynamic component loading</p>
-        <p>Added game repairing function</p>
+        <p>Added game
+          repairing function</p>
         <p>Added translations for French and Simplified Chinese</p>
       </description>
     </release>
     <release version="3.0.1" date="2023-03-04">
       <description>
-        <p>Fixed "update background picture" switch</p>
+        <p>Fixed
+          "update background picture" switch</p>
         <p>Updated core library &amp; sdk</p>
-        <p>Changed game running mechanism</p>
+        <p>Changed game
+          running mechanism</p>
         <p>Temporarily hidden repair game button</p>
       </description>
     </release>
     <release version="3.0.0" date="2023-03-04">
       <description>
-        <p>Migrated from Neutralino to GTK4/Relm</p>
-        <p>Fixed bugs, Added new features like gamescope, monitor selector and etc</p>
+        <p>Migrated
+          from Neutralino to GTK4/Relm</p>
+        <p>Fixed bugs, Added new features like gamescope, monitor
+          selector and etc</p>
       </description>
     </release>
   </releases>
