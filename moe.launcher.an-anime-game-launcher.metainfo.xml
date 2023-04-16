@@ -57,6 +57,14 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+    <release version="3.5.0" date="2023-04-16">
+      <description>
+        <p>Added game sandboxing feature</p>
+        <p>Added debugger to wine tools</p>
+        <p>Removed fractions displaying in components downloading progress bar</p>
+        <p>Moved to upgraded launcher SDK</p>
+      </description>
+    </release>
     <release version="3.4.1" date="2023-04-12">
       <description>
         <p>Fixed base game's hdiff patches applying errors caused by 3.6's voiceovers files migration</p>
