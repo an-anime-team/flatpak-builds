@@ -57,6 +57,12 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+    <release version="3.5.2" date="2023-04-16">
+      <description>
+      	<p>Added arguments and symlinks editor to sandbox settings</p>
+      	<p>Fixed game running issue if you have spaces in paths</p>
+      </description>
+    </release>
     <release version="3.5.1" date="2023-04-16">
       <description>
         <p>Fixed telemetry checking</p>
