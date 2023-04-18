@@ -62,6 +62,7 @@
         <p>Fixed mfplat patch applying</p>
         <p>Added support for proton builds</p>
         <p>Fixed wine tools running using proton builds</p>
+      </description>
     </release>
     <release version="1.0.1" date="2023-04-17">
       <description>
