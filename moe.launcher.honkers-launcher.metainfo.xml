@@ -57,6 +57,12 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+    <release version="1.0.2" date="2023-04-18">
+      <description>
+        <p>Fixed mfplat patch applying</p>
+        <p>Added support for proton builds</p>
+        <p>Fixed wine tools running using proton builds</p>
+    </release>
     <release version="1.0.1" date="2023-04-17">
       <description>
         <p>Added mfplat patch integration</p>
