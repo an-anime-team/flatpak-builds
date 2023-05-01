@@ -1,4 +1,4 @@
-app-id: moe.launcher.honkers-launcher
+app-id: moe.launcher.the-honkers-railway-launcher
 runtime: org.gnome.Platform
 runtime-version: '43'
 add-extensions:
@@ -14,8 +14,8 @@ add-extensions:
 sdk: org.gnome.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.rust-stable
-command: moe.launcher.honkers-launcher
-rename-desktop-file: honkers-launcher.desktop
+command: moe.launcher.the-honkers-railway-launcher
+rename-desktop-file: honkers-railway-launcher.desktop
 finish-args:
   - --share=network
   - --share=ipc
@@ -107,16 +107,7 @@ modules:
           project-id: 5350
           url-template: https://mirrors.edge.kernel.org/pub/software/scm/git/git-$version.tar.xz
 
-  - name: p7zip
-    buildsystem: simple
-    build-commands:
-      - make 7z install DEST_HOME=/app
-    sources:
-      - type: git
-        url: https://github.com/p7zip-project/p7zip
-        tag: v17.05
-
-  - name: honkers
+  - name: railway
     buildsystem: simple
     build-options:
       env:
@@ -125,33 +116,33 @@ modules:
       - cargo --offline fetch --manifest-path Cargo.toml --verbose
       - cargo --offline build --release --verbose
 
-      - cp target/release/honkers-launcher /app/bin/honkers-launcher
-      - cp moe.launcher.honkers-launcher.sh /app/bin/moe.launcher.honkers-launcher
-      - chmod +x /app/bin/moe.launcher.honkers-launcher
+      - cp target/release/honkers-railway-launcher /app/bin/honkers-railway-launcher
+      - cp moe.launcher.the-honkers-railway-launcher.sh /app/bin/moe.launcher.the-honkers-railway-launcher
+      - chmod +x /app/bin/moe.launcher.the-honkers-railway-launcher
     sources:
       - type: git
-        url: https://github.com/an-anime-team/honkers-launcher
-        tag: &honkers_tag 1.0.2
+        url: https://github.com/an-anime-team/the-honkers-railway-launcher
+        tag: &railway_tag 1.0.0
       - type: file
-        path: moe.launcher.honkers-launcher.sh
+        path: moe.launcher.the-honkers-railway-launcher.sh
       - cargo-sources.json
 
-  # not included in honkers so the launcher doesn't have to be rebuilt every time the metadata is changed
+  # not included in railway so the launcher doesn't have to be rebuilt every time the metadata is changed
   - name: metadata
     buildsystem: simple
     build-commands:
       - mkdir -p /app/share/icons/hicolor/512x512/apps/
-      - cp assets/images/icon.png /app/share/icons/hicolor/512x512/apps/moe.launcher.honkers-launcher.png
-      - desktop-file-install --dir=/app/share/applications --set-key=Exec --set-value=moe.launcher.honkers-launcher
-        --set-key=Icon --set-value=moe.launcher.honkers-launcher assets/honkers-launcher.desktop
+      - cp assets/images/icon.png /app/share/icons/hicolor/512x512/apps/moe.launcher.the-honkers-railway-launcher.png
+      - desktop-file-install --dir=/app/share/applications --set-key=Exec --set-value=moe.launcher.the-honkers-railway-launcher
+        --set-key=Icon --set-value=moe.launcher.the-honkers-railway-launcher assets/honkers-railway-launcher.desktop
 
       - mkdir -p /app/share/metainfo/
-      - cp moe.launcher.honkers-launcher.metainfo.xml /app/share/metainfo/
+      - cp moe.launcher.the-honkers-railway-launcher.metainfo.xml /app/share/metainfo/
 
       - mkdir -p /app/utils/
     sources:
       - type: git
-        url: https://github.com/an-anime-team/honkers-launcher
-        tag: *honkers_tag
+        url: https://github.com/an-anime-team/the-honkers-railway-launcher
+        tag: *railway_tag
       - type: file
-        path: moe.launcher.honkers-launcher.metainfo.xml
+        path: moe.launcher.the-honkers-railway-launcher.metainfo.xml

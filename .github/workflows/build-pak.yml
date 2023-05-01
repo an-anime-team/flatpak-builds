@@ -3,9 +3,9 @@ name: Build and Push Flatpak
 on:
   push:
     branches:
-      - 'honkers'
+      - 'honkers-railway'
     paths:
-      - 'moe.launcher.honkers-launcher.yml'
+      - 'moe.launcher.the-honkers-railway-launcher.yml'
       
   workflow_dispatch:
 
@@ -26,14 +26,14 @@ jobs:
         git config --global protocol.file.allow always
     - uses: actions/checkout@v3
       with:
-        ref: honkers
+        ref: honkers-railway
         submodules: true
     - uses: flatpak/flatpak-github-actions/flatpak-builder@v5
       name: "Build"
       with:
-        bundle: moe.launcher.honkers-launcher.flatpak
+        bundle: moe.launcher.the-honkers-railway-launcher.flatpak
         build-bundle: false
-        manifest-path: moe.launcher.honkers-launcher.yml
+        manifest-path: moe.launcher.the-honkers-railway-launcher.yml
         cache-key: flatpak-builder-${{ github.sha }}
     - uses: flatpak/flatpak-github-actions/flat-manager@v5
       name: "Deploy"

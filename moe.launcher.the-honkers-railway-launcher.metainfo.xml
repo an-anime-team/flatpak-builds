@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<component type="desktop-application">
+  <!-- Copyright 2022 Laurin Neff -->
+  <id>moe.launcher.the-honkers-railway-launcher</id>
+  <name>The Honkers Railway Launcher</name>
+  <summary>Play your favorite anime game on Linux</summary>
+  <summary xml:lang="de">Spielen Sie Ihr Lieblings-Anime-Spiel auf Linux</summary>
+  <summary xml:lang="ru">Играйте в вашу любимую аниме-игру на линуксе</summary>
+  <summary xml:lang="es">Juega a tu juego favorito de anime en Linux</summary>
+  <summary xml:lang="it">Gioca al tuo gioco anime preferito su Linux</summary>
+  <summary xml:lang="hu">Játssz a kedvenc játékoddal Linux-on!</summary>
+  <description>
+    <p>The Honkers Railway Launcher is an unofficial launcher for a certain video game that handles setting up Wine, installing the game, and patching it to work on Linux.</p>
+  </description>
+  <description xml:lang="de">
+    <p>The Honkers Railway Launcher ist ein inoffizieller Launcher für ein bestimmtes Videospiel, welcher die Einrichtung von Wine, die Installation des Spiels und das Patchen, dass es unter Linux läuft, übernimmt.</p>
+  </description>
+  <description xml:lang="ru">
+    <p>The Honkers Railway Launcher - это неофициальный лаунчер для определённой видео-игры, который настраивает Wine, устанавливает игру и применяет дополнительные патчи для предоставления возможности её работы на линуксе.</p>
+  </description>
+  <description xml:lang="es">
+    <p>Launcher de un Juego de Anime es un launcher no oficial para cierto videojuego. Se encarga de configurar Wine, instalar el juego, y parchearlo para que funcione en Linux.</p>
+  </description>
+  <description xml:lang="it">
+    <p>The Honkers Railway Launcher è un launcher non ufficiale per un certo videogioco anime che gestisce e configura automaticamente Wine, l'installazione e patching del gioco per farlo funzionare su Linux.</p>
+  </description>
+  <description xml:lang="hu">Az Anime Game Launcher egy nem-hivatalos launcher egy bizonyos videójátékhoz amely helyetted beállítja a Wine-t, telepíti a játékot, és alkalmazza a Linux patch-et hozzá.</description>
+  <developer_name>An Anime Team</developer_name>
+  <screenshots>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/an-anime-team/the-honkers-railway-launcher/main/repository/main-modern.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/an-anime-team/the-honkers-railway-launcher/main/repository/main-classic.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/an-anime-team/the-honkers-railway-launcher/main/repository/settings-modern.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/an-anime-team/the-honkers-railway-launcher/main/repository/settings-classic.png</image>
+    </screenshot>
+  </screenshots>
+  <launchable type="desktop-id">moe.launcher.the-honkers-railway-launcher.desktop</launchable>
+  <url type="homepage">https://github.com/an-anime-team/the-honkers-railway-launcher</url>
+  <url type="bugtracker">https://github.com/an-anime-team/the-honkers-railway-launcher/issues</url>
+  <project_license>GPL-3.0-or-later</project_license>
+  <metadata_license>CC0-1.0</metadata_license>
+  <categories>
+    <category>Game</category>
+  </categories>
+  <content_rating type="oars-1.1">
+    <content_attribute id="violence-fantasy">moderate</content_attribute>
+    <content_attribute id="drugs-alcohol">mild</content_attribute>
+    <content_attribute id="social-chat">intense</content_attribute>
+    <content_attribute id="social-info">mild</content_attribute>
+    <content_attribute id="money-purchasing">intense</content_attribute>
+    <content_attribute id="money-gambling">moderate</content_attribute>
+  </content_rating>
+  <releases>
+    <release version="1.0.0" date="2023-05-01">
+      <description>
+        <p>Initial release</p>
+      </description>
+    </release>
+  </releases>
+  <update_contact>contact at kaifa dot ch</update_contact>
+</component>

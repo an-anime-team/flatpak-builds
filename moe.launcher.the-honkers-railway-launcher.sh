@@ -15,13 +15,17 @@ if readlink /etc/hosts > /dev/null; then
     cp $original /etc/hosts
     cat <<EOF >> /etc/hosts
 # Global
-# Honkai Impact 3rd logging servers
+# Star Rail logging servers
 0.0.0.0 log-upload-os.hoyoverse.com
 0.0.0.0 sg-public-data-api.hoyoverse.com
-0.0.0.0 dump.gamesafe.qq.com
+
+# China
+# Star Rail logging servers
+0.0.0.0 log-upload.mihoyo.com
+0.0.0.0 public-data-api.mihoyo.com
 EOF
 fi
 
 export PATH=$PATH:/app/utils/bin
 
-exec honkers-launcher "$@"
+exec honkers-railway-launcher "$@"
