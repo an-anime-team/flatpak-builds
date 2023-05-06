@@ -57,6 +57,12 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+    <release version="3.6.0" date="2023-05-06">
+      <description>
+      	<p>Added game sessions manager</p>
+      	<p>Fixed wine tools running using proton builds</p>
+      </description>
+    </release>
     <release version="3.5.2" date="2023-04-16">
       <description>
       	<p>Added arguments and symlinks editor to sandbox settings</p>
