@@ -57,6 +57,11 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+    <release version="1.1.0" date="2023-05-06">
+      <description>
+        <p>Added game sessions switching</p>
+      </description>
+    </release>
     <release version="1.0.2" date="2023-04-18">
       <description>
         <p>Fixed mfplat patch applying</p>
