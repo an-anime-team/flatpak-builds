@@ -66,7 +66,7 @@
     {
         "type": "git",
         "url": "https://github.com/an-anime-team/anime-launcher-sdk",
-        "commit": "cba4a7bbde348c1b0c123517025fbb37aecfbcb4",
+        "commit": "f2efb2c8bf339e065ecafc53cfcc9c02a129124e",
         "dest": "cargo/vendor/anime-launcher-sdk"
     },
     {
@@ -2586,28 +2586,28 @@
     },
     {
         "type": "file",
-        "url": "https://static.crates.io/crates/relm4/relm4-0.6.0-alpha.2.crate",
-        "sha256": "7acc5e3ddd682eeb0ca33da36b821fc907017c6d7758b09ce280247b0b0ea8cd",
+        "url": "https://static.crates.io/crates/relm4/relm4-0.6.0-beta.1.crate",
+        "sha256": "f169f698ce2e487eed2306898fcf262224a287d0e81480db4190e74cfec412cf",
         "dest": "cargo/vendor",
-        "dest-filename": "relm4-0.6.0-alpha.2.crate"
+        "dest-filename": "relm4-0.6.0-beta.1.crate"
     },
     {
         "type": "file",
-        "url": "data:%7B%22package%22%3A%20%227acc5e3ddd682eeb0ca33da36b821fc907017c6d7758b09ce280247b0b0ea8cd%22%2C%20%22files%22%3A%20%7B%7D%7D",
-        "dest": "cargo/vendor/relm4-0.6.0-alpha.2",
+        "url": "data:%7B%22package%22%3A%20%22f169f698ce2e487eed2306898fcf262224a287d0e81480db4190e74cfec412cf%22%2C%20%22files%22%3A%20%7B%7D%7D",
+        "dest": "cargo/vendor/relm4-0.6.0-beta.1",
         "dest-filename": ".cargo-checksum.json"
     },
     {
         "type": "file",
-        "url": "https://static.crates.io/crates/relm4-macros/relm4-macros-0.6.0-alpha.2.crate",
-        "sha256": "c8525ce12dcd7d2a9e9070d84b8b885600eccd0a143df6712ce34a87d001a8b7",
+        "url": "https://static.crates.io/crates/relm4-macros/relm4-macros-0.6.0-beta.1.crate",
+        "sha256": "7fa06febb3685960e7c1c44e21e44a3829325940b31d1e91391a43c32020c201",
         "dest": "cargo/vendor",
-        "dest-filename": "relm4-macros-0.6.0-alpha.2.crate"
+        "dest-filename": "relm4-macros-0.6.0-beta.1.crate"
     },
     {
         "type": "file",
-        "url": "data:%7B%22package%22%3A%20%22c8525ce12dcd7d2a9e9070d84b8b885600eccd0a143df6712ce34a87d001a8b7%22%2C%20%22files%22%3A%20%7B%7D%7D",
-        "dest": "cargo/vendor/relm4-macros-0.6.0-alpha.2",
+        "url": "data:%7B%22package%22%3A%20%227fa06febb3685960e7c1c44e21e44a3829325940b31d1e91391a43c32020c201%22%2C%20%22files%22%3A%20%7B%7D%7D",
+        "dest": "cargo/vendor/relm4-macros-0.6.0-beta.1",
         "dest-filename": ".cargo-checksum.json"
     },
     {
@@ -4114,7 +4114,7 @@
     },
     {
         "type": "file",
-        "url": "data:%5Bsource.vendored-sources%5D%0Adirectory%20%3D%20%22cargo/vendor%22%0A%0A%5Bsource.crates-io%5D%0Areplace-with%20%3D%20%22vendored-sources%22%0A%0A%5Bsource.%22https%3A//github.com/an-anime-team/anime-game-core%22%5D%0Agit%20%3D%20%22https%3A//github.com/an-anime-team/anime-game-core%22%0Areplace-with%20%3D%20%22vendored-sources%22%0Atag%20%3D%20%221.8.0%22%0A%0A%5Bsource.%22https%3A//github.com/an-anime-team/anime-launcher-sdk%22%5D%0Agit%20%3D%20%22https%3A//github.com/an-anime-team/anime-launcher-sdk%22%0Areplace-with%20%3D%20%22vendored-sources%22%0Atag%20%3D%20%221.1.4%22%0A",
+        "url": "data:%5Bsource.vendored-sources%5D%0Adirectory%20%3D%20%22cargo/vendor%22%0A%0A%5Bsource.crates-io%5D%0Areplace-with%20%3D%20%22vendored-sources%22%0A%0A%5Bsource.%22https%3A//github.com/an-anime-team/anime-game-core%22%5D%0Agit%20%3D%20%22https%3A//github.com/an-anime-team/anime-game-core%22%0Areplace-with%20%3D%20%22vendored-sources%22%0Atag%20%3D%20%221.8.0%22%0A%0A%5Bsource.%22https%3A//github.com/an-anime-team/anime-launcher-sdk%22%5D%0Agit%20%3D%20%22https%3A//github.com/an-anime-team/anime-launcher-sdk%22%0Areplace-with%20%3D%20%22vendored-sources%22%0Atag%20%3D%20%221.2.2%22%0A",
         "dest": "cargo",
         "dest-filename": "config"
     }
