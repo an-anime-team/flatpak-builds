@@ -57,6 +57,13 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+    <release version="1.2.0" date="2023-05-24">
+      <description>
+      	<p>Added Italian and Indonesian</p>
+        <p>Redesigned main button and added Resume Download as a button option</p>
+        <p>Added options to use shared libraries from Wine</p>
+      </description>
+    </release>
     <release version="1.1.0" date="2023-05-06">
       <description>
         <p>Added game sessions manager</p>
