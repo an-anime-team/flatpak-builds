@@ -14,15 +14,7 @@ if readlink /etc/hosts > /dev/null; then
     rm /etc/hosts
     cp $original /etc/hosts
     cat <<EOF >> /etc/hosts
-# Global
-# Star Rail logging servers
-0.0.0.0 log-upload-os.hoyoverse.com
-0.0.0.0 sg-public-data-api.hoyoverse.com
-
-# China
-# Star Rail logging servers
-0.0.0.0 log-upload.mihoyo.com
-0.0.0.0 public-data-api.mihoyo.com
+# TODO
 EOF
 fi
 
