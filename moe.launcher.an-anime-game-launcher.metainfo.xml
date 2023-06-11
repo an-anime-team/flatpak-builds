@@ -57,6 +57,13 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+    <release version="3.7.1" date="2023-06-11">
+      <description>
+      	<p>Added Discord RPC icon selection as well as Japanese and Hungarian languages</p>
+      	<p>Fixed repairing the game</p>
+        <p>Fixed some installer updates reporting (including "checking free space")</p>
+      </description>
+    </release>
     <release version="3.7.0" date="2023-05-24">
       <description>
       	<p>Added Italian and Indonesian</p>
