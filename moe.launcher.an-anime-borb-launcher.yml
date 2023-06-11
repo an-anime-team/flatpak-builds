@@ -107,6 +107,14 @@ modules:
           project-id: 5350
           url-template: https://mirrors.edge.kernel.org/pub/software/scm/git/git-$version.tar.xz
 
+  - name: cabextract
+    build-options:
+      strip: true
+    sources:
+      - type: archive
+        url: "https://www.cabextract.org.uk/cabextract-1.11.tar.gz"
+        sha256: b5546db1155e4c718ff3d4b278573604f30dd64c3c5bfd4657cd089b823a3ac6
+
   - name: railway
     buildsystem: simple
     build-options:
