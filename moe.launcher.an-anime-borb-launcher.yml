@@ -108,6 +108,7 @@ modules:
           url-template: https://mirrors.edge.kernel.org/pub/software/scm/git/git-$version.tar.xz
 
   - name: cabextract
+    buildsystem: autotools
     build-options:
       strip: true
     sources:
