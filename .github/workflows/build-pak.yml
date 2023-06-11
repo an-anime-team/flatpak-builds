@@ -3,9 +3,9 @@ name: Build and Push Flatpak
 on:
   push:
     branches:
-      - 'honkers-railway'
+      - 'pgr'
     paths:
-      - 'moe.launcher.the-honkers-railway-launcher.yml'
+      - 'moe.launcher.an-anime-borb-launcher.yml'
       
   workflow_dispatch:
 
@@ -31,9 +31,9 @@ jobs:
     - uses: flatpak/flatpak-github-actions/flatpak-builder@v5
       name: "Build"
       with:
-        bundle: moe.launcher.the-honkers-railway-launcher.flatpak
+        bundle: moe.launcher.an-anime-borb-launcher.flatpak
         build-bundle: false
-        manifest-path: moe.launcher.the-honkers-railway-launcher.yml
+        manifest-path: moe.launcher.an-anime-borb-launcher.yml
         cache-key: flatpak-builder-${{ github.sha }}
     - uses: flatpak/flatpak-github-actions/flat-manager@v5
       name: "Deploy"
