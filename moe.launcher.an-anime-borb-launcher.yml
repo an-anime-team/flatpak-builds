@@ -124,7 +124,7 @@ modules:
       - cargo --offline fetch --manifest-path Cargo.toml --verbose
       - cargo --offline build --release --verbose
 
-      - cp target/release/an-anime-borb-launcher /app/bin/anime-borb-launcher
+      - cp target/release/anime-borb-launcher /app/bin/anime-borb-launcher
       - cp moe.launcher.an-anime-borb-launcher.sh /app/bin/moe.launcher.an-anime-borb-launcher
       - chmod +x /app/bin/moe.launcher.an-anime-borb-launcher
     sources:
