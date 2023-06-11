@@ -1,4 +1,4 @@
-app-id: moe.launcher.the-honkers-railway-launcher
+app-id: moe.launcher.an-anime-borb-launcher
 runtime: org.gnome.Platform
 runtime-version: '43'
 add-extensions:
@@ -14,8 +14,8 @@ add-extensions:
 sdk: org.gnome.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.rust-stable
-command: moe.launcher.the-honkers-railway-launcher
-rename-desktop-file: honkers-railway-launcher.desktop
+command: moe.launcher.an-anime-borb-launcher
+rename-desktop-file: anime-borb-launcher.desktop
 finish-args:
   - --share=network
   - --share=ipc
@@ -116,15 +116,15 @@ modules:
       - cargo --offline fetch --manifest-path Cargo.toml --verbose
       - cargo --offline build --release --verbose
 
-      - cp target/release/honkers-railway-launcher /app/bin/honkers-railway-launcher
-      - cp moe.launcher.the-honkers-railway-launcher.sh /app/bin/moe.launcher.the-honkers-railway-launcher
-      - chmod +x /app/bin/moe.launcher.the-honkers-railway-launcher
+      - cp target/release/an-anime-borb-launcher /app/bin/anime-borb-launcher
+      - cp moe.launcher.an-anime-borb-launcher.sh /app/bin/moe.launcher.an-anime-borb-launcher
+      - chmod +x /app/bin/moe.launcher.an-anime-borb-launcher
     sources:
       - type: git
-        url: https://github.com/an-anime-team/the-honkers-railway-launcher
-        tag: &railway_tag 1.2.0
+        url: https://github.com/an-anime-team/an-anime-borb-launcher
+        tag: &pgr_tag 1.0.0
       - type: file
-        path: moe.launcher.the-honkers-railway-launcher.sh
+        path: moe.launcher.an-anime-borb-launcher.sh
       - cargo-sources.json
 
   # not included in railway so the launcher doesn't have to be rebuilt every time the metadata is changed
@@ -132,17 +132,17 @@ modules:
     buildsystem: simple
     build-commands:
       - mkdir -p /app/share/icons/hicolor/512x512/apps/
-      - cp assets/images/icon.png /app/share/icons/hicolor/512x512/apps/moe.launcher.the-honkers-railway-launcher.png
-      - desktop-file-install --dir=/app/share/applications --set-key=Exec --set-value=moe.launcher.the-honkers-railway-launcher
-        --set-key=Icon --set-value=moe.launcher.the-honkers-railway-launcher assets/honkers-railway-launcher.desktop
+      - cp assets/images/icon.png /app/share/icons/hicolor/512x512/apps/moe.launcher.an-anime-borb-launcher.png
+      - desktop-file-install --dir=/app/share/applications --set-key=Exec --set-value=moe.launcher.an-anime-borb-launcher
+        --set-key=Icon --set-value=moe.launcher.an-anime-borb-launcher assets/anime-borb-launcher.desktop
 
       - mkdir -p /app/share/metainfo/
-      - cp moe.launcher.the-honkers-railway-launcher.metainfo.xml /app/share/metainfo/
+      - cp moe.launcher.an-anime-borb-launcher.metainfo.xml /app/share/metainfo/
 
       - mkdir -p /app/utils/
     sources:
       - type: git
-        url: https://github.com/an-anime-team/the-honkers-railway-launcher
-        tag: *railway_tag
+        url: https://github.com/an-anime-team/an-anime-borb-launcher
+        tag: *pgr_tag
       - type: file
-        path: moe.launcher.the-honkers-railway-launcher.metainfo.xml
+        path: moe.launcher.an-anime-borb-launcher.metainfo.xml

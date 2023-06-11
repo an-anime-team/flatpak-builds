@@ -28,4 +28,4 @@ fi
 
 export PATH=$PATH:/app/utils/bin
 
-exec honkers-railway-launcher "$@"
+exec anime-borb-launcher "$@"

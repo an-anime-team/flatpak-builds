@@ -1,19 +1,19 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <component type="desktop-application">
   <!-- Copyright 2022 Laurin Neff -->
-  <id>moe.launcher.the-honkers-railway-launcher</id>
-  <name>The Honkers Railway Launcher</name>
-  <summary>Play your favorite anime game on Linux</summary>
-  <summary xml:lang="de">Spielen Sie Ihr Lieblings-Anime-Spiel auf Linux</summary>
+  <id>moe.launcher.an-anime-borb-launcher</id>
+  <name>An Anime Borb Launcher</name>
+  <summary>Play Punishing Gray Ravens on Linux with enhancements and no telemetry</summary>
+  <summary xml:lang="de">Spielen sie Punishing Gray Ravens auf Linux mit Verbesserungen und ohne Telemetrie</summary>
   <summary xml:lang="ru">Играйте в вашу любимую аниме-игру на линуксе</summary>
   <summary xml:lang="es">Juega a tu juego favorito de anime en Linux</summary>
   <summary xml:lang="it">Gioca al tuo gioco anime preferito su Linux</summary>
   <summary xml:lang="hu">Játssz a kedvenc játékoddal Linux-on!</summary>
   <description>
-    <p>The Honkers Railway Launcher is an unofficial launcher for a certain video game that handles setting up Wine, installing the game, and patching it to work on Linux.</p>
+    <p>An Anime Borb Launcher is an unofficial launcher for PGR that handles setting up Wine, installing the game, and disabling the telemetry on Linux.</p>
   </description>
   <description xml:lang="de">
-    <p>The Honkers Railway Launcher ist ein inoffizieller Launcher für ein bestimmtes Videospiel, welcher die Einrichtung von Wine, die Installation des Spiels und das Patchen, dass es unter Linux läuft, übernimmt.</p>
+    <p>An Anime Borb Launcher ist ein inoffizieller Launcher für PGR der die Einrichtung von Wine, die Installation des Spiels und die Deaktivierung der Telemetrie unter Linux übernimmt.</p>
   </description>
   <description xml:lang="ru">
     <p>The Honkers Railway Launcher - это неофициальный лаунчер для определённой видео-игры, который настраивает Wine, устанавливает игру и применяет дополнительные патчи для предоставления возможности её работы на линуксе.</p>
@@ -28,21 +28,21 @@
   <developer_name>An Anime Team</developer_name>
   <screenshots>
     <screenshot>
-      <image>https://raw.githubusercontent.com/an-anime-team/the-honkers-railway-launcher/main/repository/main-modern.png</image>
+      <image>https://raw.githubusercontent.com/an-anime-team/an-anime-borb-launcher/main/repository/main-modern.png</image>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/an-anime-team/the-honkers-railway-launcher/main/repository/main-classic.png</image>
+      <image>https://raw.githubusercontent.com/an-anime-team/an-anime-borb-launcher/main/repository/main-classic.png</image>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/an-anime-team/the-honkers-railway-launcher/main/repository/settings-modern.png</image>
+      <image>https://raw.githubusercontent.com/an-anime-team/an-anime-borb-launcher/main/repository/settings-modern.png</image>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/an-anime-team/the-honkers-railway-launcher/main/repository/settings-classic.png</image>
+      <image>https://raw.githubusercontent.com/an-anime-team/an-anime-borb-launcher/main/repository/settings-classic.png</image>
     </screenshot>
   </screenshots>
-  <launchable type="desktop-id">moe.launcher.the-honkers-railway-launcher.desktop</launchable>
-  <url type="homepage">https://github.com/an-anime-team/the-honkers-railway-launcher</url>
-  <url type="bugtracker">https://github.com/an-anime-team/the-honkers-railway-launcher/issues</url>
+  <launchable type="desktop-id">moe.launcher.an-anime-borb-launcher.desktop</launchable>
+  <url type="homepage">https://github.com/an-anime-team/an-anime-borb-launcher</url>
+  <url type="bugtracker">https://github.com/an-anime-team/an-anime-borb-launcher/issues</url>
   <project_license>GPL-3.0-or-later</project_license>
   <metadata_license>CC0-1.0</metadata_license>
   <categories>
@@ -57,18 +57,6 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
-    <release version="1.2.0" date="2023-05-24">
-      <description>
-      	<p>Added Italian and Indonesian</p>
-        <p>Redesigned main button and added Resume Download as a button option</p>
-        <p>Added options to use shared libraries from Wine</p>
-      </description>
-    </release>
-    <release version="1.1.0" date="2023-05-06">
-      <description>
-        <p>Added game sessions manager</p>
-      </description>
-    </release>
     <release version="1.0.0" date="2023-05-01">
       <description>
         <p>Initial release</p>
