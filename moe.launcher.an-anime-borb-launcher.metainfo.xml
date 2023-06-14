@@ -57,7 +57,18 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
-    <release version="1.0.0" date="2023-05-01">
+    <release version="1.0.1" date="2023-06-14">
+      <description>
+        <p>Added mfc140 and fonts installing localization</p>
+        <p>Fixed check button style for newly made sessions</p>
+        <p>Fixed repairer's NaN progress</p>
+        <p>Fixed game session selection when current one is removed</p>
+        <p>Fixed mfc140 and fonts installing</p>
+        <p>Updated Spanish</p>
+        <p>Updated Hungarian</p>
+      </description>
+    </release>
+    <release version="1.0.0" date="2023-06-11">
       <description>
         <p>Initial release</p>
       </description>
