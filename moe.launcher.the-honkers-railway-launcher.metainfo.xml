@@ -57,6 +57,11 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+   <release version="1.2.1" date="2023-06-15">
+      <description>
+      	<p>See changelog at https://github.com/an-anime-team/the-honkers-railway-launcher/releases/tag/1.2.1</p>
+      </description>
+    </release>
     <release version="1.2.0" date="2023-05-24">
       <description>
       	<p>Added Italian and Indonesian</p>
