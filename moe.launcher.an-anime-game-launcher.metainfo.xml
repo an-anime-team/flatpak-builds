@@ -57,6 +57,14 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+    <release version="3.7.3" date="2023-06-18">
+      <description>
+        <p>Added telemetry disabling state support</p>
+        <p>Added Discord RPC icons updating</p>
+        <p>Replaced xlua patch by "disable mhypbase" option</p>
+        <p>Returned back old background file path</p>
+      </description>
+    </release>
     <release version="3.7.2" date="2023-06-14">
       <description>
       <p>Fixed game session selection when current one is removed</p>
