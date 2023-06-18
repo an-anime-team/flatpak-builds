@@ -57,6 +57,14 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+    <release version="1.2.2" date="2023-06-18">
+      <description>
+      	<p>Added deletion of old patch files</p>
+        <p>Added telemetry disabling state support</p>
+        <p>Added Discord RPC icons updating</p>
+        <p>Returned back old background file path</p>
+      </description>
+    </release>
    <release version="1.2.1" date="2023-06-15">
       <description>
       	<p>See changelog at https://github.com/an-anime-team/the-honkers-railway-launcher/releases/tag/1.2.1</p>
