@@ -57,6 +57,14 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+    <release version="3.7.5" date="2023-07-14">
+      <description>
+        <p>Added support to the new wishes url cache location</p>
+        <p>Fixed telemetry disabling</p>
+        <p>Disabled patch applying for new installations</p>
+        <p>Updated translations: Italian, Hungarian, Japanese, Indonesian, Spanish, Turkish, Chinese</p>
+      </description>
+    </release>
     <release version="3.7.4" date="2023-06-19">
       <description>
         <p>*Hotfix* - Fix Patch applying</p>
