@@ -57,6 +57,11 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+    <release version="3.7.6" date="2023-07-15">
+      <description>
+        <p>Hotfix: Fixed game launching on installs without launcher.bat file</p>
+      </description>
+    </release>
     <release version="3.7.5" date="2023-07-14">
       <description>
         <p>Added support to the new wishes url cache location</p>
