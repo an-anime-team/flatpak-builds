@@ -57,6 +57,13 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+    <release version="1.2.4" date="2023-07-17">
+      <description>
+        <p>Fixed jadeite patch state handling from the metadata file</p>
+        <p>Fixed game pre-downloading button sensitivity when the update was partially downloaded, but then interrupted</p>
+        <p>Fixed game pre-downloading button visibility when jadeite patch state is not &quot;verified&quot;</p>
+      </description>
+    </release>
     <release version="1.2.3" date="2023-07-14">
       <description>
         <p>Fixed telemetry disabling</p>
