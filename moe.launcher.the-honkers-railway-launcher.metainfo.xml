@@ -57,6 +57,11 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+    <release version="1.2.5" date="2023-07-19">
+      <description>
+        <p>Added a workaround to remove outdated Telemetry.dll file which fixes login error 400 in game login screen</p>
+      </description>
+    </release>
     <release version="1.2.4" date="2023-07-17">
       <description>
         <p>Fixed jadeite patch state handling from the metadata file</p>
