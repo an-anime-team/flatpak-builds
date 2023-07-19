@@ -21,7 +21,7 @@ jobs:
       run: |
         dnf install -y wget flatpak gtk4-devel gtk4 libadwaita git curl openssl-devel rust cargo xorg-x11-server-Xvfb flatpak-builder python3-aiohttp python3-tenacity python3-gobject
         flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-        wget https://raw.githubusercontent.com/flatpak/flat-manager/master/flat-manager-client -O /usr/bin/flat-manager-client
+        wget https://raw.githubusercontent.com/flatpak/flat-manager/f6ef84fc39659065c7323e7680adff20add9068a/flat-manager-client -O /usr/bin/flat-manager-client
         chmod +x /usr/bin/flat-manager-client
         git config --global protocol.file.allow always
     - uses: actions/checkout@v3
