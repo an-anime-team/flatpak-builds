@@ -57,6 +57,13 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+    <release version="1.2.2" date="2023-07-20">
+      <description>
+        <p>Fixed telemetry disabling</p>
+        <p>Fixed jadeite patch state handling from the metadata file</p>
+        <p>Updated translations: Italian, Hungarian, Japanese, Indonesian, Spanish, Turkish, Chinese</p>
+      </description>
+    </release>
     <release version="1.2.1" date="2023-06-18">
       <description>
         <p>Added deletion of old patch files</p>
