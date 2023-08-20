@@ -86,7 +86,7 @@ flatpak override --filesystem=xdg-config/MangoHud:ro moe.launcher.an-anime-game-
 To use gamescope, install the Gamescope Flatpak extension:
 
 ```sh
-flatpak install flathub com.valvesoftware.Steam.Utility.gamescope
+flatpak install flathub org.freedesktop.Platform.VulkanLayer.gamescope
 ```
 
 ### Discord RPC
