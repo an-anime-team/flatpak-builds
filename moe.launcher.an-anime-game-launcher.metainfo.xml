@@ -59,8 +59,8 @@
   <releases>
     <release version="3.9.0" date="2023-08-20">
       <description>
-        <p>Added `--session <name>` flag to switch active session</p>
-        <p>Added `%launch_args%` magic word for game launching command</p>
+        <p>Added --session (name) flag to switch active session</p>
+        <p>Added %launch_args% magic word for game launching command</p>
         <p>Added feature to map wine drives</p>
         <p>Added Portuguese and Polish</p>
         <p>Removed patch integration</p>
