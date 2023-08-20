@@ -57,6 +57,14 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+      <release version="1.4.0" date="2023-08-20">
+      <description>
+        <p>Added feature to map wine drives</p>
+        <p>Added `%launch_args%` magic word for game launching command</p>
+        <p>Added `--session <name>` flag to switch active session</p>
+        <p>Added Portugese and Polish</p>
+      </description>
+    </release>
     <release version="1.3.0" date="2023-08-02">
       <description>
         <p>Added new gamescope version compatibility</p>
