@@ -62,7 +62,7 @@
         <li>Added `--session <name>` flag to switch active session</li>
         <li>Added `%launch_args%` magic word for game launching command</li>
         <li>Added feature to map wine drives</li>
-        <li>Added Portuguese & Polish</li>
+        <li>Added Portuguese and Polish</li>
         <li>Removed patch integration</li>
       </description>
     </release>
