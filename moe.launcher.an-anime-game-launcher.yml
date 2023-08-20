@@ -1,16 +1,6 @@
 app-id: moe.launcher.an-anime-game-launcher
 runtime: org.gnome.Platform
 runtime-version: '43'
-add-extensions:
-  com.valvesoftware.Steam.Utility:
-    subdirectories: true
-    directory: utils
-    version: stable
-    versions: stable;beta;test
-    add-ld-path: lib
-    merge-dirs: bin
-    no-autodownload: true
-    autodelete: true
 sdk: org.gnome.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.rust-stable
@@ -122,7 +112,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/an-anime-team/an-anime-game-launcher
-        tag: &aagl_tag 3.8.0
+        tag: &aagl_tag 3.9.0
       - type: file
         path: moe.launcher.an-anime-game-launcher.sh
       - cargo-sources.json
