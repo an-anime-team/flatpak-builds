@@ -90,8 +90,8 @@ modules:
         git-fetch -and -not -name git-reset -and -not -name git-clone -delete
     sources:
       - type: archive
-        url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.41.0.tar.xz
-        sha256: e748bafd424cfe80b212cbc6f1bbccc3a47d4862fb1eb7988877750478568040
+        url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.42.0.tar.xz
+        sha256: 3278210e9fd2994b8484dd7e3ddd9ea8b940ef52170cdb606daa94d887c93b0d
         x-checker-data:
           type: anitya
           project-id: 5350
