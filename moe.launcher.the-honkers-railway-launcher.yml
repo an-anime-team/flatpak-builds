@@ -72,6 +72,11 @@ modules:
           type: anitya
           project-id: 17410
           url-template: https://github.com/FeralInteractive/gamemode/releases/download/$version/gamemode-$version.tar.xz
+      
+      # https://github.com/FeralInteractive/gamemode/issues/413
+      # patch from https://github.com/FeralInteractive/gamemode/commit/4934191b1928ef695c3e8af21e75781f8591745f
+      - type: patch
+        path: ./fix-gamemode.patch
 
   - name: gamemoderun
     buildsystem: simple
