@@ -102,6 +102,15 @@ modules:
           project-id: 5350
           url-template: https://mirrors.edge.kernel.org/pub/software/scm/git/git-$version.tar.xz
 
+  - name: p7zip
+    buildsystem: simple
+    build-commands:
+      - make 7z install DEST_HOME=/app
+    sources:
+      - type: git
+        url: https://github.com/p7zip-project/p7zip
+        tag: v17.05
+
   - name: aagl
     buildsystem: simple
     build-options:
@@ -117,7 +126,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/an-anime-team/an-anime-game-launcher
-        tag: &aagl_tag 3.9.0
+        tag: &aagl_tag 3.9.1
       - type: file
         path: moe.launcher.an-anime-game-launcher.sh
       - cargo-sources.json
