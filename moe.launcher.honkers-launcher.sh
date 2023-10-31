@@ -22,6 +22,6 @@ if readlink /etc/hosts > /dev/null; then
 EOF
 fi
 
-export PATH=$PATH:/app/utils/bin
+export PATH=$PATH:/usr/lib/extensions/vulkan/gamescope/bin
 
 exec honkers-launcher "$@"
