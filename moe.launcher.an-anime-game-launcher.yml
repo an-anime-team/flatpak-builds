@@ -72,7 +72,7 @@ modules:
           type: anitya
           project-id: 17410
           url-template: https://github.com/FeralInteractive/gamemode/releases/download/$version/gamemode-$version.tar.xz
-      
+
       # https://github.com/FeralInteractive/gamemode/issues/413
       # patch from https://github.com/FeralInteractive/gamemode/commit/4934191b1928ef695c3e8af21e75781f8591745f
       - type: patch
@@ -95,8 +95,8 @@ modules:
         git-fetch -and -not -name git-reset -and -not -name git-clone -delete
     sources:
       - type: archive
-        url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.42.0.tar.xz
-        sha256: 3278210e9fd2994b8484dd7e3ddd9ea8b940ef52170cdb606daa94d887c93b0d
+        url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.42.1.tar.xz
+        sha256: 8e46fa96bf35a65625d85fde50391e39bc0620d1bb39afb70b96c4a237a1a4f7
         x-checker-data:
           type: anitya
           project-id: 5350
