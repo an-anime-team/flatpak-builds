@@ -57,6 +57,14 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+    <release version="3.9.2" date="2023-11-13">
+      <description>
+        <p>Added Korean and Dutch, updated Japanese translations</p>
+        <p>Added 4.2.0 voiceover sizes</p>
+        <p>Made free space checks resolve symlinks</p>
+        <p>Updated development libraries versions</p>
+      </description>
+    </release>
     <release version="3.9.1" date="2023-09-28">
       <description>
         <p>Added support for segmented zip archives (fixed initial game downloading)</p>
