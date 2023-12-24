@@ -57,6 +57,15 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+    <release version="3.9.3" date="2023-12-23">
+      <description>
+        <p>Added UpdatingPermissions installation step</p>
+        <p>Downloaders now will skip finished files and truncate them if needed</p>
+        <p>Increased voiceovers version prediction error</p>
+        <p>Updated FPS unlocker version which fixes new game version integration issue</p>
+        <p>Updated Turkish, German, Chinese, and Polish translations</p>
+      </description>
+    </release>
     <release version="3.9.2" date="2023-11-13">
       <description>
         <p>Added Korean and Dutch, updated Japanese translations</p>
