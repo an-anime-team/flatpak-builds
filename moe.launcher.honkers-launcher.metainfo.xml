@@ -57,6 +57,29 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+    <release version="1.6.0" date="2023-08-29">
+      <description>
+        <p>Added new Concerning patch status</p>
+        <p>Made free space checks resolve symlinks</p>
+        <p>Added UpdatingPermissions installation step</p>
+        <p>Downloaders now will skip finished files and truncate them if needed</p>
+        <p>Added new fix for the API responses</p>
+        <p>Added special tooltips for concerning patch status</p>
+        <p>Fixed "Kill game process" button</p>
+        <p>Added Vietnamese, Korean, and Dutch, updated Turkish, German, Polish, and Chinese translations</p>
+      </description>
+    </release>
+    <release version="1.5.0" date="2023-08-20">
+      <description>
+        <p>Added feature to map wine drives</p>
+        <p>Added %launch_args% magic word for game launching command.</p>
+        <p>Now you can use %bash_command% &lt;script&gt; %launch_args% to run custom script</p>
+        <p>Added --session &lt;name&gt; flag to switch active session</p>
+        <p>Improved files migration code. In the best case scenarios, it will work immediately now</p>
+        <p>Updated Chinese game API link</p>
+        <p>Added Portuguese and Polish, updated Swedish translations</p>
+      </description>
+    </release>
     <release version="1.4.0" date="2023-08-04">
       <description>
         <p>Added multi-region support</p>
