@@ -57,6 +57,12 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+    <release version="1.5.2" date="2023-12-29">
+      <description>
+        <p>Fixed "Kill game process" button</p>
+        <p>Updated Turkish, German, Polish, and Chinese translations</p>
+      </description>
+    </release>
     <release version="1.5.1" date="2023-11-15">
       <description>
         <p>Added "UpdatingPermissions" installation step</p>
