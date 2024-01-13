@@ -5,9 +5,6 @@ for i in {0..9}; do
     test -S $XDG_RUNTIME_DIR/discord-ipc-$i || ln -sf {app/com.discordapp.Discord,$XDG_RUNTIME_DIR}/discord-ipc-$i;
 done
 
-# Change references to old flatpak data dir in config file to new data dir
-sed -i s/moe.launcher.an-anime-game-launcher-gtk/moe.launcher.an-anime-game-launcher/ $XDG_DATA_HOME/anime-game-launcher/config.json
-
 # Modify /etc/hosts to block logging servers
 # This is possible because /etc is a writable tmpfs in flatpak
 if readlink /etc/hosts > /dev/null; then
@@ -46,4 +43,4 @@ fi
 
 export PATH=$PATH:/usr/lib/extensions/vulkan/gamescope/bin
 
-exec anime-game-launcher "$@"
+exec anime-games-launcher "$@"

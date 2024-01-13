@@ -1,11 +1,11 @@
-app-id: moe.launcher.an-anime-game-launcher
+app-id: moe.launcher.anime-games-launcher
 runtime: org.gnome.Platform
 runtime-version: '45'
 sdk: org.gnome.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.rust-stable
-command: moe.launcher.an-anime-game-launcher
-rename-desktop-file: anime-game-launcher.desktop
+command: moe.launcher.anime-games-launcher
+rename-desktop-file: anime-games-launcher.desktop
 finish-args:
   - --share=network
   - --share=ipc
@@ -84,24 +84,6 @@ modules:
       - install -Dm755 data/gamemoderun -t /app/bin
     sources: *gamemode_sources
 
-  - name: git
-    buildsystem: autotools
-    config-opts:
-      - --without-tcltk
-    post-install:
-      - rm -rf /app/share/gitweb
-      - find /app/libexec/git-core/ -type f -not -name git -and -not -name git-rev-parse
-        -and -not -name git-remote -and -not -name git-remote-https -and -not -name
-        git-fetch -and -not -name git-reset -and -not -name git-clone -delete
-    sources:
-      - type: archive
-        url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.42.1.tar.xz
-        sha256: 8e46fa96bf35a65625d85fde50391e39bc0620d1bb39afb70b96c4a237a1a4f7
-        x-checker-data:
-          type: anitya
-          project-id: 5350
-          url-template: https://mirrors.edge.kernel.org/pub/software/scm/git/git-$version.tar.xz
-
   - name: p7zip
     buildsystem: simple
     build-commands:
@@ -111,7 +93,7 @@ modules:
         url: https://github.com/p7zip-project/p7zip
         tag: v17.05
 
-  - name: aagl
+  - name: launcher
     buildsystem: simple
     build-options:
       env:
@@ -120,33 +102,33 @@ modules:
       - cargo --offline fetch --manifest-path Cargo.toml --verbose
       - cargo --offline build --release --verbose
 
-      - cp target/release/anime-game-launcher /app/bin/anime-game-launcher
-      - cp moe.launcher.an-anime-game-launcher.sh /app/bin/moe.launcher.an-anime-game-launcher
-      - chmod +x /app/bin/moe.launcher.an-anime-game-launcher
+      - cp target/release/anime-games-launcher /app/bin/anime-games-launcher
+      - cp moe.launcher.anime-games-launcher.sh /app/bin/moe.launcher.anime-games-launcher
+      - chmod +x /app/bin/moe.launcher.anime-games-launcher
     sources:
       - type: git
-        url: https://github.com/an-anime-team/an-anime-game-launcher
-        tag: &aagl_tag 3.9.4
+        url: https://github.com/an-anime-team/anime-games-launcher
+        tag: &launcher_tag v1.0.0
       - type: file
-        path: moe.launcher.an-anime-game-launcher.sh
+        path: moe.launcher.anime-games-launcher.sh
       - cargo-sources.json
 
-  # not included in aagl so the launcher doesn't have to be rebuilt every time the metadata is changed
+  # not included above so the launcher doesn't have to be rebuilt every time the metadata is changed
   - name: metadata
     buildsystem: simple
     build-commands:
       - mkdir -p /app/share/icons/hicolor/512x512/apps/
-      - cp assets/images/icon.png /app/share/icons/hicolor/512x512/apps/moe.launcher.an-anime-game-launcher.png
-      - desktop-file-install --dir=/app/share/applications --set-key=Exec --set-value=moe.launcher.an-anime-game-launcher
-        --set-key=Icon --set-value=moe.launcher.an-anime-game-launcher assets/anime-game-launcher.desktop
+      - cp assets/images/icon.png /app/share/icons/hicolor/512x512/apps/moe.launcher.anime-games-launcher.png
+      - desktop-file-install --dir=/app/share/applications --set-key=Exec --set-value=moe.launcher.anime-games-launcher
+        --set-key=Icon --set-value=moe.launcher.anime-games-launcher assets/anime-games-launcher.desktop
 
       - mkdir -p /app/share/metainfo/
-      - cp moe.launcher.an-anime-game-launcher.metainfo.xml /app/share/metainfo/
+      - cp moe.launcher.anime-games-launcher.metainfo.xml /app/share/metainfo/
 
       - mkdir -p /app/utils/
     sources:
       - type: git
-        url: https://github.com/an-anime-team/an-anime-game-launcher
-        tag: *aagl_tag
+        url: https://github.com/an-anime-team/anime-games-launcher
+        tag: *launcher_tag
       - type: file
-        path: moe.launcher.an-anime-game-launcher.metainfo.xml
+        path: moe.launcher.anime-games-launcher.metainfo.xml
