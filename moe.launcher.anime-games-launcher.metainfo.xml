@@ -50,6 +50,27 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+    <release version="1.0.2" date="2024-01-21">
+      <description>
+        <p>Hotfix release. Previous one had a last-minute change with the German locale support which I didn't test.</p>
+        <p>Changed:</p>
+        <p>Fixed German translations</p>
+        <p>Replaced v1_network_http_get with more powerful v1_network_fetch</p>
+      </description>
+    </release>
+    <release version="1.0.1" date="2024-01-21">
+      <description>
+        <p>Launcher now will check installed games versions and put them to the "outdated games" section if their updates are available.</p>
+        <p>Added:</p>
+        <p>Added Chinese, Portuguese, German translations</p>
+        <p>Added outdated games category</p>
+        <p>Added virtual desktop preference</p>
+        <p>Added xxhash support</p>
+        <p>Added pre_transition optional API</p>
+        <p>Changed:</p>
+        <p>Updated v1_network_http_get standard</p>
+      </description>
+    </release>
     <release version="1.0.0" date="2024-01-12">
       <description>
         <p>Throughout the time I've been working on this project, I've often been asked about creating some sort of "multilauncher" to run all the games instead of using different launchers for different games. As time went on, the number of games our team was supporting grew, and with it the workload on me grew.</p>

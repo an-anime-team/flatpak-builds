@@ -108,7 +108,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/an-anime-team/anime-games-launcher
-        tag: &launcher_tag v1.0.0
+        tag: &launcher_tag v1.0.2
       - type: file
         path: moe.launcher.anime-games-launcher.sh
       - cargo-sources.json
