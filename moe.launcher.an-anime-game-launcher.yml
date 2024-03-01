@@ -66,8 +66,8 @@ modules:
       - -Dwith-sd-bus-provider=no-daemon
     sources: &gamemode_sources
       - type: archive
-        url: https://github.com/FeralInteractive/gamemode/releases/download/1.7/gamemode-1.7.tar.xz
-        sha256: c1860f76f1d4c0d6e3965e52de21c824f24791049946da728da50f0c63748389
+        url: https://github.com/FeralInteractive/gamemode/releases/download/1.8.1/gamemode-1.8.1.tar.xz
+        sha256: cdb117d05d65dbd03c0bd2104df874a1f878db8f23cc4d55bfa44e832482269e
         x-checker-data:
           type: anitya
           project-id: 17410
@@ -95,8 +95,8 @@ modules:
         git-fetch -and -not -name git-reset -and -not -name git-clone -delete
     sources:
       - type: archive
-        url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.42.1.tar.xz
-        sha256: 8e46fa96bf35a65625d85fde50391e39bc0620d1bb39afb70b96c4a237a1a4f7
+        url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.44.0.tar.xz
+        sha256: e358738dcb5b5ea340ce900a0015c03ae86e804e7ff64e47aa4631ddee681de3
         x-checker-data:
           type: anitya
           project-id: 5350
