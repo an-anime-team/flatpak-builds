@@ -57,6 +57,18 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+    <release version="1.6.1" date="2024-03-24">
+      <description>
+        <p>Bundle applications-system-symbolic icon to the app</p>
+        <p>Added "force grab cursor" option to the gamescope settings</p>
+        <p>Added Thai and Ukrainian</p>
+        <p>Update wish url</p>
+        <p>Updated dependencies</p>
+        <p>Improved app args parsing</p>
+        <p>Updated locales</p>
+        <p>Fixed GtkSwitch UI state representation</p>
+      </description>
+    </release>
     <release version="1.6.0" date="2023-08-29">
       <description>
         <p>Added new Concerning patch status</p>
