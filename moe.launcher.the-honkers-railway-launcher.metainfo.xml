@@ -57,7 +57,13 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
-    <release version="1.5.3" date="2024-04-24">
+    <release version="1.5.4" date="2024-03-27">
+      <description>
+        <p>Updated voiceovers sizes</p>
+        <p>Updated game version parsing algorithm</p>
+      </description>
+    </release>
+    <release version="1.5.3" date="2024-03-24">
       <description>
         <p>Bundle applications-system-symbolic icon to the app</p>
         <p>Added "force grab cursor" option to the gamescope settings</p>
