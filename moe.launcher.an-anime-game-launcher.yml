@@ -66,17 +66,12 @@ modules:
       - -Dwith-sd-bus-provider=no-daemon
     sources: &gamemode_sources
       - type: archive
-        url: https://github.com/FeralInteractive/gamemode/releases/download/1.7/gamemode-1.7.tar.xz
-        sha256: c1860f76f1d4c0d6e3965e52de21c824f24791049946da728da50f0c63748389
+        url: https://github.com/FeralInteractive/gamemode/releases/download/1.8.1/gamemode-1.8.1.tar.xz
+        sha256: cdb117d05d65dbd03c0bd2104df874a1f878db8f23cc4d55bfa44e832482269e
         x-checker-data:
           type: anitya
           project-id: 17410
           url-template: https://github.com/FeralInteractive/gamemode/releases/download/$version/gamemode-$version.tar.xz
-
-      # https://github.com/FeralInteractive/gamemode/issues/413
-      # patch from https://github.com/FeralInteractive/gamemode/commit/4934191b1928ef695c3e8af21e75781f8591745f
-      - type: patch
-        path: ./fix-gamemode.patch
 
   - name: gamemoderun
     buildsystem: simple
