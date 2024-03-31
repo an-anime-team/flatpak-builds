@@ -101,6 +101,56 @@ modules:
           type: anitya
           project-id: 5350
           url-template: https://mirrors.edge.kernel.org/pub/software/scm/git/git-$version.tar.xz
+          
+  # freedesktop sdk does not provide avdec_h264 due to not compiling ffmpeg without h.264 support, so we have to compile it ourselves
+  # this is mostly taken from the freedesktop sdk repository and the kdenlive flatpak manifest
+  - name: ffmpeg
+    buildsystem: autotools
+    config-opts:
+      - --disable-doc 
+      - --disable-static 
+      - --enable-shared 
+      - --enable-gnutls 
+      - --enable-gcrypt 
+      - --enable-ladspa 
+      - --enable-lcms2 
+      - --enable-libaom 
+      - --enable-libdav1d 
+      - --enable-libmp3lame 
+      - --enable-libfontconfig 
+      - --enable-libfreetype 
+      - --enable-libfribidi 
+      - --enable-libopus 
+      - --enable-libpulse 
+      - --enable-libspeex 
+      - --enable-libtheora 
+      - --enable-libvorbis 
+      - --enable-libvpx 
+      - --enable-librsvg 
+      - --enable-libwebp 
+      - --enable-libxml2 
+      - --enable-libopenjpeg 
+      - --enable-openal 
+      - --enable-opengl 
+      - --enable-sdl2 
+      - --enable-vulkan 
+      - --enable-zlib 
+      - --enable-libv4l2 
+      - --enable-libxcb 
+      - --enable-vdpau 
+      - --enable-vaapi 
+      - --enable-pthreads
+      - --enable-libfdk-aac
+      - --enable-decoder="h264"
+    build-options:
+      prepend-path: /usr/lib/sdk/llvm17/bin
+      prepend-ld-library-path: /usr/lib/sdk/llvm17/lib
+    cleanup:
+      - /share/ffmpeg/examples
+    sources:
+      - type: git
+        url: https://git.ffmpeg.org/ffmpeg.git
+        tag: n6.1.1
 
   - name: railway
     buildsystem: simple
