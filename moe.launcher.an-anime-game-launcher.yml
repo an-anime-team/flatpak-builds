@@ -90,8 +90,8 @@ modules:
         git-fetch -and -not -name git-reset -and -not -name git-clone -delete
     sources:
       - type: archive
-        url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.44.0.tar.xz
-        sha256: e358738dcb5b5ea340ce900a0015c03ae86e804e7ff64e47aa4631ddee681de3
+        url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.45.0.tar.xz
+        sha256: 0aac200bd06476e7df1ff026eb123c6827bc10fe69d2823b4bf2ebebe5953429
         x-checker-data:
           type: anitya
           project-id: 5350
@@ -111,38 +111,38 @@ modules:
   - name: ffmpeg
     buildsystem: autotools
     config-opts:
-      - --disable-doc 
-      - --disable-static 
-      - --enable-shared 
-      - --enable-gnutls 
-      - --enable-gcrypt 
-      - --enable-ladspa 
-      - --enable-lcms2 
-      - --enable-libaom 
-      - --enable-libdav1d 
-      - --enable-libmp3lame 
-      - --enable-libfontconfig 
-      - --enable-libfreetype 
-      - --enable-libfribidi 
-      - --enable-libopus 
-      - --enable-libpulse 
-      - --enable-libspeex 
-      - --enable-libtheora 
-      - --enable-libvorbis 
-      - --enable-libvpx 
-      - --enable-librsvg 
-      - --enable-libwebp 
-      - --enable-libxml2 
-      - --enable-libopenjpeg 
-      - --enable-openal 
-      - --enable-opengl 
-      - --enable-sdl2 
-      - --enable-vulkan 
-      - --enable-zlib 
-      - --enable-libv4l2 
-      - --enable-libxcb 
-      - --enable-vdpau 
-      - --enable-vaapi 
+      - --disable-doc
+      - --disable-static
+      - --enable-shared
+      - --enable-gnutls
+      - --enable-gcrypt
+      - --enable-ladspa
+      - --enable-lcms2
+      - --enable-libaom
+      - --enable-libdav1d
+      - --enable-libmp3lame
+      - --enable-libfontconfig
+      - --enable-libfreetype
+      - --enable-libfribidi
+      - --enable-libopus
+      - --enable-libpulse
+      - --enable-libspeex
+      - --enable-libtheora
+      - --enable-libvorbis
+      - --enable-libvpx
+      - --enable-librsvg
+      - --enable-libwebp
+      - --enable-libxml2
+      - --enable-libopenjpeg
+      - --enable-openal
+      - --enable-opengl
+      - --enable-sdl2
+      - --enable-vulkan
+      - --enable-zlib
+      - --enable-libv4l2
+      - --enable-libxcb
+      - --enable-vdpau
+      - --enable-vaapi
       - --enable-pthreads
       - --enable-libfdk-aac
       - --enable-decoder="h264"
