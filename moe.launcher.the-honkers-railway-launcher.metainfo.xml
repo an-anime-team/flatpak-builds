@@ -57,6 +57,11 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+    <release version="1.5.5" date="2024-05-08">
+      <description>
+        <p>Added Czech language</p>
+      </description>
+    </release>
     <release version="1.5.4" date="2024-03-27">
       <description>
         <p>Updated voiceovers sizes</p>
