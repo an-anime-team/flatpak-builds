@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <component type="desktop-application">
-  <!-- Copyright 2022 Laurin Neff -->
   <id>moe.launcher.honkers-launcher</id>
   <name>Honkers Launcher</name>
   <summary>Play your favorite anime game on Linux</summary>
@@ -57,11 +56,17 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+    <release version="1.6.2" date="2024-05-08">
+      <description>
+        <p>Updated API links</p>
+        <p>Added Czech translations</p>
+      </description>
+    </release>
     <release version="1.6.1" date="2024-03-24">
       <description>
         <p>Bundle applications-system-symbolic icon to the app</p>
         <p>Added "force grab cursor" option to the gamescope settings</p>
-        <p>Added Thai and Ukrainian</p>
+        <p>Added Thai and Ukrainian translations</p>
         <p>Update wish url</p>
         <p>Updated dependencies</p>
         <p>Improved app args parsing</p>

@@ -176,7 +176,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/an-anime-team/honkers-launcher
-        tag: &honkers_tag 1.6.1
+        tag: &honkers_tag 1.6.2
       - type: file
         path: moe.launcher.honkers-launcher.sh
       - cargo-sources.json
