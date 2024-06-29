@@ -5,7 +5,7 @@ on:
     branches:
       - 'main'
     paths:
-      - 'moe.launcher.an-anime-game-launcher.yml'
+      - 'moe.launcher.wavey-launcher.yml'
       
   workflow_dispatch:
 
@@ -31,9 +31,9 @@ jobs:
     - uses: flatpak/flatpak-github-actions/flatpak-builder@v5
       name: "Build"
       with:
-        bundle: moe.launcher.an-anime-game-launcher.flatpak
+        bundle: moe.launcher.wavey-launcher.flatpak
         build-bundle: false
-        manifest-path: moe.launcher.an-anime-game-launcher.yml
+        manifest-path: moe.launcher.wavey-launcher.yml
         cache-key: flatpak-builder-${{ github.sha }}
     - uses: flatpak/flatpak-github-actions/flat-manager@v5
       name: "Deploy"
