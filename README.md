@@ -1,4 +1,4 @@
-# An Anime Game Launcher Flatpak
+# Wavey Launcher Flatpak
 
 ## Installation
 
@@ -18,7 +18,7 @@ flatpak remote-add --if-not-exists launcher.moe https://gol.launcher.moe/gol.lau
 Now the only thing remaining is to install the launcher
 
 ```sh
-flatpak install launcher.moe moe.launcher.an-anime-game-launcher
+flatpak install launcher.moe moe.launcher.wavey-launcher
 ```
 
 ## Uninstall
@@ -26,13 +26,13 @@ flatpak install launcher.moe moe.launcher.an-anime-game-launcher
 To uninstall the launcher including all the files run the following
 
 ```sh
-flatpak uninstall --delete-data moe.launcher.an-anime-game-launcher
+flatpak uninstall --delete-data moe.launcher.wavey-launcher
 ```
 
 or to keep the files simply run
 
 ```sh
-flatpak uninstall moe.launcher.an-anime-game-launcher
+flatpak uninstall moe.launcher.wavey-launcher
 ```
 
 ## Additional configuration
@@ -49,21 +49,10 @@ mkdir -p $GAME_PATH/prefix $GAME_PATH/game $GAME_PATH/temp
 Then, grant the flatpak permission to access these paths:
 
 ```sh
-flatpak override --user --filesystem=$GAME_PATH moe.launcher.an-anime-game-launcher
+flatpak override --user --filesystem=$GAME_PATH moe.launcher.wavey-launcher
 ```
 
 Then, start the launcher and install the game.
-
-### /etc/hosts
-
-Unlike the other packages, the flatpak does _not_ require you to edit
-/etc/hosts. By default, logging and the optional proxy/cdn servers are blocked.
-If you want to unblock the optional servers, set the `NO_BLOCK_PROXY`
-environment variable:
-
-```sh
-flatpak override --env=NO_BLOCK_PROXY=true moe.launcher.an-anime-game-launcher
-```
 
 ### MangoHud
 
@@ -74,11 +63,11 @@ flatpak install flathub org.freedesktop.Platform.VulkanLayer.MangoHud
 ```
 
 By default, the MangoHud configuration is stored at
-`~/.var/app/moe.launcher.an-anime-game-launcher-gtk/config/MangoHud/MangoHud.conf`.
+`~/.var/app/moe.launcher.wavey-launcher-gtk/config/MangoHud/MangoHud.conf`.
 To use the config file from the host system instead, run this command:
 
 ```sh
-flatpak override --filesystem=xdg-config/MangoHud:ro moe.launcher.an-anime-game-launcher
+flatpak override --filesystem=xdg-config/MangoHud:ro moe.launcher.wavey-launcher
 ```
 
 ### Gamescope
@@ -101,5 +90,5 @@ GameMode status, this won't work due to an
 As a workaround, you can run this command:
 
 ```sh
-flatpak override --talk-name=com.feralinteractive.GameMode moe.launcher.an-anime-game-launcher
+flatpak override --talk-name=com.feralinteractive.GameMode moe.launcher.wavey-launcher
 ```

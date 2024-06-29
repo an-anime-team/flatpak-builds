@@ -1,11 +1,11 @@
-app-id: moe.launcher.an-anime-game-launcher
+app-id: moe.launcher.wavey-launcher
 runtime: org.gnome.Platform
 runtime-version: '45'
 sdk: org.gnome.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.rust-stable
-command: moe.launcher.an-anime-game-launcher
-rename-desktop-file: anime-game-launcher.desktop
+command: moe.launcher.wavey-launcher
+rename-desktop-file: wavey-launcher.desktop
 finish-args:
   - --share=network
   - --share=ipc
@@ -36,26 +36,6 @@ cleanup:
   - '*.a'
 
 modules:
-  - name: xdelta3
-    buildsystem: autotools
-    sources:
-      - type: archive
-        url: https://github.com/jmacd/xdelta/archive/refs/tags/v3.1.0.tar.gz
-        sha256: 7515cf5378fca287a57f4e2fee1094aabc79569cfe60d91e06021a8fd7bae29d
-        strip-components: 2
-        x-checker-data:
-          type: anitya
-          project-id: 5177
-          url-template: https://github.com/jmacd/xdelta/archive/refs/tags/v$version.tar.gz
-      - type: shell
-        commands:
-          - aclocal
-          - autoreconf --install
-          - libtoolize
-          - autoconf
-          - autoheader
-          - automake --add-missing
-          - automake
 
   # copy/pasted from bottles
   - name: gamemode
@@ -96,15 +76,6 @@ modules:
           type: anitya
           project-id: 5350
           url-template: https://mirrors.edge.kernel.org/pub/software/scm/git/git-$version.tar.xz
-
-  - name: p7zip
-    buildsystem: simple
-    build-commands:
-      - make 7z install DEST_HOME=/app
-    sources:
-      - type: git
-        url: https://github.com/p7zip-project/p7zip
-        tag: v17.05
 
   # freedesktop sdk does not provide avdec_h264 due to not compiling ffmpeg without h.264 support, so we have to compile it ourselves
   # this is mostly taken from the freedesktop sdk repository and the kdenlive flatpak manifest
@@ -156,7 +127,7 @@ modules:
         url: https://git.ffmpeg.org/ffmpeg.git
         tag: n6.1.1
 
-  - name: aagl
+  - name: wavey
     buildsystem: simple
     build-options:
       env:
@@ -165,33 +136,33 @@ modules:
       - cargo --offline fetch --manifest-path Cargo.toml --verbose
       - cargo --offline build --release --verbose
 
-      - cp target/release/anime-game-launcher /app/bin/anime-game-launcher
-      - cp moe.launcher.an-anime-game-launcher.sh /app/bin/moe.launcher.an-anime-game-launcher
-      - chmod +x /app/bin/moe.launcher.an-anime-game-launcher
+      - cp target/release/wavey-launcher /app/bin/wavey-launcher
+      - cp moe.launcher.wavey-launcher.sh /app/bin/moe.launcher.wavey-launcher
+      - chmod +x /app/bin/moe.launcher.wavey-launcher
     sources:
       - type: git
-        url: https://github.com/an-anime-team/an-anime-game-launcher
-        tag: &aagl_tag 3.10.0
+        url: https://github.com/an-anime-team/wavey-launcher
+        tag: &wavey_tag 1.0.0
       - type: file
-        path: moe.launcher.an-anime-game-launcher.sh
+        path: moe.launcher.wavey-launcher.sh
       - cargo-sources.json
 
-  # not included in aagl so the launcher doesn't have to be rebuilt every time the metadata is changed
+  # not included in wavey so the launcher doesn't have to be rebuilt every time the metadata is changed
   - name: metadata
     buildsystem: simple
     build-commands:
       - mkdir -p /app/share/icons/hicolor/512x512/apps/
-      - cp assets/images/icon.png /app/share/icons/hicolor/512x512/apps/moe.launcher.an-anime-game-launcher.png
-      - desktop-file-install --dir=/app/share/applications --set-key=Exec --set-value=moe.launcher.an-anime-game-launcher
-        --set-key=Icon --set-value=moe.launcher.an-anime-game-launcher assets/anime-game-launcher.desktop
+      - cp assets/images/icon.png /app/share/icons/hicolor/512x512/apps/moe.launcher.wavey-launcher.png
+      - desktop-file-install --dir=/app/share/applications --set-key=Exec --set-value=moe.launcher.wavey-launcher
+        --set-key=Icon --set-value=moe.launcher.wavey-launcher assets/wavey-launcher.desktop
 
       - mkdir -p /app/share/metainfo/
-      - cp moe.launcher.an-anime-game-launcher.metainfo.xml /app/share/metainfo/
+      - cp moe.launcher.wavey-launcher.metainfo.xml /app/share/metainfo/
 
       - mkdir -p /app/utils/
     sources:
       - type: git
-        url: https://github.com/an-anime-team/an-anime-game-launcher
-        tag: *aagl_tag
+        url: https://github.com/an-anime-team/wavey-launcher
+        tag: *wavey_tag
       - type: file
-        path: moe.launcher.an-anime-game-launcher.metainfo.xml
+        path: moe.launcher.wavey-launcher.metainfo.xml
