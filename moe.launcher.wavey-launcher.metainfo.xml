@@ -10,21 +10,21 @@
   <summary xml:lang="it">Gioca al tuo gioco anime preferito su Linux</summary>
   <summary xml:lang="hu">Játssz a kedvenc játékoddal Linux-on!</summary>
   <description>
-    <p>An Wavey Launcher is an unofficial launcher for a certain video game that handles setting up Wine, installing the game, and patching it to work on Linux.</p>
+    <p>Wavey Launcher is an unofficial launcher for a certain video game that handles setting up Wine, installing the game, and patching it to work on Linux.</p>
   </description>
   <description xml:lang="de">
-    <p>An Wavey Launcher ist ein inoffizieller Launcher für ein bestimmtes Videospiel, welcher die Einrichtung von Wine, die Installation des Spiels und das Patchen, dass es unter Linux läuft, übernimmt.</p>
+    <p>Wavey Launcher ist ein inoffizieller Launcher für ein bestimmtes Videospiel, welcher die Einrichtung von Wine, die Installation des Spiels und das Patchen, dass es unter Linux läuft, übernimmt.</p>
   </description>
   <description xml:lang="ru">
-    <p>An Wavey Launcher - это неофициальный лаунчер для определённой видео-игры, который настраивает Wine, устанавливает игру и применяет дополнительные патчи для предоставления возможности её работы на линуксе.</p>
+    <p>Wavey Launcher - это неофициальный лаунчер для определённой видео-игры, который настраивает Wine, устанавливает игру и применяет дополнительные патчи для предоставления возможности её работы на линуксе.</p>
   </description>
   <description xml:lang="es">
     <p>Launcher de un Juego de Anime es un launcher no oficial para cierto videojuego. Se encarga de configurar Wine, instalar el juego, y parchearlo para que funcione en Linux.</p>
   </description>
   <description xml:lang="it">
-    <p>An Wavey Launcher è un launcher non ufficiale per un certo videogioco anime che gestisce e configura automaticamente Wine, l'installazione e patching del gioco per farlo funzionare su Linux.</p>
+    <p>Wavey Launcher è un launcher non ufficiale per un certo videogioco anime che gestisce e configura automaticamente Wine, l'installazione e patching del gioco per farlo funzionare su Linux.</p>
   </description>
-  <description xml:lang="hu">Az Wavey Launcher egy nem-hivatalos launcher egy bizonyos videójátékhoz amely helyetted beállítja a Wine-t, telepíti a játékot, és alkalmazza a Linux patch-et hozzá.</description>
+  <description xml:lang="hu">Wavey Launcher egy nem-hivatalos launcher egy bizonyos videójátékhoz amely helyetted beállítja a Wine-t, telepíti a játékot, és alkalmazza a Linux patch-et hozzá.</description>
   <developer_name>An Anime Team</developer_name>
   <screenshots>
     <screenshot>
@@ -57,6 +57,11 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+    <release version="1.0.1" date="2024-06-29">
+      <description>
+        <p>Small fix</p>
+      </description>
+    </release>
     <release version="1.0.0" date="2024-06-29">
       <description>
         <p>Initial Release</p>
