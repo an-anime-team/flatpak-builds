@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <component type="desktop-application">
-  <!-- Copyright 2022 Laurin Neff -->
   <id>moe.launcher.the-honkers-railway-launcher</id>
   <name>The Honkers Railway Launcher</name>
   <summary>Play your favorite anime game on Linux</summary>
@@ -57,6 +56,13 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+    <release version="1.6.1" date="2024-07-02">
+      <description>
+        <p>Handle dwebp re-coding errors</p>
+        <p>Added 2.3.0 voiceovers sizes</p>
+        <p>Added workaround for wrong pre-downloads API format</p>
+      </description>
+    </release>
     <release version="1.6.0" date="2024-06-17">
       <description>
         <p>Fixed API, added Italian</p>
