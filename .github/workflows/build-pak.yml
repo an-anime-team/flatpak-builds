@@ -3,9 +3,9 @@ name: Build and Push Flatpak
 on:
   push:
     branches:
-      - 'main'
+      - 'sleepy'
     paths:
-      - 'moe.launcher.an-anime-game-launcher.yml'
+      - 'moe.launcher.sleepy-launcher.yml'
       
   workflow_dispatch:
 
@@ -26,14 +26,14 @@ jobs:
         git config --global protocol.file.allow always
     - uses: actions/checkout@v3
       with:
-        ref: main
+        ref: sleepy
         submodules: true
     - uses: flatpak/flatpak-github-actions/flatpak-builder@v5
       name: "Build"
       with:
-        bundle: moe.launcher.an-anime-game-launcher.flatpak
+        bundle: moe.launcher.sleepy-launcher.flatpak
         build-bundle: false
-        manifest-path: moe.launcher.an-anime-game-launcher.yml
+        manifest-path: moe.launcher.sleepy-launcher.yml
         cache-key: flatpak-builder-${{ github.sha }}
     - uses: flatpak/flatpak-github-actions/flat-manager@v5
       name: "Deploy"
