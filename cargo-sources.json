@@ -80,7 +80,7 @@
     {
         "type": "git",
         "url": "https://github.com/an-anime-team/anime-game-core",
-        "commit": "f141176fe5d940c89eee376354a07408c18fbcab",
+        "commit": "7944efab8516e581367963e82674060a33b9d72e",
         "dest": "cargo/vendor/anime-game-core"
     },
     {
@@ -92,7 +92,7 @@
     {
         "type": "git",
         "url": "https://github.com/an-anime-team/anime-launcher-sdk",
-        "commit": "82f6584c9888debb8540568e30f9fb3b3175d689",
+        "commit": "91ce712a941dbbee8b24b8beadaf50bb01dfb32f",
         "dest": "cargo/vendor/anime-launcher-sdk"
     },
     {
@@ -3496,15 +3496,15 @@
     },
     {
         "type": "file",
-        "url": "https://static.crates.io/crates/tinyvec/tinyvec-1.6.1.crate",
-        "sha256": "c55115c6fbe2d2bef26eb09ad74bde02d8255476fc0c7b515ef09fbb35742d82",
+        "url": "https://static.crates.io/crates/tinyvec/tinyvec-1.7.0.crate",
+        "sha256": "ce6b6a2fb3a985e99cebfaefa9faa3024743da73304ca1c683a36429613d3d22",
         "dest": "cargo/vendor",
-        "dest-filename": "tinyvec-1.6.1.crate"
+        "dest-filename": "tinyvec-1.7.0.crate"
     },
     {
         "type": "file",
-        "url": "data:%7B%22package%22%3A%20%22c55115c6fbe2d2bef26eb09ad74bde02d8255476fc0c7b515ef09fbb35742d82%22%2C%20%22files%22%3A%20%7B%7D%7D",
-        "dest": "cargo/vendor/tinyvec-1.6.1",
+        "url": "data:%7B%22package%22%3A%20%22ce6b6a2fb3a985e99cebfaefa9faa3024743da73304ca1c683a36429613d3d22%22%2C%20%22files%22%3A%20%7B%7D%7D",
+        "dest": "cargo/vendor/tinyvec-1.7.0",
         "dest-filename": ".cargo-checksum.json"
     },
     {
@@ -4172,15 +4172,15 @@
     },
     {
         "type": "file",
-        "url": "https://static.crates.io/crates/windows-targets/windows-targets-0.52.5.crate",
-        "sha256": "6f0713a46559409d202e70e28227288446bf7841d3211583a4b53e3f6d96e7eb",
+        "url": "https://static.crates.io/crates/windows-targets/windows-targets-0.52.6.crate",
+        "sha256": "9b724f72796e036ab90c1021d4780d4d3d648aca59e491e6b98e725b84e99973",
         "dest": "cargo/vendor",
-        "dest-filename": "windows-targets-0.52.5.crate"
+        "dest-filename": "windows-targets-0.52.6.crate"
     },
     {
         "type": "file",
-        "url": "data:%7B%22package%22%3A%20%226f0713a46559409d202e70e28227288446bf7841d3211583a4b53e3f6d96e7eb%22%2C%20%22files%22%3A%20%7B%7D%7D",
-        "dest": "cargo/vendor/windows-targets-0.52.5",
+        "url": "data:%7B%22package%22%3A%20%229b724f72796e036ab90c1021d4780d4d3d648aca59e491e6b98e725b84e99973%22%2C%20%22files%22%3A%20%7B%7D%7D",
+        "dest": "cargo/vendor/windows-targets-0.52.6",
         "dest-filename": ".cargo-checksum.json"
     },
     {
@@ -4198,15 +4198,15 @@
     },
     {
         "type": "file",
-        "url": "https://static.crates.io/crates/windows_aarch64_gnullvm/windows_aarch64_gnullvm-0.52.5.crate",
-        "sha256": "7088eed71e8b8dda258ecc8bac5fb1153c5cffaf2578fc8ff5d61e23578d3263",
+        "url": "https://static.crates.io/crates/windows_aarch64_gnullvm/windows_aarch64_gnullvm-0.52.6.crate",
+        "sha256": "32a4622180e7a0ec044bb555404c800bc9fd9ec262ec147edd5989ccd0c02cd3",
         "dest": "cargo/vendor",
-        "dest-filename": "windows_aarch64_gnullvm-0.52.5.crate"
+        "dest-filename": "windows_aarch64_gnullvm-0.52.6.crate"
     },
     {
         "type": "file",
-        "url": "data:%7B%22package%22%3A%20%227088eed71e8b8dda258ecc8bac5fb1153c5cffaf2578fc8ff5d61e23578d3263%22%2C%20%22files%22%3A%20%7B%7D%7D",
-        "dest": "cargo/vendor/windows_aarch64_gnullvm-0.52.5",
+        "url": "data:%7B%22package%22%3A%20%2232a4622180e7a0ec044bb555404c800bc9fd9ec262ec147edd5989ccd0c02cd3%22%2C%20%22files%22%3A%20%7B%7D%7D",
+        "dest": "cargo/vendor/windows_aarch64_gnullvm-0.52.6",
         "dest-filename": ".cargo-checksum.json"
     },
     {
@@ -4224,15 +4224,15 @@
     },
     {
         "type": "file",
-        "url": "https://static.crates.io/crates/windows_aarch64_msvc/windows_aarch64_msvc-0.52.5.crate",
-        "sha256": "9985fd1504e250c615ca5f281c3f7a6da76213ebd5ccc9561496568a2752afb6",
+        "url": "https://static.crates.io/crates/windows_aarch64_msvc/windows_aarch64_msvc-0.52.6.crate",
+        "sha256": "09ec2a7bb152e2252b53fa7803150007879548bc709c039df7627cabbd05d469",
         "dest": "cargo/vendor",
-        "dest-filename": "windows_aarch64_msvc-0.52.5.crate"
+        "dest-filename": "windows_aarch64_msvc-0.52.6.crate"
     },
     {
         "type": "file",
-        "url": "data:%7B%22package%22%3A%20%229985fd1504e250c615ca5f281c3f7a6da76213ebd5ccc9561496568a2752afb6%22%2C%20%22files%22%3A%20%7B%7D%7D",
-        "dest": "cargo/vendor/windows_aarch64_msvc-0.52.5",
+        "url": "data:%7B%22package%22%3A%20%2209ec2a7bb152e2252b53fa7803150007879548bc709c039df7627cabbd05d469%22%2C%20%22files%22%3A%20%7B%7D%7D",
+        "dest": "cargo/vendor/windows_aarch64_msvc-0.52.6",
         "dest-filename": ".cargo-checksum.json"
     },
     {
@@ -4250,28 +4250,28 @@
     },
     {
         "type": "file",
-        "url": "https://static.crates.io/crates/windows_i686_gnu/windows_i686_gnu-0.52.5.crate",
-        "sha256": "88ba073cf16d5372720ec942a8ccbf61626074c6d4dd2e745299726ce8b89670",
+        "url": "https://static.crates.io/crates/windows_i686_gnu/windows_i686_gnu-0.52.6.crate",
+        "sha256": "8e9b5ad5ab802e97eb8e295ac6720e509ee4c243f69d781394014ebfe8bbfa0b",
         "dest": "cargo/vendor",
-        "dest-filename": "windows_i686_gnu-0.52.5.crate"
+        "dest-filename": "windows_i686_gnu-0.52.6.crate"
     },
     {
         "type": "file",
-        "url": "data:%7B%22package%22%3A%20%2288ba073cf16d5372720ec942a8ccbf61626074c6d4dd2e745299726ce8b89670%22%2C%20%22files%22%3A%20%7B%7D%7D",
-        "dest": "cargo/vendor/windows_i686_gnu-0.52.5",
+        "url": "data:%7B%22package%22%3A%20%228e9b5ad5ab802e97eb8e295ac6720e509ee4c243f69d781394014ebfe8bbfa0b%22%2C%20%22files%22%3A%20%7B%7D%7D",
+        "dest": "cargo/vendor/windows_i686_gnu-0.52.6",
         "dest-filename": ".cargo-checksum.json"
     },
     {
         "type": "file",
-        "url": "https://static.crates.io/crates/windows_i686_gnullvm/windows_i686_gnullvm-0.52.5.crate",
-        "sha256": "87f4261229030a858f36b459e748ae97545d6f1ec60e5e0d6a3d32e0dc232ee9",
+        "url": "https://static.crates.io/crates/windows_i686_gnullvm/windows_i686_gnullvm-0.52.6.crate",
+        "sha256": "0eee52d38c090b3caa76c563b86c3a4bd71ef1a819287c19d586d7334ae8ed66",
         "dest": "cargo/vendor",
-        "dest-filename": "windows_i686_gnullvm-0.52.5.crate"
+        "dest-filename": "windows_i686_gnullvm-0.52.6.crate"
     },
     {
         "type": "file",
-        "url": "data:%7B%22package%22%3A%20%2287f4261229030a858f36b459e748ae97545d6f1ec60e5e0d6a3d32e0dc232ee9%22%2C%20%22files%22%3A%20%7B%7D%7D",
-        "dest": "cargo/vendor/windows_i686_gnullvm-0.52.5",
+        "url": "data:%7B%22package%22%3A%20%220eee52d38c090b3caa76c563b86c3a4bd71ef1a819287c19d586d7334ae8ed66%22%2C%20%22files%22%3A%20%7B%7D%7D",
+        "dest": "cargo/vendor/windows_i686_gnullvm-0.52.6",
         "dest-filename": ".cargo-checksum.json"
     },
     {
@@ -4289,15 +4289,15 @@
     },
     {
         "type": "file",
-        "url": "https://static.crates.io/crates/windows_i686_msvc/windows_i686_msvc-0.52.5.crate",
-        "sha256": "db3c2bf3d13d5b658be73463284eaf12830ac9a26a90c717b7f771dfe97487bf",
+        "url": "https://static.crates.io/crates/windows_i686_msvc/windows_i686_msvc-0.52.6.crate",
+        "sha256": "240948bc05c5e7c6dabba28bf89d89ffce3e303022809e73deaefe4f6ec56c66",
         "dest": "cargo/vendor",
-        "dest-filename": "windows_i686_msvc-0.52.5.crate"
+        "dest-filename": "windows_i686_msvc-0.52.6.crate"
     },
     {
         "type": "file",
-        "url": "data:%7B%22package%22%3A%20%22db3c2bf3d13d5b658be73463284eaf12830ac9a26a90c717b7f771dfe97487bf%22%2C%20%22files%22%3A%20%7B%7D%7D",
-        "dest": "cargo/vendor/windows_i686_msvc-0.52.5",
+        "url": "data:%7B%22package%22%3A%20%22240948bc05c5e7c6dabba28bf89d89ffce3e303022809e73deaefe4f6ec56c66%22%2C%20%22files%22%3A%20%7B%7D%7D",
+        "dest": "cargo/vendor/windows_i686_msvc-0.52.6",
         "dest-filename": ".cargo-checksum.json"
     },
     {
@@ -4315,15 +4315,15 @@
     },
     {
         "type": "file",
-        "url": "https://static.crates.io/crates/windows_x86_64_gnu/windows_x86_64_gnu-0.52.5.crate",
-        "sha256": "4e4246f76bdeff09eb48875a0fd3e2af6aada79d409d33011886d3e1581517d9",
+        "url": "https://static.crates.io/crates/windows_x86_64_gnu/windows_x86_64_gnu-0.52.6.crate",
+        "sha256": "147a5c80aabfbf0c7d901cb5895d1de30ef2907eb21fbbab29ca94c5b08b1a78",
         "dest": "cargo/vendor",
-        "dest-filename": "windows_x86_64_gnu-0.52.5.crate"
+        "dest-filename": "windows_x86_64_gnu-0.52.6.crate"
     },
     {
         "type": "file",
-        "url": "data:%7B%22package%22%3A%20%224e4246f76bdeff09eb48875a0fd3e2af6aada79d409d33011886d3e1581517d9%22%2C%20%22files%22%3A%20%7B%7D%7D",
-        "dest": "cargo/vendor/windows_x86_64_gnu-0.52.5",
+        "url": "data:%7B%22package%22%3A%20%22147a5c80aabfbf0c7d901cb5895d1de30ef2907eb21fbbab29ca94c5b08b1a78%22%2C%20%22files%22%3A%20%7B%7D%7D",
+        "dest": "cargo/vendor/windows_x86_64_gnu-0.52.6",
         "dest-filename": ".cargo-checksum.json"
     },
     {
@@ -4341,15 +4341,15 @@
     },
     {
         "type": "file",
-        "url": "https://static.crates.io/crates/windows_x86_64_gnullvm/windows_x86_64_gnullvm-0.52.5.crate",
-        "sha256": "852298e482cd67c356ddd9570386e2862b5673c85bd5f88df9ab6802b334c596",
+        "url": "https://static.crates.io/crates/windows_x86_64_gnullvm/windows_x86_64_gnullvm-0.52.6.crate",
+        "sha256": "24d5b23dc417412679681396f2b49f3de8c1473deb516bd34410872eff51ed0d",
         "dest": "cargo/vendor",
-        "dest-filename": "windows_x86_64_gnullvm-0.52.5.crate"
+        "dest-filename": "windows_x86_64_gnullvm-0.52.6.crate"
     },
     {
         "type": "file",
-        "url": "data:%7B%22package%22%3A%20%22852298e482cd67c356ddd9570386e2862b5673c85bd5f88df9ab6802b334c596%22%2C%20%22files%22%3A%20%7B%7D%7D",
-        "dest": "cargo/vendor/windows_x86_64_gnullvm-0.52.5",
+        "url": "data:%7B%22package%22%3A%20%2224d5b23dc417412679681396f2b49f3de8c1473deb516bd34410872eff51ed0d%22%2C%20%22files%22%3A%20%7B%7D%7D",
+        "dest": "cargo/vendor/windows_x86_64_gnullvm-0.52.6",
         "dest-filename": ".cargo-checksum.json"
     },
     {
@@ -4367,15 +4367,15 @@
     },
     {
         "type": "file",
-        "url": "https://static.crates.io/crates/windows_x86_64_msvc/windows_x86_64_msvc-0.52.5.crate",
-        "sha256": "bec47e5bfd1bff0eeaf6d8b485cc1074891a197ab4225d504cb7a1ab88b02bf0",
+        "url": "https://static.crates.io/crates/windows_x86_64_msvc/windows_x86_64_msvc-0.52.6.crate",
+        "sha256": "589f6da84c646204747d1270a2a5661ea66ed1cced2631d546fdfb155959f9ec",
         "dest": "cargo/vendor",
-        "dest-filename": "windows_x86_64_msvc-0.52.5.crate"
+        "dest-filename": "windows_x86_64_msvc-0.52.6.crate"
     },
     {
         "type": "file",
-        "url": "data:%7B%22package%22%3A%20%22bec47e5bfd1bff0eeaf6d8b485cc1074891a197ab4225d504cb7a1ab88b02bf0%22%2C%20%22files%22%3A%20%7B%7D%7D",
-        "dest": "cargo/vendor/windows_x86_64_msvc-0.52.5",
+        "url": "data:%7B%22package%22%3A%20%22589f6da84c646204747d1270a2a5661ea66ed1cced2631d546fdfb155959f9ec%22%2C%20%22files%22%3A%20%7B%7D%7D",
+        "dest": "cargo/vendor/windows_x86_64_msvc-0.52.6",
         "dest-filename": ".cargo-checksum.json"
     },
     {
@@ -4497,28 +4497,28 @@
     },
     {
         "type": "file",
-        "url": "https://static.crates.io/crates/zerocopy/zerocopy-0.7.34.crate",
-        "sha256": "ae87e3fcd617500e5d106f0380cf7b77f3c6092aae37191433159dda23cfb087",
+        "url": "https://static.crates.io/crates/zerocopy/zerocopy-0.7.35.crate",
+        "sha256": "1b9b4fd18abc82b8136838da5d50bae7bdea537c574d8dc1a34ed098d6c166f0",
         "dest": "cargo/vendor",
-        "dest-filename": "zerocopy-0.7.34.crate"
+        "dest-filename": "zerocopy-0.7.35.crate"
     },
     {
         "type": "file",
-        "url": "data:%7B%22package%22%3A%20%22ae87e3fcd617500e5d106f0380cf7b77f3c6092aae37191433159dda23cfb087%22%2C%20%22files%22%3A%20%7B%7D%7D",
-        "dest": "cargo/vendor/zerocopy-0.7.34",
+        "url": "data:%7B%22package%22%3A%20%221b9b4fd18abc82b8136838da5d50bae7bdea537c574d8dc1a34ed098d6c166f0%22%2C%20%22files%22%3A%20%7B%7D%7D",
+        "dest": "cargo/vendor/zerocopy-0.7.35",
         "dest-filename": ".cargo-checksum.json"
     },
     {
         "type": "file",
-        "url": "https://static.crates.io/crates/zerocopy-derive/zerocopy-derive-0.7.34.crate",
-        "sha256": "15e934569e47891f7d9411f1a451d947a60e000ab3bd24fbb970f000387d1b3b",
+        "url": "https://static.crates.io/crates/zerocopy-derive/zerocopy-derive-0.7.35.crate",
+        "sha256": "fa4f8080344d4671fb4e831a13ad1e68092748387dfc4f55e356242fae12ce3e",
         "dest": "cargo/vendor",
-        "dest-filename": "zerocopy-derive-0.7.34.crate"
+        "dest-filename": "zerocopy-derive-0.7.35.crate"
     },
     {
         "type": "file",
-        "url": "data:%7B%22package%22%3A%20%2215e934569e47891f7d9411f1a451d947a60e000ab3bd24fbb970f000387d1b3b%22%2C%20%22files%22%3A%20%7B%7D%7D",
-        "dest": "cargo/vendor/zerocopy-derive-0.7.34",
+        "url": "data:%7B%22package%22%3A%20%22fa4f8080344d4671fb4e831a13ad1e68092748387dfc4f55e356242fae12ce3e%22%2C%20%22files%22%3A%20%7B%7D%7D",
+        "dest": "cargo/vendor/zerocopy-derive-0.7.35",
         "dest-filename": ".cargo-checksum.json"
     },
     {
@@ -4660,7 +4660,7 @@
     },
     {
         "type": "file",
-        "url": "data:%5Bsource.vendored-sources%5D%0Adirectory%20%3D%20%22cargo/vendor%22%0A%0A%5Bsource.crates-io%5D%0Areplace-with%20%3D%20%22vendored-sources%22%0A%0A%5Bsource.%22https%3A//github.com/an-anime-team/anime-game-core%22%5D%0Agit%20%3D%20%22https%3A//github.com/an-anime-team/anime-game-core%22%0Areplace-with%20%3D%20%22vendored-sources%22%0Atag%20%3D%20%221.21.1%22%0A%0A%5Bsource.%22https%3A//github.com/an-anime-team/anime-launcher-sdk%22%5D%0Agit%20%3D%20%22https%3A//github.com/an-anime-team/anime-launcher-sdk%22%0Areplace-with%20%3D%20%22vendored-sources%22%0Atag%20%3D%20%221.16.2%22%0A",
+        "url": "data:%5Bsource.vendored-sources%5D%0Adirectory%20%3D%20%22cargo/vendor%22%0A%0A%5Bsource.crates-io%5D%0Areplace-with%20%3D%20%22vendored-sources%22%0A%0A%5Bsource.%22https%3A//github.com/an-anime-team/anime-game-core%22%5D%0Agit%20%3D%20%22https%3A//github.com/an-anime-team/anime-game-core%22%0Areplace-with%20%3D%20%22vendored-sources%22%0Atag%20%3D%20%221.21.2%22%0A%0A%5Bsource.%22https%3A//github.com/an-anime-team/anime-launcher-sdk%22%5D%0Agit%20%3D%20%22https%3A//github.com/an-anime-team/anime-launcher-sdk%22%0Areplace-with%20%3D%20%22vendored-sources%22%0Atag%20%3D%20%221.16.3%22%0A",
         "dest": "cargo",
         "dest-filename": "config"
     }

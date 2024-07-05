@@ -36,27 +36,6 @@ cleanup:
   - '*.a'
 
 modules:
-  - name: xdelta3
-    buildsystem: autotools
-    sources:
-      - type: archive
-        url: https://github.com/jmacd/xdelta/archive/refs/tags/v3.1.0.tar.gz
-        sha256: 7515cf5378fca287a57f4e2fee1094aabc79569cfe60d91e06021a8fd7bae29d
-        strip-components: 2
-        x-checker-data:
-          type: anitya
-          project-id: 5177
-          url-template: https://github.com/jmacd/xdelta/archive/refs/tags/v$version.tar.gz
-      - type: shell
-        commands:
-          - aclocal
-          - autoreconf --install
-          - libtoolize
-          - autoconf
-          - autoheader
-          - automake --add-missing
-          - automake
-          
   # copy/pasted from bottles
   - name: gamemode
     buildsystem: meson
@@ -171,7 +150,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/an-anime-team/sleepy-launcher
-        tag: &sleepy_tag 1.0.0
+        tag: &sleepy_tag 1.0.1
       - type: file
         path: moe.launcher.sleepy-launcher.sh
       - cargo-sources.json
