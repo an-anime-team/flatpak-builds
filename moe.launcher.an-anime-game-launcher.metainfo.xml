@@ -56,6 +56,13 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+    <release version="3.10.2" date="2024-07-19">
+      <description>
+        <p>Updated FPS Unlocker</p>
+        <p>Added Indonesia as a wine language option</p>
+        <p>Added writing of the game output to the game.log file in the launcher folder, the size is controlled via the LAUNCHER_GAME_LOG_FILE_LIMIT env variable.</p>
+      </description>
+    </release>
     <release version="3.10.1" date="2024-07-02">
       <description>
         <p>Handle dwebp re-coding errors</p>
