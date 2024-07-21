@@ -92,7 +92,7 @@
     {
         "type": "git",
         "url": "https://github.com/an-anime-team/anime-launcher-sdk",
-        "commit": "4589c81c27693643f3f73f8be6878f8f97c282d4",
+        "commit": "0603733f2bd7efb38255e1d24f4a33e7137c88f3",
         "dest": "cargo/vendor/anime-launcher-sdk"
     },
     {
@@ -207,15 +207,15 @@
     },
     {
         "type": "file",
-        "url": "https://static.crates.io/crates/arrayref/arrayref-0.3.7.crate",
-        "sha256": "6b4930d2cb77ce62f89ee5d5289b4ac049559b1c45539271f5ed4fdc7db34545",
+        "url": "https://static.crates.io/crates/arrayref/arrayref-0.3.8.crate",
+        "sha256": "9d151e35f61089500b617991b791fc8bfd237ae50cd5950803758a179b41e67a",
         "dest": "cargo/vendor",
-        "dest-filename": "arrayref-0.3.7.crate"
+        "dest-filename": "arrayref-0.3.8.crate"
     },
     {
         "type": "file",
-        "url": "data:%7B%22package%22%3A%20%226b4930d2cb77ce62f89ee5d5289b4ac049559b1c45539271f5ed4fdc7db34545%22%2C%20%22files%22%3A%20%7B%7D%7D",
-        "dest": "cargo/vendor/arrayref-0.3.7",
+        "url": "data:%7B%22package%22%3A%20%229d151e35f61089500b617991b791fc8bfd237ae50cd5950803758a179b41e67a%22%2C%20%22files%22%3A%20%7B%7D%7D",
+        "dest": "cargo/vendor/arrayref-0.3.8",
         "dest-filename": ".cargo-checksum.json"
     },
     {
@@ -4406,15 +4406,15 @@
     },
     {
         "type": "file",
-        "url": "https://static.crates.io/crates/winnow/winnow-0.6.13.crate",
-        "sha256": "59b5e5f6c299a3c7890b876a2a587f3115162487e704907d9b6cd29473052ba1",
+        "url": "https://static.crates.io/crates/winnow/winnow-0.6.14.crate",
+        "sha256": "374ec40a2d767a3c1b4972d9475ecd557356637be906f2cb3f7fe17a6eb5e22f",
         "dest": "cargo/vendor",
-        "dest-filename": "winnow-0.6.13.crate"
+        "dest-filename": "winnow-0.6.14.crate"
     },
     {
         "type": "file",
-        "url": "data:%7B%22package%22%3A%20%2259b5e5f6c299a3c7890b876a2a587f3115162487e704907d9b6cd29473052ba1%22%2C%20%22files%22%3A%20%7B%7D%7D",
-        "dest": "cargo/vendor/winnow-0.6.13",
+        "url": "data:%7B%22package%22%3A%20%22374ec40a2d767a3c1b4972d9475ecd557356637be906f2cb3f7fe17a6eb5e22f%22%2C%20%22files%22%3A%20%7B%7D%7D",
+        "dest": "cargo/vendor/winnow-0.6.14",
         "dest-filename": ".cargo-checksum.json"
     },
     {
@@ -4562,15 +4562,15 @@
     },
     {
         "type": "file",
-        "url": "https://static.crates.io/crates/zip/zip-2.1.3.crate",
-        "sha256": "775a2b471036342aa69bc5a602bc889cb0a06cda00477d0c69566757d5553d39",
+        "url": "https://static.crates.io/crates/zip/zip-2.1.5.crate",
+        "sha256": "b895748a3ebcb69b9d38dcfdf21760859a4b0d0b0015277640c2ef4c69640e6f",
         "dest": "cargo/vendor",
-        "dest-filename": "zip-2.1.3.crate"
+        "dest-filename": "zip-2.1.5.crate"
     },
     {
         "type": "file",
-        "url": "data:%7B%22package%22%3A%20%22775a2b471036342aa69bc5a602bc889cb0a06cda00477d0c69566757d5553d39%22%2C%20%22files%22%3A%20%7B%7D%7D",
-        "dest": "cargo/vendor/zip-2.1.3",
+        "url": "data:%7B%22package%22%3A%20%22b895748a3ebcb69b9d38dcfdf21760859a4b0d0b0015277640c2ef4c69640e6f%22%2C%20%22files%22%3A%20%7B%7D%7D",
+        "dest": "cargo/vendor/zip-2.1.5",
         "dest-filename": ".cargo-checksum.json"
     },
     {
@@ -4673,7 +4673,7 @@
     },
     {
         "type": "file",
-        "url": "data:%5Bsource.vendored-sources%5D%0Adirectory%20%3D%20%22cargo/vendor%22%0A%0A%5Bsource.crates-io%5D%0Areplace-with%20%3D%20%22vendored-sources%22%0A%0A%5Bsource.%22https%3A//github.com/an-anime-team/anime-game-core%22%5D%0Agit%20%3D%20%22https%3A//github.com/an-anime-team/anime-game-core%22%0Areplace-with%20%3D%20%22vendored-sources%22%0Atag%20%3D%20%221.21.3%22%0A%0A%5Bsource.%22https%3A//github.com/an-anime-team/anime-launcher-sdk%22%5D%0Agit%20%3D%20%22https%3A//github.com/an-anime-team/anime-launcher-sdk%22%0Areplace-with%20%3D%20%22vendored-sources%22%0Atag%20%3D%20%221.16.7%22%0A",
+        "url": "data:%5Bsource.vendored-sources%5D%0Adirectory%20%3D%20%22cargo/vendor%22%0A%0A%5Bsource.crates-io%5D%0Areplace-with%20%3D%20%22vendored-sources%22%0A%0A%5Bsource.%22https%3A//github.com/an-anime-team/anime-game-core%22%5D%0Agit%20%3D%20%22https%3A//github.com/an-anime-team/anime-game-core%22%0Areplace-with%20%3D%20%22vendored-sources%22%0Atag%20%3D%20%221.21.3%22%0A%0A%5Bsource.%22https%3A//github.com/an-anime-team/anime-launcher-sdk%22%5D%0Agit%20%3D%20%22https%3A//github.com/an-anime-team/anime-launcher-sdk%22%0Areplace-with%20%3D%20%22vendored-sources%22%0Atag%20%3D%20%221.16.10%22%0A",
         "dest": "cargo",
         "dest-filename": "config"
     }
