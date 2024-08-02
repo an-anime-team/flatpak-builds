@@ -56,6 +56,16 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+    <release version="1.7.0" date="2024-08-02">
+      <description>
+        <p>Removed migrate install</p>
+        <p>Changed game version prioritization</p>
+        <p>Added writing of the game output to the game.log file in the launcher folder, the size is controlled via the LAUNCHER_GAME_LOG_FILE_LIMIT env variable.</p>
+        <p>Added Indonesia as a wine language option</p>
+        <p>localized force-grab-cursor to Ukrainian</p>
+        <p>Support new API</p>
+      </description>
+    </release>
     <release version="1.6.3" date="2024-05-20">
       <description>
         <p>Updated background URI API key</p>
