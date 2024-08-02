@@ -63,6 +63,15 @@ modules:
       - install -Dm755 data/gamemoderun -t /app/bin
     sources: *gamemode_sources
 
+  - name: p7zip
+    buildsystem: simple
+    build-commands:
+      - make 7z install DEST_HOME=/app
+    sources:
+      - type: git
+        url: https://github.com/p7zip-project/p7zip
+        tag: v17.05
+
   - name: git
     buildsystem: autotools
     config-opts:
