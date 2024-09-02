@@ -18,6 +18,7 @@ if readlink /etc/hosts > /dev/null; then
 # Star Rail logging servers
 0.0.0.0 log-upload-os.hoyoverse.com
 0.0.0.0 sg-public-data-api.hoyoverse.com
+0.0.0.0 hkrpg-log-upload-os.hoyoverse.com
 
 # China
 # Star Rail logging servers
