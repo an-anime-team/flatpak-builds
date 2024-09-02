@@ -56,6 +56,13 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+    <release version="3.12.0" date="2024-09-01">
+      <description>
+        <p>Fixed permission issue when extracting files</p>
+        <p>Fixed game size estimation</p>
+        <p>Reworked gamescope feature</p>
+      </description>
+    </release>
     <release version="3.11.0" date="2024-08-02">
       <description>
         <p>Removed migrate install</p>
