@@ -56,6 +56,11 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+    <release version="1.2.1" date="2024-09-02">
+      <description>
+        <p>Fixed gamescope config issue</p>
+      </description>
+    </release>
     <release version="1.2.0" date="2024-09-01">
       <description>
         <p>Fixed file permission issue on update</p>
