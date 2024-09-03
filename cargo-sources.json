@@ -105,7 +105,7 @@
     {
         "type": "git",
         "url": "https://github.com/an-anime-team/anime-launcher-sdk",
-        "commit": "2feddee84635c0d2ab178dfad7fd0e40437f6c00",
+        "commit": "a101b856e8e2d7b57ca6566b2752d2c8ab7cc3d9",
         "dest": "cargo/vendor/anime-launcher-sdk"
     },
     {
@@ -203,19 +203,6 @@
         "type": "file",
         "url": "data:%7B%22package%22%3A%20%227d5a26814d8dcb93b0e5a0ff3c6d80a8843bafb21b39e8e18a6f05471870e110%22%2C%20%22files%22%3A%20%7B%7D%7D",
         "dest": "cargo/vendor/arbitrary-1.3.2",
-        "dest-filename": ".cargo-checksum.json"
-    },
-    {
-        "type": "file",
-        "url": "https://static.crates.io/crates/arc-swap/arc-swap-1.7.1.crate",
-        "sha256": "69f7f8c3906b62b754cd5326047894316021dcfe5a194c8ea52bdd94934a3457",
-        "dest": "cargo/vendor",
-        "dest-filename": "arc-swap-1.7.1.crate"
-    },
-    {
-        "type": "file",
-        "url": "data:%7B%22package%22%3A%20%2269f7f8c3906b62b754cd5326047894316021dcfe5a194c8ea52bdd94934a3457%22%2C%20%22files%22%3A%20%7B%7D%7D",
-        "dest": "cargo/vendor/arc-swap-1.7.1",
         "dest-filename": ".cargo-checksum.json"
     },
     {
@@ -363,15 +350,15 @@
     },
     {
         "type": "file",
-        "url": "https://static.crates.io/crates/async-trait/async-trait-0.1.81.crate",
-        "sha256": "6e0c28dcc82d7c8ead5cb13beb15405b57b8546e93215673ff8ca0349a028107",
+        "url": "https://static.crates.io/crates/async-trait/async-trait-0.1.82.crate",
+        "sha256": "a27b8a3a6e1a44fa4c8baf1f653e4172e81486d4941f2237e20dc2d0cf4ddff1",
         "dest": "cargo/vendor",
-        "dest-filename": "async-trait-0.1.81.crate"
+        "dest-filename": "async-trait-0.1.82.crate"
     },
     {
         "type": "file",
-        "url": "data:%7B%22package%22%3A%20%226e0c28dcc82d7c8ead5cb13beb15405b57b8546e93215673ff8ca0349a028107%22%2C%20%22files%22%3A%20%7B%7D%7D",
-        "dest": "cargo/vendor/async-trait-0.1.81",
+        "url": "data:%7B%22package%22%3A%20%22a27b8a3a6e1a44fa4c8baf1f653e4172e81486d4941f2237e20dc2d0cf4ddff1%22%2C%20%22files%22%3A%20%7B%7D%7D",
+        "dest": "cargo/vendor/async-trait-0.1.82",
         "dest-filename": ".cargo-checksum.json"
     },
     {
@@ -1208,19 +1195,6 @@
     },
     {
         "type": "file",
-        "url": "https://static.crates.io/crates/fluent/fluent-0.16.1.crate",
-        "sha256": "bb74634707bebd0ce645a981148e8fb8c7bccd4c33c652aeffd28bf2f96d555a",
-        "dest": "cargo/vendor",
-        "dest-filename": "fluent-0.16.1.crate"
-    },
-    {
-        "type": "file",
-        "url": "data:%7B%22package%22%3A%20%22bb74634707bebd0ce645a981148e8fb8c7bccd4c33c652aeffd28bf2f96d555a%22%2C%20%22files%22%3A%20%7B%7D%7D",
-        "dest": "cargo/vendor/fluent-0.16.1",
-        "dest-filename": ".cargo-checksum.json"
-    },
-    {
-        "type": "file",
         "url": "https://static.crates.io/crates/fluent-bundle/fluent-bundle-0.15.3.crate",
         "sha256": "7fe0a21ee80050c678013f82edf4b705fe2f26f1f9877593d13198612503f493",
         "dest": "cargo/vendor",
@@ -1260,28 +1234,28 @@
     },
     {
         "type": "file",
-        "url": "https://static.crates.io/crates/fluent-template-macros/fluent-template-macros-0.9.4.crate",
-        "sha256": "77d2bcae1f3ec390c50161fcf130d3228750e9ecf965618584e046d884199b83",
+        "url": "https://static.crates.io/crates/fluent-template-macros/fluent-template-macros-0.10.1.crate",
+        "sha256": "b86ebacac709a063f57ee83d37c451d60dc873554f9bd828531fd1ec43209c80",
         "dest": "cargo/vendor",
-        "dest-filename": "fluent-template-macros-0.9.4.crate"
+        "dest-filename": "fluent-template-macros-0.10.1.crate"
     },
     {
         "type": "file",
-        "url": "data:%7B%22package%22%3A%20%2277d2bcae1f3ec390c50161fcf130d3228750e9ecf965618584e046d884199b83%22%2C%20%22files%22%3A%20%7B%7D%7D",
-        "dest": "cargo/vendor/fluent-template-macros-0.9.4",
+        "url": "data:%7B%22package%22%3A%20%22b86ebacac709a063f57ee83d37c451d60dc873554f9bd828531fd1ec43209c80%22%2C%20%22files%22%3A%20%7B%7D%7D",
+        "dest": "cargo/vendor/fluent-template-macros-0.10.1",
         "dest-filename": ".cargo-checksum.json"
     },
     {
         "type": "file",
-        "url": "https://static.crates.io/crates/fluent-templates/fluent-templates-0.9.4.crate",
-        "sha256": "197feb1e37209c6b3d29f0754b11fc070890efb2b1d761caac4e5287a200e9db",
+        "url": "https://static.crates.io/crates/fluent-templates/fluent-templates-0.10.1.crate",
+        "sha256": "f339cc149c01ba2f7b0feba2acde6dd6e4a48472daffe2ddfdd6073e564c60b3",
         "dest": "cargo/vendor",
-        "dest-filename": "fluent-templates-0.9.4.crate"
+        "dest-filename": "fluent-templates-0.10.1.crate"
     },
     {
         "type": "file",
-        "url": "data:%7B%22package%22%3A%20%22197feb1e37209c6b3d29f0754b11fc070890efb2b1d761caac4e5287a200e9db%22%2C%20%22files%22%3A%20%7B%7D%7D",
-        "dest": "cargo/vendor/fluent-templates-0.9.4",
+        "url": "data:%7B%22package%22%3A%20%22f339cc149c01ba2f7b0feba2acde6dd6e4a48472daffe2ddfdd6073e564c60b3%22%2C%20%22files%22%3A%20%7B%7D%7D",
+        "dest": "cargo/vendor/fluent-templates-0.10.1",
         "dest-filename": ".cargo-checksum.json"
     },
     {
@@ -3431,15 +3405,15 @@
     },
     {
         "type": "file",
-        "url": "https://static.crates.io/crates/tempfile/tempfile-3.11.0.crate",
-        "sha256": "b8fcd239983515c23a32fb82099f97d0b11b8c72f654ed659363a95c3dad7a53",
+        "url": "https://static.crates.io/crates/tempfile/tempfile-3.12.0.crate",
+        "sha256": "04cbcdd0c794ebb0d4cf35e88edd2f7d2c4c3e9a5a6dab322839b321c6a87a64",
         "dest": "cargo/vendor",
-        "dest-filename": "tempfile-3.11.0.crate"
+        "dest-filename": "tempfile-3.12.0.crate"
     },
     {
         "type": "file",
-        "url": "data:%7B%22package%22%3A%20%22b8fcd239983515c23a32fb82099f97d0b11b8c72f654ed659363a95c3dad7a53%22%2C%20%22files%22%3A%20%7B%7D%7D",
-        "dest": "cargo/vendor/tempfile-3.11.0",
+        "url": "data:%7B%22package%22%3A%20%2204cbcdd0c794ebb0d4cf35e88edd2f7d2c4c3e9a5a6dab322839b321c6a87a64%22%2C%20%22files%22%3A%20%7B%7D%7D",
+        "dest": "cargo/vendor/tempfile-3.12.0",
         "dest-filename": ".cargo-checksum.json"
     },
     {
@@ -4725,7 +4699,7 @@
     },
     {
         "type": "file",
-        "url": "data:%5Bsource.vendored-sources%5D%0Adirectory%20%3D%20%22cargo/vendor%22%0A%0A%5Bsource.crates-io%5D%0Areplace-with%20%3D%20%22vendored-sources%22%0A%0A%5Bsource.%22https%3A//github.com/an-anime-team/anime-game-core%22%5D%0Agit%20%3D%20%22https%3A//github.com/an-anime-team/anime-game-core%22%0Areplace-with%20%3D%20%22vendored-sources%22%0Atag%20%3D%20%221.24.2%22%0A%0A%5Bsource.%22https%3A//github.com/an-anime-team/anime-launcher-sdk%22%5D%0Agit%20%3D%20%22https%3A//github.com/an-anime-team/anime-launcher-sdk%22%0Areplace-with%20%3D%20%22vendored-sources%22%0Atag%20%3D%20%221.20.2%22%0A",
+        "url": "data:%5Bsource.vendored-sources%5D%0Adirectory%20%3D%20%22cargo/vendor%22%0A%0A%5Bsource.crates-io%5D%0Areplace-with%20%3D%20%22vendored-sources%22%0A%0A%5Bsource.%22https%3A//github.com/an-anime-team/anime-game-core%22%5D%0Agit%20%3D%20%22https%3A//github.com/an-anime-team/anime-game-core%22%0Areplace-with%20%3D%20%22vendored-sources%22%0Atag%20%3D%20%221.24.2%22%0A%0A%5Bsource.%22https%3A//github.com/an-anime-team/anime-launcher-sdk%22%5D%0Agit%20%3D%20%22https%3A//github.com/an-anime-team/anime-launcher-sdk%22%0Areplace-with%20%3D%20%22vendored-sources%22%0Atag%20%3D%20%221.20.3%22%0A",
         "dest": "cargo",
         "dest-filename": "config"
     }
