@@ -56,6 +56,11 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+    <release version="1.9.0" date="2024-10-09">
+      <description>
+        <p>Removed Discord RPC</p>
+      </description>
+    </release>
     <release version="1.8.2" date="2024-09-11">
       <description>
         <p>Fixed downloading/updating not working</p>
