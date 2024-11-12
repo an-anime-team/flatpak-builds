@@ -1,10 +1,5 @@
 #!/bin/sh
 
-# Discord RPC
-for i in {0..9}; do
-    test -S $XDG_RUNTIME_DIR/discord-ipc-$i || ln -sf {app/com.discordapp.Discord,$XDG_RUNTIME_DIR}/discord-ipc-$i;
-done
-
 # Modify /etc/hosts to block logging servers
 # This is possible because /etc is a writable tmpfs in flatpak
 if readlink /etc/hosts > /dev/null; then
