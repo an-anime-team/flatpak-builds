@@ -124,7 +124,7 @@ modules:
     sources:
       - type: git
         url: https://git.ffmpeg.org/ffmpeg.git
-        tag: n6.1.1
+        tag: n7.1
 
   - name: wavey
     buildsystem: simple
