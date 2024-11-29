@@ -56,6 +56,11 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+   <release version="1.10.2" date="2024-11-29">
+      <description>
+        <p>Fix launcher crashing on start</p>
+      </description>
+    </release>
     <release version="1.10.1" date="2024-11-28">
       <description>
         <p>Fix broken API preventing background updates and etc</p>
