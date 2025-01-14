@@ -56,6 +56,12 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+    <release version="1.10.0" date="2025-01-14">
+      <description>
+        <p>Added (untested) support for new hdiffmap.json update file</p>
+        <p>Added zh-tw localization</p>
+      </description>
+    </release>
     <release version="1.9.1" date="2024-12-05">
       <description>
         <p>Fixed version detection for game installed via HoyoPlay</p>
