@@ -56,6 +56,12 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+    <release version="3.13.1" date="2025-04-08">
+      <description>
+        <p>Added support for wow64</p>
+        <p>Added new locales and updated some</p>
+      </description>
+    </release>
     <release version="3.13.0" date="2024-10-09">
       <description>
         <p>Removed Discord RPC</p>
