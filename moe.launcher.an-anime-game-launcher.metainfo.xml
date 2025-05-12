@@ -56,6 +56,11 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+   <release version="3.14.0" date="2025-05-12">
+      <description>
+        <p>Fixed issue breaking all previous launcher version</p>
+      </description>
+    </release>
     <release version="3.13.1" date="2025-04-08">
       <description>
         <p>Added support for wow64</p>
