@@ -4,7 +4,6 @@ runtime-version: '47'
 sdk: org.gnome.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.rust-stable
-  - org.freedesktop.Sdk.Extension.protoc
 command: moe.launcher.an-anime-game-launcher
 rename-desktop-file: anime-game-launcher.desktop
 finish-args:
