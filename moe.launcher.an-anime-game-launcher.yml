@@ -4,6 +4,7 @@ runtime-version: '47'
 sdk: org.gnome.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.rust-stable
+  - org.freedesktop.Sdk.Extension.protoc
 command: moe.launcher.an-anime-game-launcher
 rename-desktop-file: anime-game-launcher.desktop
 finish-args:
@@ -133,6 +134,26 @@ modules:
       - type: git
         url: https://git.ffmpeg.org/ffmpeg.git
         tag: n7.1
+
+  - name: protobuf
+    buildsystem: cmake-ninja
+    config-opts:
+      - -DCMAKE_BUILD_TYPE=None
+      - -DBUILD_SHARED_LIBS=ON
+      - -Dprotobuf_BUILD_TESTS=OFF
+    sources:
+      - type: git
+        url: https://github.com/protocolbuffers/protobuf.git
+        commit: 43e1626812c1b543e56a7bec59dc09eb18248bd2
+        tag: v30.2
+        x-checker-data:
+          type: json
+          url: https://api.github.com/repos/protocolbuffers/protobuf/releases/latest
+          tag-query: .tag_name
+          timestamp-query: .published_at
+          version-query: $tag | sub("^[vV]"; "")
+    cleanup:
+      - /bin
 
   - name: aagl
     buildsystem: simple
