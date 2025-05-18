@@ -56,6 +56,15 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+   <release version="3.14.1" date="2025-05-18">
+     <description>
+       <p>Added 5.6.0 voiceover sizes</p>
+       <p>Store sophon chunks in subfolders</p>
+       <p>Now temporary sophon chunks will be removed after applying</p>
+       <p>Improved RAM usage in files MD5 hashes verifier</p>
+       <p>Fixed multiple sophon chunks progress counting</p>
+     </description>
+   </release>
    <release version="3.14.0" date="2025-05-12">
       <description>
         <p>Fixed issue breaking all previous launcher version</p>
