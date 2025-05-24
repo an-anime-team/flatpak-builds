@@ -133,6 +133,8 @@ modules:
       - type: git
         url: https://git.ffmpeg.org/ffmpeg.git
         tag: n7.1.1
+      - type: patch
+        path: fix-ffmpeg.patch
 
   - name: protobuf
     buildsystem: cmake-ninja
