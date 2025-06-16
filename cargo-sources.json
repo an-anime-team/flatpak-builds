@@ -80,7 +80,7 @@
     {
         "type": "git",
         "url": "https://github.com/an-anime-team/anime-game-core",
-        "commit": "4caaddd50c221c81739c2791e739c43566f28518",
+        "commit": "d080ef3cb663e2e1a28ba3d79d5d42300c3f2d64",
         "dest": "cargo/vendor/anime-game-core"
     },
     {
@@ -92,7 +92,7 @@
     {
         "type": "git",
         "url": "https://github.com/an-anime-team/anime-launcher-sdk",
-        "commit": "e9c03f708512c8a99d71a54068d5ad106dbc2b61",
+        "commit": "01eed18884a39695fca070966bbd54bd0961b52f",
         "dest": "cargo/vendor/anime-launcher-sdk"
     },
     {
