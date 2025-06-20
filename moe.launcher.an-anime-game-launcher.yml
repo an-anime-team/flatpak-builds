@@ -68,8 +68,8 @@ modules:
         git-fetch -and -not -name git-reset -and -not -name git-clone -delete
     sources:
       - type: archive
-        url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.49.0.tar.xz
-        sha256: 618190cf590b7e9f6c11f91f23b1d267cd98c3ab33b850416d8758f8b5a85628
+        url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.50.0.tar.xz
+        sha256: dff3c000e400ace3a63b8a6f8b3b76b88ecfdffd4504a04aba4248372cdec045
         x-checker-data:
           type: anitya
           project-id: 5350
@@ -145,8 +145,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/protocolbuffers/protobuf.git
-        commit: 43e1626812c1b543e56a7bec59dc09eb18248bd2
-        tag: v30.2
+        commit: 74211c0dfc2777318ab53c2cd2c317a2ef9012de
+        tag: v31.1
         x-checker-data:
           type: json
           url: https://api.github.com/repos/protocolbuffers/protobuf/releases/latest
