@@ -61,7 +61,6 @@
        <p>Improved sophon implementation to utilize multiple threads</p>
      </description>
    </release>
-  <releases>
    <release version="3.14.3" date="2025-06-21">
      <description>
        <p>Added 5.7.0 voiceover sizes</p>
