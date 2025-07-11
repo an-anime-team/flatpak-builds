@@ -56,6 +56,20 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+   <release version="3.15.0" date="2025-07-11">
+     <description>
+       <p>Improved sophon implementation to utilize multiple threads</p>
+     </description>
+   </release>
+  <releases>
+   <release version="3.14.3" date="2025-06-21">
+     <description>
+       <p>Added 5.7.0 voiceover sizes</p>
+       <p>Added logic to get voiceover sizes from the API for the currently live version</p>
+       <p>Fixed crashes on game predownloading attempt</p>
+     </description>
+   </release>
+  <releases>
    <release version="3.14.2" date="2025-06-16">
      <description>
        <p>Added new game repairing support</p>
