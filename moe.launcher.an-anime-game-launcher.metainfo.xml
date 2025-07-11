@@ -68,7 +68,6 @@
        <p>Fixed crashes on game predownloading attempt</p>
      </description>
    </release>
-  <releases>
    <release version="3.14.2" date="2025-06-16">
      <description>
        <p>Added new game repairing support</p>
