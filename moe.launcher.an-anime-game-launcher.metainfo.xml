@@ -56,6 +56,11 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+  <release version="3.15.1" date="2025-07-28">
+     <description>
+       <p>Fixed preload not using the configured temporary folder</p>
+     </description>
+   </release>
    <release version="3.15.0" date="2025-07-11">
      <description>
        <p>Improved sophon implementation to utilize multiple threads</p>
