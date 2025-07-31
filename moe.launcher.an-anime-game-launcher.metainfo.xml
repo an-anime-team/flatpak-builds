@@ -56,6 +56,12 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+   <release version="3.15.3" date="2025-07-31">
+     <description>
+       <p>Fixed update getting stuck at 100% or close, fix applied to install part too</p>
+       <p>Updated classic mode default window size to better match the 1440p background images</p>
+     </description>
+   </release>
    <release version="3.15.2" date="2025-07-29">
      <description>
        <p>Fixed preload progress bar not displaying any progress</p>
