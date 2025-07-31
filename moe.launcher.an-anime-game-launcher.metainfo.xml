@@ -56,6 +56,11 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+   <release version="3.15.4" date="2025-07-31">
+     <description>
+       <p>Fixed the update getting stuck fix not being included</p>
+     </description>
+   </release>
    <release version="3.15.3" date="2025-07-31">
      <description>
        <p>Fixed update getting stuck at 100% or close, fix applied to install part too</p>
