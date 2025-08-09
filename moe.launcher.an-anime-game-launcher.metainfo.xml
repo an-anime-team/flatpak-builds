@@ -56,6 +56,12 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+   <release version="3.15.5" date="2025-08-09">
+     <description>
+       <p>Fixed download starting again after reaching 100% in an endless loop</p>
+       <p>Updated fps unlocker to 1.2.1 and bat script to work with latest wine behavior</p>
+     </description>
+   </release>
    <release version="3.15.4" date="2025-07-31">
      <description>
        <p>Fixed the update getting stuck fix not being included</p>
