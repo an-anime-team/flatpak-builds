@@ -80,7 +80,7 @@
     {
         "type": "git",
         "url": "https://github.com/an-anime-team/anime-game-core",
-        "commit": "3c79e055bc23f147217af012084d31c63cb799f1",
+        "commit": "23960de393b94c0d6549b49ae62f5f3601ffc6f4",
         "dest": "cargo/vendor/anime-game-core"
     },
     {
@@ -92,7 +92,7 @@
     {
         "type": "git",
         "url": "https://github.com/an-anime-team/anime-launcher-sdk",
-        "commit": "5d3d24e121e9cbadf64a526f5b5dc87f478330d0",
+        "commit": "d0e0d8dea936b9c1ac05fa47fc5b593c4313ef70",
         "dest": "cargo/vendor/anime-launcher-sdk"
     },
     {
@@ -1663,15 +1663,15 @@
     },
     {
         "type": "file",
-        "url": "https://static.crates.io/crates/h2/h2-0.4.11.crate",
-        "sha256": "17da50a276f1e01e0ba6c029e47b7100754904ee8a278f886546e98575380785",
+        "url": "https://static.crates.io/crates/h2/h2-0.4.12.crate",
+        "sha256": "f3c0b69cfcb4e1b9f1bf2f53f95f766e4661169728ec61cd3fe5a0166f2d1386",
         "dest": "cargo/vendor",
-        "dest-filename": "h2-0.4.11.crate"
+        "dest-filename": "h2-0.4.12.crate"
     },
     {
         "type": "file",
-        "url": "data:%7B%22package%22%3A%20%2217da50a276f1e01e0ba6c029e47b7100754904ee8a278f886546e98575380785%22%2C%20%22files%22%3A%20%7B%7D%7D",
-        "dest": "cargo/vendor/h2-0.4.11",
+        "url": "data:%7B%22package%22%3A%20%22f3c0b69cfcb4e1b9f1bf2f53f95f766e4661169728ec61cd3fe5a0166f2d1386%22%2C%20%22files%22%3A%20%7B%7D%7D",
+        "dest": "cargo/vendor/h2-0.4.12",
         "dest-filename": ".cargo-checksum.json"
     },
     {
@@ -1819,15 +1819,15 @@
     },
     {
         "type": "file",
-        "url": "https://static.crates.io/crates/hyper/hyper-1.6.0.crate",
-        "sha256": "cc2b571658e38e0c01b1fdca3bbbe93c00d3d71693ff2770043f8c29bc7d6f80",
+        "url": "https://static.crates.io/crates/hyper/hyper-1.7.0.crate",
+        "sha256": "eb3aa54a13a0dfe7fbe3a59e0c76093041720fdc77b110cc0fc260fafb4dc51e",
         "dest": "cargo/vendor",
-        "dest-filename": "hyper-1.6.0.crate"
+        "dest-filename": "hyper-1.7.0.crate"
     },
     {
         "type": "file",
-        "url": "data:%7B%22package%22%3A%20%22cc2b571658e38e0c01b1fdca3bbbe93c00d3d71693ff2770043f8c29bc7d6f80%22%2C%20%22files%22%3A%20%7B%7D%7D",
-        "dest": "cargo/vendor/hyper-1.6.0",
+        "url": "data:%7B%22package%22%3A%20%22eb3aa54a13a0dfe7fbe3a59e0c76093041720fdc77b110cc0fc260fafb4dc51e%22%2C%20%22files%22%3A%20%7B%7D%7D",
+        "dest": "cargo/vendor/hyper-1.7.0",
         "dest-filename": ".cargo-checksum.json"
     },
     {
@@ -1845,15 +1845,15 @@
     },
     {
         "type": "file",
-        "url": "https://static.crates.io/crates/hyper-util/hyper-util-0.1.15.crate",
-        "sha256": "7f66d5bd4c6f02bf0542fad85d626775bab9258cf795a4256dcaf3161114d1df",
+        "url": "https://static.crates.io/crates/hyper-util/hyper-util-0.1.16.crate",
+        "sha256": "8d9b05277c7e8da2c93a568989bb6207bef0112e8d17df7a6eda4a3cf143bc5e",
         "dest": "cargo/vendor",
-        "dest-filename": "hyper-util-0.1.15.crate"
+        "dest-filename": "hyper-util-0.1.16.crate"
     },
     {
         "type": "file",
-        "url": "data:%7B%22package%22%3A%20%227f66d5bd4c6f02bf0542fad85d626775bab9258cf795a4256dcaf3161114d1df%22%2C%20%22files%22%3A%20%7B%7D%7D",
-        "dest": "cargo/vendor/hyper-util-0.1.15",
+        "url": "data:%7B%22package%22%3A%20%228d9b05277c7e8da2c93a568989bb6207bef0112e8d17df7a6eda4a3cf143bc5e%22%2C%20%22files%22%3A%20%7B%7D%7D",
+        "dest": "cargo/vendor/hyper-util-0.1.16",
         "dest-filename": ".cargo-checksum.json"
     },
     {
@@ -3197,15 +3197,15 @@
     },
     {
         "type": "file",
-        "url": "https://static.crates.io/crates/reqwest/reqwest-0.12.22.crate",
-        "sha256": "cbc931937e6ca3a06e3b6c0aa7841849b160a90351d6ab467a8b9b9959767531",
+        "url": "https://static.crates.io/crates/reqwest/reqwest-0.12.23.crate",
+        "sha256": "d429f34c8092b2d42c7c93cec323bb4adeb7c67698f70839adec842ec10c7ceb",
         "dest": "cargo/vendor",
-        "dest-filename": "reqwest-0.12.22.crate"
+        "dest-filename": "reqwest-0.12.23.crate"
     },
     {
         "type": "file",
-        "url": "data:%7B%22package%22%3A%20%22cbc931937e6ca3a06e3b6c0aa7841849b160a90351d6ab467a8b9b9959767531%22%2C%20%22files%22%3A%20%7B%7D%7D",
-        "dest": "cargo/vendor/reqwest-0.12.22",
+        "url": "data:%7B%22package%22%3A%20%22d429f34c8092b2d42c7c93cec323bb4adeb7c67698f70839adec842ec10c7ceb%22%2C%20%22files%22%3A%20%7B%7D%7D",
+        "dest": "cargo/vendor/reqwest-0.12.23",
         "dest-filename": ".cargo-checksum.json"
     },
     {
@@ -4029,15 +4029,15 @@
     },
     {
         "type": "file",
-        "url": "https://static.crates.io/crates/tinyvec/tinyvec-1.9.0.crate",
-        "sha256": "09b3661f17e86524eccd4371ab0429194e0d7c008abb45f7a7495b1719463c71",
+        "url": "https://static.crates.io/crates/tinyvec/tinyvec-1.10.0.crate",
+        "sha256": "bfa5fdc3bce6191a1dbc8c02d5c8bffcf557bafa17c124c5264a458f1b0613fa",
         "dest": "cargo/vendor",
-        "dest-filename": "tinyvec-1.9.0.crate"
+        "dest-filename": "tinyvec-1.10.0.crate"
     },
     {
         "type": "file",
-        "url": "data:%7B%22package%22%3A%20%2209b3661f17e86524eccd4371ab0429194e0d7c008abb45f7a7495b1719463c71%22%2C%20%22files%22%3A%20%7B%7D%7D",
-        "dest": "cargo/vendor/tinyvec-1.9.0",
+        "url": "data:%7B%22package%22%3A%20%22bfa5fdc3bce6191a1dbc8c02d5c8bffcf557bafa17c124c5264a458f1b0613fa%22%2C%20%22files%22%3A%20%7B%7D%7D",
+        "dest": "cargo/vendor/tinyvec-1.10.0",
         "dest-filename": ".cargo-checksum.json"
     },
     {
@@ -4081,15 +4081,15 @@
     },
     {
         "type": "file",
-        "url": "https://static.crates.io/crates/tokio-util/tokio-util-0.7.15.crate",
-        "sha256": "66a539a9ad6d5d281510d5bd368c973d636c02dbf8a67300bfb6b950696ad7df",
+        "url": "https://static.crates.io/crates/tokio-util/tokio-util-0.7.16.crate",
+        "sha256": "14307c986784f72ef81c89db7d9e28d6ac26d16213b109ea501696195e6e3ce5",
         "dest": "cargo/vendor",
-        "dest-filename": "tokio-util-0.7.15.crate"
+        "dest-filename": "tokio-util-0.7.16.crate"
     },
     {
         "type": "file",
-        "url": "data:%7B%22package%22%3A%20%2266a539a9ad6d5d281510d5bd368c973d636c02dbf8a67300bfb6b950696ad7df%22%2C%20%22files%22%3A%20%7B%7D%7D",
-        "dest": "cargo/vendor/tokio-util-0.7.15",
+        "url": "data:%7B%22package%22%3A%20%2214307c986784f72ef81c89db7d9e28d6ac26d16213b109ea501696195e6e3ce5%22%2C%20%22files%22%3A%20%7B%7D%7D",
+        "dest": "cargo/vendor/tokio-util-0.7.16",
         "dest-filename": ".cargo-checksum.json"
     },
     {
@@ -5713,7 +5713,7 @@
     },
     {
         "type": "file",
-        "url": "data:%5Bsource.vendored-sources%5D%0Adirectory%20%3D%20%22cargo/vendor%22%0A%0A%5Bsource.crates-io%5D%0Areplace-with%20%3D%20%22vendored-sources%22%0A%0A%5Bsource.%22https%3A//github.com/an-anime-team/anime-game-core%22%5D%0Agit%20%3D%20%22https%3A//github.com/an-anime-team/anime-game-core%22%0Areplace-with%20%3D%20%22vendored-sources%22%0Atag%20%3D%20%221.34.2%22%0A%0A%5Bsource.%22https%3A//github.com/an-anime-team/anime-launcher-sdk%22%5D%0Agit%20%3D%20%22https%3A//github.com/an-anime-team/anime-launcher-sdk%22%0Areplace-with%20%3D%20%22vendored-sources%22%0Atag%20%3D%20%221.30.4%22%0A",
+        "url": "data:%5Bsource.vendored-sources%5D%0Adirectory%20%3D%20%22cargo/vendor%22%0A%0A%5Bsource.crates-io%5D%0Areplace-with%20%3D%20%22vendored-sources%22%0A%0A%5Bsource.%22https%3A//github.com/an-anime-team/anime-game-core%22%5D%0Agit%20%3D%20%22https%3A//github.com/an-anime-team/anime-game-core%22%0Areplace-with%20%3D%20%22vendored-sources%22%0Atag%20%3D%20%221.35.0%22%0A%0A%5Bsource.%22https%3A//github.com/an-anime-team/anime-launcher-sdk%22%5D%0Agit%20%3D%20%22https%3A//github.com/an-anime-team/anime-launcher-sdk%22%0Areplace-with%20%3D%20%22vendored-sources%22%0Atag%20%3D%20%221.31.0%22%0A",
         "dest": "cargo",
         "dest-filename": "config"
     }
