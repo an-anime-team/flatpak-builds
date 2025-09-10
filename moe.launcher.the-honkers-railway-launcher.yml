@@ -137,7 +137,29 @@ modules:
     sources:
       - type: git
         url: https://git.ffmpeg.org/ffmpeg.git
-        tag: n7.1
+        tag: n7.1.1
+      - type: patch
+        path: fix-ffmpeg.patch
+
+  - name: protobuf
+    buildsystem: cmake-ninja
+    config-opts:
+      - -DCMAKE_BUILD_TYPE=None
+      - -DBUILD_SHARED_LIBS=ON
+      - -Dprotobuf_BUILD_TESTS=OFF
+    sources:
+      - type: git
+        url: https://github.com/protocolbuffers/protobuf.git
+        commit: 43e1626812c1b543e56a7bec59dc09eb18248bd2
+        tag: v30.2
+        x-checker-data:
+          type: json
+          url: https://api.github.com/repos/protocolbuffers/protobuf/releases/latest
+          tag-query: .tag_name
+          timestamp-query: .published_at
+          version-query: $tag | sub("^[vV]"; "")
+    cleanup:
+      - /bin
 
   - name: railway
     buildsystem: simple
@@ -154,7 +176,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/an-anime-team/the-honkers-railway-launcher
-        tag: &railway_tag 1.10.0
+        tag: &railway_tag 1.11.0
       - type: file
         path: moe.launcher.the-honkers-railway-launcher.sh
       - cargo-sources.json
