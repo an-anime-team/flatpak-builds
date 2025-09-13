@@ -24,18 +24,18 @@ jobs:
         wget https://raw.githubusercontent.com/flatpak/flat-manager/f6ef84fc39659065c7323e7680adff20add9068a/flat-manager-client -O /usr/bin/flat-manager-client
         chmod +x /usr/bin/flat-manager-client
         git config --global protocol.file.allow always
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         ref: sleepy
         submodules: true
-    - uses: flatpak/flatpak-github-actions/flatpak-builder@v5
+    - uses: flatpak/flatpak-github-actions/flatpak-builder@v6.5
       name: "Build"
       with:
         bundle: moe.launcher.sleepy-launcher.flatpak
         build-bundle: false
         manifest-path: moe.launcher.sleepy-launcher.yml
         cache-key: flatpak-builder-${{ github.sha }}
-    - uses: flatpak/flatpak-github-actions/flat-manager@v5
+    - uses: flatpak/flatpak-github-actions/flat-manager@v6.5
       name: "Deploy"
       with:
         repository: stable
