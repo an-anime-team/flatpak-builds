@@ -137,7 +137,9 @@ modules:
     sources:
       - type: git
         url: https://git.ffmpeg.org/ffmpeg.git
-        tag: n7.1
+        tag: n7.1.1
+      - type: patch
+        patch: fix-ffmpeg.patch
         
   - name: honkers
     buildsystem: simple
@@ -154,7 +156,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/an-anime-team/honkers-launcher
-        tag: &honkers_tag 1.10.2
+        tag: &honkers_tag 1.11.0
       - type: file
         path: moe.launcher.honkers-launcher.sh
       - cargo-sources.json
