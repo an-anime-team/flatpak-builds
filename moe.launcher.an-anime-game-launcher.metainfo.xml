@@ -56,6 +56,11 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+   <release version="3.16.0" date="2025-09-13">
+     <description>
+       <p>Removed support for launching with Proton from the launcher. Launching with proton externally is unaffected.</p>
+     </description>
+   </release>
    <release version="3.15.6" date="2025-08-19">
      <description>
        <p>Fixed some places that should have localized strings being empty instead</p>
