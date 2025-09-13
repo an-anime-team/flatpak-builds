@@ -56,6 +56,11 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+   <release version="1.11.0" date="2025-09-13">
+      <description>
+        <p>Removed support for launching with Proton from the launcher. Launching with proton externally is unaffected.</p>
+      </description>
+   </release>
    <release version="1.10.2" date="2024-11-29">
       <description>
         <p>Fix launcher crashing on start</p>
