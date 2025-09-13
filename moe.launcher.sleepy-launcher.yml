@@ -134,7 +134,7 @@ modules:
         url: https://git.ffmpeg.org/ffmpeg.git
         tag: n7.1.1
       - type: patch
-        patch: fix-ffmpeg.patch
+        path: fix-ffmpeg.patch
 
   - name: sleepy
     buildsystem: simple
