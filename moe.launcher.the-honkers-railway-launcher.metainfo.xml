@@ -56,6 +56,11 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+    <release version="1.11.1" date="2025-09-13">
+      <description>
+        <p>Removed build-time dependency on protobuf</p>
+      </description>
+    </release>
     <release version="1.11.0" date="2025-09-10">
       <description>
         <p>Added (initial?) support for wow64 wine builds</p>
