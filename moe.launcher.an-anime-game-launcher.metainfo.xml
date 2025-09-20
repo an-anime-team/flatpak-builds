@@ -56,6 +56,12 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+   <release version="3.17.0" date="2025-09-20">
+     <description>
+       <p>Added DXVK installation check for broken dxvk installations</p>
+       <p>Fixed FPS unlocker not working with some runners</p>
+     </description>
+   </release>
    <release version="3.16.0" date="2025-09-13">
      <description>
        <p>Removed support for launching with Proton from the launcher. Launching with proton externally is unaffected.</p>
