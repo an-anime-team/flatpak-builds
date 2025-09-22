@@ -56,6 +56,11 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+    <release version="1.5.0" date="2025-09-22">
+      <description>
+        <p>Added DXVK installation check for broken dxvk installations</p>
+      </description>
+    </release>
     <release version="1.4.0" date="2025-09-13">
       <description>
         <p>Added ability to extract the signal search history URL</p>
