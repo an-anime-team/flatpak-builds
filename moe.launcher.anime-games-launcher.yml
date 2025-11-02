@@ -1,6 +1,6 @@
 app-id: moe.launcher.anime-games-launcher
 runtime: org.gnome.Platform
-runtime-version: '47'
+runtime-version: '49'
 sdk: org.gnome.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.rust-stable
@@ -18,10 +18,8 @@ finish-args:
   - --talk-name=org.freedesktop.Notifications
   - --device=all # Controllers
   - --allow=devel # Required to make Wine work
-
 build-options:
   append-path: /usr/lib/sdk/rust-stable/bin
-
 cleanup:
   - /include
   - /lib/pkgconfig
@@ -33,7 +31,6 @@ cleanup:
   - /share/vala
   - '*.la'
   - '*.a'
-
 modules:
   - name: xdelta3
     buildsystem: autotools
@@ -55,7 +52,6 @@ modules:
           - autoheader
           - automake --add-missing
           - automake
-
   # copy/pasted from bottles
   - name: gamemode
     buildsystem: meson
@@ -71,18 +67,15 @@ modules:
           type: anitya
           project-id: 17410
           url-template: https://github.com/FeralInteractive/gamemode/releases/download/$version/gamemode-$version.tar.xz
-
       # https://github.com/FeralInteractive/gamemode/issues/413
       # patch from https://github.com/FeralInteractive/gamemode/commit/4934191b1928ef695c3e8af21e75781f8591745f
       - type: patch
         path: ./fix-gamemode.patch
-
   - name: gamemoderun
     buildsystem: simple
     build-commands:
       - install -Dm755 data/gamemoderun -t /app/bin
     sources: *gamemode_sources
-
   - name: p7zip
     buildsystem: simple
     build-commands:
@@ -91,44 +84,43 @@ modules:
       - type: git
         url: https://github.com/p7zip-project/p7zip
         tag: v17.05
-
   # freedesktop sdk does not provide avdec_h264 due to not compiling ffmpeg without h.264 support, so we have to compile it ourselves
   # this is mostly taken from the freedesktop sdk repository and the kdenlive flatpak manifest
   - name: ffmpeg
     buildsystem: autotools
     config-opts:
-      - --disable-doc 
-      - --disable-static 
-      - --enable-shared 
-      - --enable-gnutls 
-      - --enable-gcrypt 
-      - --enable-ladspa 
-      - --enable-lcms2 
-      - --enable-libaom 
-      - --enable-libdav1d 
-      - --enable-libmp3lame 
-      - --enable-libfontconfig 
-      - --enable-libfreetype 
-      - --enable-libfribidi 
-      - --enable-libopus 
-      - --enable-libpulse 
-      - --enable-libspeex 
-      - --enable-libtheora 
-      - --enable-libvorbis 
-      - --enable-libvpx 
-      - --enable-librsvg 
-      - --enable-libwebp 
-      - --enable-libxml2 
-      - --enable-libopenjpeg 
-      - --enable-openal 
-      - --enable-opengl 
-      - --enable-sdl2 
-      - --enable-vulkan 
-      - --enable-zlib 
-      - --enable-libv4l2 
-      - --enable-libxcb 
-      - --enable-vdpau 
-      - --enable-vaapi 
+      - --disable-doc
+      - --disable-static
+      - --enable-shared
+      - --enable-gnutls
+      - --enable-gcrypt
+      - --enable-ladspa
+      - --enable-lcms2
+      - --enable-libaom
+      - --enable-libdav1d
+      - --enable-libmp3lame
+      - --enable-libfontconfig
+      - --enable-libfreetype
+      - --enable-libfribidi
+      - --enable-libopus
+      - --enable-libpulse
+      - --enable-libspeex
+      - --enable-libtheora
+      - --enable-libvorbis
+      - --enable-libvpx
+      - --enable-librsvg
+      - --enable-libwebp
+      - --enable-libxml2
+      - --enable-libopenjpeg
+      - --enable-openal
+      - --enable-opengl
+      - --enable-sdl2
+      - --enable-vulkan
+      - --enable-zlib
+      - --enable-libv4l2
+      - --enable-libxcb
+      - --enable-vdpau
+      - --enable-vaapi
       - --enable-pthreads
       - --enable-libfdk-aac
       - --enable-decoder="h264"
@@ -141,7 +133,6 @@ modules:
       - type: git
         url: https://git.ffmpeg.org/ffmpeg.git
         tag: n7.1
-        
   - name: launcher
     buildsystem: simple
     build-options:
@@ -150,7 +141,6 @@ modules:
     build-commands:
       - cargo --offline fetch --manifest-path Cargo.toml --verbose
       - cargo --offline build --release --verbose
-
       - cp target/release/anime-games-launcher /app/bin/anime-games-launcher
       - cp moe.launcher.anime-games-launcher.sh /app/bin/moe.launcher.anime-games-launcher
       - chmod +x /app/bin/moe.launcher.anime-games-launcher
@@ -161,19 +151,15 @@ modules:
       - type: file
         path: moe.launcher.anime-games-launcher.sh
       - cargo-sources.json
-
   # not included above so the launcher doesn't have to be rebuilt every time the metadata is changed
   - name: metadata
     buildsystem: simple
     build-commands:
       - mkdir -p /app/share/icons/hicolor/512x512/apps/
       - cp assets/images/icon.png /app/share/icons/hicolor/512x512/apps/moe.launcher.anime-games-launcher.png
-      - desktop-file-install --dir=/app/share/applications --set-key=Exec --set-value=moe.launcher.anime-games-launcher
-        --set-key=Icon --set-value=moe.launcher.anime-games-launcher assets/anime-games-launcher.desktop
-
+      - desktop-file-install --dir=/app/share/applications --set-key=Exec --set-value=moe.launcher.anime-games-launcher --set-key=Icon --set-value=moe.launcher.anime-games-launcher assets/anime-games-launcher.desktop
       - mkdir -p /app/share/metainfo/
       - cp moe.launcher.anime-games-launcher.metainfo.xml /app/share/metainfo/
-
       - mkdir -p /app/utils/
     sources:
       - type: git
