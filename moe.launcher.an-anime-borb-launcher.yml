@@ -1,6 +1,6 @@
 app-id: moe.launcher.an-anime-borb-launcher
 runtime: org.gnome.Platform
-runtime-version: '47'
+runtime-version: '49'
 sdk: org.gnome.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.rust-stable
@@ -18,10 +18,8 @@ finish-args:
   - --talk-name=org.freedesktop.Notifications
   - --device=all # Controllers
   - --allow=devel # Required to make Wine work
-
 build-options:
   append-path: /usr/lib/sdk/rust-stable/bin
-
 cleanup:
   - /include
   - /lib/pkgconfig
@@ -33,7 +31,6 @@ cleanup:
   - /share/vala
   - '*.la'
   - '*.a'
-
 modules:
   - name: xdelta3
     buildsystem: autotools
@@ -55,7 +52,6 @@ modules:
           - autoheader
           - automake --add-missing
           - automake
-
   # copy/pasted from bottles
   - name: gamemode
     buildsystem: meson
@@ -71,27 +67,22 @@ modules:
           type: anitya
           project-id: 17410
           url-template: https://github.com/FeralInteractive/gamemode/releases/download/$version/gamemode-$version.tar.xz
-      
       # https://github.com/FeralInteractive/gamemode/issues/413
       # patch from https://github.com/FeralInteractive/gamemode/commit/4934191b1928ef695c3e8af21e75781f8591745f
       - type: patch
         path: ./fix-gamemode.patch
-
   - name: gamemoderun
     buildsystem: simple
     build-commands:
       - install -Dm755 data/gamemoderun -t /app/bin
     sources: *gamemode_sources
-
   - name: git
     buildsystem: autotools
     config-opts:
       - --without-tcltk
     post-install:
       - rm -rf /app/share/gitweb
-      - find /app/libexec/git-core/ -type f -not -name git -and -not -name git-rev-parse -and -not -name git-remote -and
-        -not -name git-remote-https -and -not -name git-fetch -and -not -name git-reset -and -not -name git-clone
-        -delete
+      - find /app/libexec/git-core/ -type f -not -name git -and -not -name git-rev-parse -and -not -name git-remote -and -not -name git-remote-https -and -not -name git-fetch -and -not -name git-reset -and -not -name git-clone -delete
     sources:
       - type: archive
         url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.40.0.tar.xz
@@ -100,14 +91,12 @@ modules:
           type: anitya
           project-id: 5350
           url-template: https://mirrors.edge.kernel.org/pub/software/scm/git/git-$version.tar.xz
-
   - name: cabextract
     buildsystem: autotools
     sources:
       - type: archive
         url: "https://www.cabextract.org.uk/cabextract-1.11.tar.gz"
         sha256: b5546db1155e4c718ff3d4b278573604f30dd64c3c5bfd4657cd089b823a3ac6
-
   - name: pgr
     buildsystem: simple
     build-options:
@@ -116,7 +105,6 @@ modules:
     build-commands:
       - cargo --offline fetch --manifest-path Cargo.toml --verbose
       - cargo --offline build --release --verbose
-
       - cp target/release/anime-borb-launcher /app/bin/anime-borb-launcher
       - cp moe.launcher.an-anime-borb-launcher.sh /app/bin/moe.launcher.an-anime-borb-launcher
       - chmod +x /app/bin/moe.launcher.an-anime-borb-launcher
@@ -127,19 +115,15 @@ modules:
       - type: file
         path: moe.launcher.an-anime-borb-launcher.sh
       - cargo-sources.json
-
   # not included in railway so the launcher doesn't have to be rebuilt every time the metadata is changed
   - name: metadata
     buildsystem: simple
     build-commands:
       - mkdir -p /app/share/icons/hicolor/512x512/apps/
       - cp assets/images/icon.png /app/share/icons/hicolor/512x512/apps/moe.launcher.an-anime-borb-launcher.png
-      - desktop-file-install --dir=/app/share/applications --set-key=Exec --set-value=moe.launcher.an-anime-borb-launcher
-        --set-key=Icon --set-value=moe.launcher.an-anime-borb-launcher assets/anime-borb-launcher.desktop
-
+      - desktop-file-install --dir=/app/share/applications --set-key=Exec --set-value=moe.launcher.an-anime-borb-launcher --set-key=Icon --set-value=moe.launcher.an-anime-borb-launcher assets/anime-borb-launcher.desktop
       - mkdir -p /app/share/metainfo/
       - cp moe.launcher.an-anime-borb-launcher.metainfo.xml /app/share/metainfo/
-
       - mkdir -p /app/utils/
     sources:
       - type: git
