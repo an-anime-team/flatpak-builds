@@ -1,6 +1,6 @@
 app-id: moe.launcher.wavey-launcher
 runtime: org.gnome.Platform
-runtime-version: '47'
+runtime-version: '49'
 sdk: org.gnome.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.rust-stable
@@ -18,10 +18,8 @@ finish-args:
   - --talk-name=org.freedesktop.Notifications
   - --device=all # Controllers
   - --allow=devel # Required to make Wine work
-
 build-options:
   append-path: /usr/lib/sdk/rust-stable/bin
-
 cleanup:
   - /include
   - /lib/pkgconfig
@@ -33,9 +31,7 @@ cleanup:
   - /share/vala
   - '*.la'
   - '*.a'
-
 modules:
-
   # copy/pasted from bottles
   - name: gamemode
     buildsystem: meson
@@ -51,22 +47,18 @@ modules:
           type: anitya
           project-id: 17410
           url-template: https://github.com/FeralInteractive/gamemode/releases/download/$version/gamemode-$version.tar.xz
-
   - name: gamemoderun
     buildsystem: simple
     build-commands:
       - install -Dm755 data/gamemoderun -t /app/bin
     sources: *gamemode_sources
-
   - name: git
     buildsystem: autotools
     config-opts:
       - --without-tcltk
     post-install:
       - rm -rf /app/share/gitweb
-      - find /app/libexec/git-core/ -type f -not -name git -and -not -name git-rev-parse
-        -and -not -name git-remote -and -not -name git-remote-https -and -not -name
-        git-fetch -and -not -name git-reset -and -not -name git-clone -delete
+      - find /app/libexec/git-core/ -type f -not -name git -and -not -name git-rev-parse -and -not -name git-remote -and -not -name git-remote-https -and -not -name git-fetch -and -not -name git-reset -and -not -name git-clone -delete
     sources:
       - type: archive
         url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.45.2.tar.xz
@@ -75,7 +67,6 @@ modules:
           type: anitya
           project-id: 5350
           url-template: https://mirrors.edge.kernel.org/pub/software/scm/git/git-$version.tar.xz
-
   # freedesktop sdk does not provide avdec_h264 due to not compiling ffmpeg without h.264 support, so we have to compile it ourselves
   # this is mostly taken from the freedesktop sdk repository and the kdenlive flatpak manifest
   - name: ffmpeg
@@ -125,7 +116,6 @@ modules:
       - type: git
         url: https://git.ffmpeg.org/ffmpeg.git
         tag: n7.1
-
   - name: wavey
     buildsystem: simple
     build-options:
@@ -134,7 +124,6 @@ modules:
     build-commands:
       - cargo --offline fetch --manifest-path Cargo.toml --verbose
       - cargo --offline build --release --verbose
-
       - cp target/release/wavey-launcher /app/bin/wavey-launcher
       - cp moe.launcher.wavey-launcher.sh /app/bin/moe.launcher.wavey-launcher
       - chmod +x /app/bin/moe.launcher.wavey-launcher
@@ -145,19 +134,15 @@ modules:
       - type: file
         path: moe.launcher.wavey-launcher.sh
       - cargo-sources.json
-
   # not included in wavey so the launcher doesn't have to be rebuilt every time the metadata is changed
   - name: metadata
     buildsystem: simple
     build-commands:
       - mkdir -p /app/share/icons/hicolor/512x512/apps/
       - cp assets/images/icon.png /app/share/icons/hicolor/512x512/apps/moe.launcher.wavey-launcher.png
-      - desktop-file-install --dir=/app/share/applications --set-key=Exec --set-value=moe.launcher.wavey-launcher
-        --set-key=Icon --set-value=moe.launcher.wavey-launcher assets/wavey-launcher.desktop
-
+      - desktop-file-install --dir=/app/share/applications --set-key=Exec --set-value=moe.launcher.wavey-launcher --set-key=Icon --set-value=moe.launcher.wavey-launcher assets/wavey-launcher.desktop
       - mkdir -p /app/share/metainfo/
       - cp moe.launcher.wavey-launcher.metainfo.xml /app/share/metainfo/
-
       - mkdir -p /app/utils/
     sources:
       - type: git
