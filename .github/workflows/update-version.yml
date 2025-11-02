@@ -1,0 +1,263 @@
+# Workflow: Bump Flatpak runtime-version and sdk-version across all branches
+#
+# Usage:
+# - Go to the Actions tab -> "Bump Flatpak runtime/sdk versions" -> Run workflow
+# - Provide the version number (e.g. 47) as the "version" input.
+#
+# What it does:
+# - Iterates over all remote branches
+# - For each branch, creates a working branch named update/sdk-runtime-<version>-<branch>
+# - Updates `runtime-version` and `sdk-version` keys in JSON/YAML/other files to the provided version
+# - Validates JSON/YAML where possible (jq / yq)
+# - Commits, pushes the branch, and opens a pull request back to the original branch
+#
+# Notes / prerequisites:
+# - This workflow uses the default GITHUB_TOKEN to push branches and create PRs.
+#   If your repo has branch protection requiring stricter checks, the push may fail;
+#   the PR will still be created when possible and the failure will be noted in logs.
+# - The script is conservative: skips files that fail JSON/YAML parse and reports them in the PR body.
+# - It searches files tracked by git with extensions: .json .yaml .yml .jsonnet .xml and also performs
+#   a best-effort grep+sed replacement for other files that might contain runtime/sdk keys.
+#
+# Security:
+# - This runs inside GitHub Actions using the GITHUB_TOKEN. For larger fleets or cross-repo runs,
+#   consider using a machine account with a PAT and appropriate scopes.
+#
+name: Bump Flatpak runtime/sdk versions
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Target runtime/sdk version (e.g. 47)'
+        required: true
+        default: '47'
+      branch-glob-exclude:
+        description: 'Optional: bash glob (grep -E) to exclude branches (e.g. ^dependabot/)'
+        required: false
+        default: ''
+      skip-protected-branches:
+        description: 'If true, skip branches that are protected (default: true)'
+        required: false
+        default: 'true'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  bump-versions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository (fetch all branches)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install dependencies (jq, yq)
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y jq gettext-base
+          # install mikefarah yq v4
+          YQ_VERSION=v4.40.2
+          wget -qO /usr/local/bin/yq "https://github.com/mikefarah/yq/releases/download/${YQ_VERSION}/yq_linux_amd64"
+          chmod +x /usr/local/bin/yq
+          yq --version
+
+      - name: Configure git user
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Prepare environment variables
+        id: inputs
+        run: |
+          echo "VERSION=${{ github.event.inputs.version }}" >> $GITHUB_OUTPUT
+          echo "EXCLUDE=${{ github.event.inputs.branch-glob-exclude }}" >> $GITHUB_OUTPUT
+          echo "SKIP_PROTECTED=${{ github.event.inputs.skip-protected-branches }}" >> $GITHUB_OUTPUT
+
+      - name: Fetch remote branches and protection status
+        # We use the GitHub API to list branches and (optionally) protection status.
+        env:
+          REPO: ${{ github.repository }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # list branches
+          echo "Collecting remote branches..."
+          curl -s -H "Authorization: token $GITHUB_TOKEN" \
+            "https://api.github.com/repos/$REPO/branches?per_page=100" > /tmp/branches.json
+          jq -r '.[].name' /tmp/branches.json > /tmp/branch-names.txt
+          echo "Found branches:"
+          cat /tmp/branch-names.txt
+          # Save entire branches file for possible later use
+          mv /tmp/branches.json /tmp/branch-list.json
+
+      - name: Update branches and open PRs
+        env:
+          REPO: ${{ github.repository }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VERSION: ${{ steps.inputs.outputs.VERSION }}
+          EXCLUDE: ${{ steps.inputs.outputs.EXCLUDE }}
+          SKIP_PROTECTED: ${{ steps.inputs.outputs.SKIP_PROTECTED }}
+        run: |
+          set -euo pipefail
+          git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${REPO}.git"
+          ROOT=$(pwd)
+          BRANCHES_FILE=/tmp/branch-list.json
+
+          # helper functions
+          update_json_key() {
+            local file=$1 key=$2
+            if jq -e "has(\"$key\")" "$file" >/dev/null 2>&1; then
+              cur=$(jq -r ".\"$key\"" "$file")
+              if [[ "$cur" != "$VERSION" ]]; then
+                jq ".\"$key\" = \"$VERSION\"" "$file" > "$file.tmp" && mv "$file.tmp" "$file"
+                return 0
+              fi
+            fi
+            return 1
+          }
+
+          update_yaml_key() {
+            local file=$1 key=$2
+            if yq eval "has(\"$key\")" "$file" >/dev/null 2>&1; then
+              cur=$(yq eval ".\"$key\"" "$file")
+              if [[ "$cur" != "$VERSION" ]]; then
+                yq eval ".\"$key\" = \"${VERSION}\"" -i "$file"
+                return 0
+              fi
+            fi
+            return 1
+          }
+
+          is_protected() {
+            local branch=$1
+            # query branch protection
+            status=$(curl -s -o /tmp/branch_prot.json -w "%{http_code}" -H "Authorization: token ${GITHUB_TOKEN}" \
+              "https://api.github.com/repos/${REPO}/branches/${branch}/protection")
+            # 200 => protected, 404 => not protected
+            if [[ "$status" == "200" ]]; then
+              echo "true"
+            else
+              echo "false"
+            fi
+          }
+
+          # iterate branches
+          jq -r '.[].name' "$BRANCHES_FILE" | while IFS= read -r target_branch; do
+            # optional exclude filter
+            if [[ -n "${EXCLUDE}" ]]; then
+              if echo "$target_branch" | grep -E "${EXCLUDE}" >/dev/null 2>&1; then
+                echo "Skipping branch (excluded by pattern): $target_branch"
+                continue
+              fi
+            fi
+
+            if [[ "${SKIP_PROTECTED}" == "true" ]]; then
+              protected=$(is_protected "$target_branch")
+              if [[ "$protected" == "true" ]]; then
+                echo "Branch $target_branch is protected; skipping per skip-protected-branches=true"
+                continue
+              fi
+            fi
+
+            safe_branch="update/sdk-runtime-${VERSION}-${target_branch//\//-}"
+            workdir="/tmp/wt-${safe_branch}"
+            echo "Processing branch: $target_branch -> workdir: $workdir -> new branch: $safe_branch"
+
+            # create worktree for branch
+            rm -rf "$workdir"
+            mkdir -p "$workdir"
+            git fetch origin "$target_branch":"refs/remotes/origin/${target_branch}" || true
+            # create a local checkout of the target branch
+            git worktree add --detach "$workdir" "origin/${target_branch}" || { echo "Failed to add worktree for ${target_branch}"; continue; }
+            pushd "$workdir" >/dev/null
+
+            # create new branch from this branch
+            git checkout -b "$safe_branch" || { echo "Failed to checkout new branch $safe_branch"; popd >/dev/null; git worktree remove "$workdir" --force || true; continue; }
+
+            changed=false
+            notes=()
+            # find candidate files tracked by git
+            files=$(git ls-files -- '*.json' '*.yaml' '*.yml' '*.jsonnet' '*.xml' || true)
+            for f in $files; do
+              updated=false
+              if [[ "$f" =~ \.json$ ]]; then
+                if jq empty "$f" >/dev/null 2>&1; then
+                  if update_json_key "$f" "runtime-version"; then updated=true; fi
+                  if update_json_key "$f" "sdk-version"; then updated=true; fi
+                else
+                  notes+=("$f: invalid JSON, skipped")
+                fi
+              elif [[ "$f" =~ \.ya?ml$ ]]; then
+                if yq eval '.' "$f" >/dev/null 2>&1; then
+                  if update_yaml_key "$f" "runtime-version"; then updated=true; fi
+                  if update_yaml_key "$f" "sdk-version"; then updated=true; fi
+                else
+                  notes+=("$f: invalid YAML, skipped")
+                fi
+              else
+                # fallback: naive grep+sed for lines that look like runtime-version or sdk-version
+                if grep -En 'runtime[-_ ]?version[[:space:]]*[:=]' "$f" >/dev/null 2>&1 || grep -En 'sdk[-_ ]?version' "$f" >/dev/null 2>&1; then
+                  # try to replace digits after separators; keep quotes if present
+                  sed -E -i.bak -e "s/([\"']?runtime[-_ ]?version[\"']?[[:space:]]*[:=][[:space:]]*)(\"?)[0-9]+(\"?)/\1\2${VERSION}\3/g" \
+                                -e "s/([\"']?sdk[-_ ]?version[\"']?[[:space:]]*[:=][[:space:]]*)(\"?)[0-9]+(\"?)/\1\2${VERSION}\3/g" "$f" || true
+                  if ! cmp -s "$f" "$f.bak"; then updated=true; fi
+                  rm -f "$f.bak" || true
+                fi
+              fi
+
+              if [[ "$updated" == "true" ]]; then
+                git add "$f"
+                changed=true
+              fi
+            done
+
+            if [[ "$changed" == "true" ]]; then
+              git commit -m "chore: bump runtime-version and sdk-version to ${VERSION}" || true
+
+              # push branch
+              if git push -u origin "HEAD:${safe_branch}"; then
+                echo "Pushed ${safe_branch}"
+              else
+                echo "Push failed for ${safe_branch} (may be protected) — PR creation will proceed where possible"
+              fi
+
+              # Build PR body
+              PR_BODY="Automated change to bump Flatpak runtime-version and sdk-version to ${VERSION}.\n\nFiles changed:\n"
+              git --no-pager diff --name-only HEAD~1 HEAD | while read -r fn; do PR_BODY="${PR_BODY}- ${fn}\n"; done
+              if [ ${#notes[@]} -gt 0 ]; then
+                PR_BODY="${PR_BODY}\nNotes:\n"
+                for n in "${notes[@]}"; do PR_BODY="${PR_BODY}- ${n}\n"; done
+              fi
+
+              # Create PR using REST API
+              pr_post_data=$(jq -n --arg title "Bump Flatpak runtime/sdk to ${VERSION}" \
+                                    --arg head "$safe_branch" \
+                                    --arg base "$target_branch" \
+                                    --arg body "$PR_BODY" \
+                                    '{title:$title, head:$head, base:$base, body:$body, maintainer_can_modify:true}')
+              pr_response=$(curl -s -o /tmp/pr_create.json -w "%{http_code}" -X POST -H "Authorization: token ${GITHUB_TOKEN}" \
+                -H "Accept: application/vnd.github+json" \
+                "https://api.github.com/repos/${REPO}/pulls" \
+                -d "$pr_post_data")
+              if [[ "$pr_response" == "201" ]]; then
+                pr_url=$(jq -r .html_url /tmp/pr_create.json)
+                echo "Created PR: $pr_url"
+              else
+                echo "Failed to create PR for ${safe_branch} -> ${target_branch}. Response code: $pr_response"
+                jq . /tmp/pr_create.json || true
+              fi
+            else
+              echo "No changes for branch $target_branch"
+              # cleanup created branch if empty
+            fi
+
+            # cleanup worktree
+            popd >/dev/null
+            git worktree remove "$workdir" --force || true
+
+          done
+
+      - name: Summary
+        run: echo "Workflow completed. Check Actions logs for per-branch details."
