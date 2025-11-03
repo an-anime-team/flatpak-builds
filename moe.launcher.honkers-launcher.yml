@@ -1,15 +1,17 @@
 app-id: moe.launcher.honkers-launcher
+command: moe.launcher.honkers-launcher
+rename-desktop-file: honkers-launcher.desktop
+
 runtime: org.gnome.Platform
 runtime-version: '49'
 sdk: org.gnome.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.rust-stable
-command: moe.launcher.honkers-launcher
-rename-desktop-file: honkers-launcher.desktop
+
 finish-args:
   - --share=network
   - --share=ipc
-  - --socket=x11 # Not fallback-x11, because while the launcher supports Wayland, Wine doesn't (yet)
+  - --socket=x11
   - --socket=wayland
   - --socket=pulseaudio
   - --filesystem=/mnt
@@ -18,8 +20,10 @@ finish-args:
   - --talk-name=org.freedesktop.Notifications
   - --device=all # Controllers
   - --allow=devel # Required to make Wine work
+
 build-options:
   append-path: /usr/lib/sdk/rust-stable/bin
+
 cleanup:
   - /include
   - /lib/pkgconfig
@@ -31,8 +35,8 @@ cleanup:
   - /share/vala
   - '*.la'
   - '*.a'
+
 modules:
-  # copy/pasted from bottles
   - name: gamemode
     buildsystem: meson
     config-opts:
@@ -41,36 +45,38 @@ modules:
       - -Dwith-sd-bus-provider=no-daemon
     sources: &gamemode_sources
       - type: archive
-        url: https://github.com/FeralInteractive/gamemode/releases/download/1.7/gamemode-1.7.tar.xz
-        sha256: c1860f76f1d4c0d6e3965e52de21c824f24791049946da728da50f0c63748389
+        url: https://github.com/FeralInteractive/gamemode/releases/download/1.8.2/gamemode-1.8.2.tar.xz
+        sha256: 98cd1bcf6101c92fe87f974c7776af23c7e18f29ce6ecfe572b1c39dcde5c181
         x-checker-data:
           type: anitya
           project-id: 17410
           url-template: https://github.com/FeralInteractive/gamemode/releases/download/$version/gamemode-$version.tar.xz
-      # https://github.com/FeralInteractive/gamemode/issues/413
-      # patch from https://github.com/FeralInteractive/gamemode/commit/4934191b1928ef695c3e8af21e75781f8591745f
-      - type: patch
-        path: ./fix-gamemode.patch
+
   - name: gamemoderun
     buildsystem: simple
     build-commands:
       - install -Dm755 data/gamemoderun -t /app/bin
     sources: *gamemode_sources
+
   - name: git
     buildsystem: autotools
     config-opts:
       - --without-tcltk
     post-install:
       - rm -rf /app/share/gitweb
-      - find /app/libexec/git-core/ -type f -not -name git -and -not -name git-rev-parse -and -not -name git-remote -and -not -name git-remote-https -and -not -name git-fetch -and -not -name git-reset -and -not -name git-clone -delete
+      - |
+        cd /app/libexec/git-core
+        keep="git git-rev-parse git-remote git-remote-https git-fetch git-reset git-clone"
+        for f in *; do [[ " $keep " =~ " $f " ]] || rm -f "$f"; done
     sources:
       - type: archive
-        url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.40.0.tar.xz
-        sha256: b17a598fbf58729ef13b577465eb93b2d484df1201518b708b5044ff623bf46d
+        url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.51.2.tar.xz
+        sha256: 233d7143a2d58e60755eee9b76f559ec73ea2b3c297f5b503162ace95966b4e3
         x-checker-data:
           type: anitya
           project-id: 5350
           url-template: https://mirrors.edge.kernel.org/pub/software/scm/git/git-$version.tar.xz
+
   - name: p7zip
     buildsystem: simple
     build-commands:
@@ -79,8 +85,18 @@ modules:
       - type: git
         url: https://github.com/p7zip-project/p7zip
         tag: v17.05
-  # freedesktop sdk does not provide avdec_h264 due to not compiling ffmpeg without h.264 support, so we have to compile it ourselves
-  # this is mostly taken from the freedesktop sdk repository and the kdenlive flatpak manifest
+
+  # Needed for FFmpeg 7.1.1
+  - name: fdk-aac
+    buildsystem: autotools
+    config-opts:
+      - --disable-static
+    sources:
+      - type: git
+        url: https://github.com/mstorsjo/fdk-aac.git
+        tag: v2.0.3
+  
+  # Compiling FFmpeg from source for h264 support, see Kdenlive's manifest for an example.
   - name: ffmpeg
     buildsystem: autotools
     config-opts:
@@ -119,17 +135,13 @@ modules:
       - --enable-pthreads
       - --enable-libfdk-aac
       - --enable-decoder="h264"
-    build-options:
-      prepend-path: /usr/lib/sdk/llvm17/bin
-      prepend-ld-library-path: /usr/lib/sdk/llvm17/lib
     cleanup:
       - /share/ffmpeg/examples
     sources:
       - type: git
         url: https://git.ffmpeg.org/ffmpeg.git
         tag: n7.1.1
-      - type: patch
-        path: fix-ffmpeg.patch
+
   - name: honkers
     buildsystem: simple
     build-options:
@@ -148,7 +160,8 @@ modules:
       - type: file
         path: moe.launcher.honkers-launcher.sh
       - cargo-sources.json
-  # not included in honkers so the launcher doesn't have to be rebuilt every time the metadata is changed
+
+  # Avoid rebuilding launcher when only metadata is changed
   - name: metadata
     buildsystem: simple
     build-commands:
