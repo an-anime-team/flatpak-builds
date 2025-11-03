@@ -1,15 +1,17 @@
 app-id: moe.launcher.sleepy-launcher
+command: moe.launcher.sleepy-launcher
+rename-desktop-file: sleepy-launcher.desktop
+
 runtime: org.gnome.Platform
 runtime-version: '49'
 sdk: org.gnome.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.rust-stable
-command: moe.launcher.sleepy-launcher
-rename-desktop-file: sleepy-launcher.desktop
+
 finish-args:
   - --share=network
   - --share=ipc
-  - --socket=x11 # Not fallback-x11, because while the launcher supports Wayland, Wine doesn't (yet)
+  - --socket=x11
   - --socket=wayland
   - --socket=pulseaudio
   - --filesystem=/mnt
@@ -18,8 +20,10 @@ finish-args:
   - --talk-name=org.freedesktop.Notifications
   - --device=all # Controllers
   - --allow=devel # Required to make Wine work
+
 build-options:
   append-path: /usr/lib/sdk/rust-stable/bin
+
 cleanup:
   - /include
   - /lib/pkgconfig
@@ -31,8 +35,8 @@ cleanup:
   - /share/vala
   - '*.la'
   - '*.a'
+
 modules:
-  # copy/pasted from bottles
   - name: gamemode
     buildsystem: meson
     config-opts:
@@ -41,32 +45,38 @@ modules:
       - -Dwith-sd-bus-provider=no-daemon
     sources: &gamemode_sources
       - type: archive
-        url: https://github.com/FeralInteractive/gamemode/releases/download/1.8.1/gamemode-1.8.1.tar.xz
-        sha256: cdb117d05d65dbd03c0bd2104df874a1f878db8f23cc4d55bfa44e832482269e
+        url: https://github.com/FeralInteractive/gamemode/releases/download/1.8.2/gamemode-1.8.2.tar.xz
+        sha256: 98cd1bcf6101c92fe87f974c7776af23c7e18f29ce6ecfe572b1c39dcde5c181
         x-checker-data:
           type: anitya
           project-id: 17410
           url-template: https://github.com/FeralInteractive/gamemode/releases/download/$version/gamemode-$version.tar.xz
+
   - name: gamemoderun
     buildsystem: simple
     build-commands:
       - install -Dm755 data/gamemoderun -t /app/bin
     sources: *gamemode_sources
+
   - name: git
     buildsystem: autotools
     config-opts:
       - --without-tcltk
     post-install:
       - rm -rf /app/share/gitweb
-      - find /app/libexec/git-core/ -type f -not -name git -and -not -name git-rev-parse -and -not -name git-remote -and -not -name git-remote-https -and -not -name git-fetch -and -not -name git-reset -and -not -name git-clone -delete
+      - |
+        cd /app/libexec/git-core
+        keep="git git-rev-parse git-remote git-remote-https git-fetch git-reset git-clone"
+        for f in *; do [[ " $keep " =~ " $f " ]] || rm -f "$f"; done
     sources:
       - type: archive
-        url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.45.2.tar.xz
-        sha256: 51bfe87eb1c02fed1484051875365eeab229831d30d0cec5d89a14f9e40e9adb
+        url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.51.2.tar.xz
+        sha256: 233d7143a2d58e60755eee9b76f559ec73ea2b3c297f5b503162ace95966b4e3
         x-checker-data:
           type: anitya
           project-id: 5350
           url-template: https://mirrors.edge.kernel.org/pub/software/scm/git/git-$version.tar.xz
+
   - name: p7zip
     buildsystem: simple
     build-commands:
@@ -75,8 +85,18 @@ modules:
       - type: git
         url: https://github.com/p7zip-project/p7zip
         tag: v17.05
-  # freedesktop sdk does not provide avdec_h264 due to not compiling ffmpeg without h.264 support, so we have to compile it ourselves
-  # this is mostly taken from the freedesktop sdk repository and the kdenlive flatpak manifest
+
+  # Needed for FFmpeg 7.1.1
+  - name: fdk-aac
+    buildsystem: autotools
+    config-opts:
+      - --disable-static
+    sources:
+      - type: git
+        url: https://github.com/mstorsjo/fdk-aac.git
+        tag: v2.0.3
+  
+  # Compiling FFmpeg from source for h264 support, see Kdenlive's manifest for an example.
   - name: ffmpeg
     buildsystem: autotools
     config-opts:
@@ -115,17 +135,13 @@ modules:
       - --enable-pthreads
       - --enable-libfdk-aac
       - --enable-decoder="h264"
-    build-options:
-      prepend-path: /usr/lib/sdk/llvm17/bin
-      prepend-ld-library-path: /usr/lib/sdk/llvm17/lib
     cleanup:
       - /share/ffmpeg/examples
     sources:
       - type: git
         url: https://git.ffmpeg.org/ffmpeg.git
         tag: n7.1.1
-      - type: patch
-        path: fix-ffmpeg.patch
+
   - name: sleepy
     buildsystem: simple
     build-options:
@@ -144,7 +160,8 @@ modules:
       - type: file
         path: moe.launcher.sleepy-launcher.sh
       - cargo-sources.json
-  # not included in sleepy so the launcher doesn't have to be rebuilt every time the metadata is changed
+
+  # Avoid rebuilding launcher when only metadata is changed
   - name: metadata
     buildsystem: simple
     build-commands:
