@@ -88,14 +88,12 @@ modules:
 
   - name: imagemagick
     config-opts:
-      - --enable-shared
       - --disable-static
       - --disable-docs
       - --with-modules
       - --with-threads
       - --with-png
       - --with-jpeg
-      - --with-tiff
       - --with-webp
       - --with-libraw
     sources:
