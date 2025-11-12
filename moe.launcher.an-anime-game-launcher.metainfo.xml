@@ -56,6 +56,13 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+   <release version="3.18.0" date="2025-11-12">
+     <description>
+       <p>Fixed size of images in the "Appearance" preferences section (most noticeable on flatpak)</p>
+       <p>Fixed the package name for libwebp-utils on Arch Linux</p>
+       <p>Updated Korean translation</p>
+     </description>
+   </release>
    <release version="3.17.0" date="2025-09-20">
      <description>
        <p>Added DXVK installation check for broken dxvk installations</p>
