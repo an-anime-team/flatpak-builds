@@ -93,6 +93,11 @@ modules:
       - --disable-docs
       - --with-modules
       - --with-threads
+      - --with-png
+      - --with-jpeg
+      - --with-tiff
+      - --with-webp
+      - --with-libraw
     sources:
       - type: archive
         url: https://github.com/ImageMagick/ImageMagick/archive/7.1.2-8.tar.gz
