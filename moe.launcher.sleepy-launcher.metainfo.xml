@@ -56,6 +56,14 @@
     <content_attribute id="money-gambling">moderate</content_attribute>
   </content_rating>
   <releases>
+    <release version="1.6.0" date="2025-11-12">
+      <description>
+        <p>Added support for layered launcher backgrounds (background separate from text)</p>
+        <p>Fixed size of images in the "Appearance" preferences section (most noticeable on flatpak)</p>
+        <p>Updated default window size in classic appearance option to match the other launchers</p>
+        <p>Removed dwebp dependency, replaced by imagemagick</p>
+      </description>
+    </release>
     <release version="1.5.0" date="2025-09-22">
       <description>
         <p>Added DXVK installation check for broken dxvk installations</p>
