@@ -96,6 +96,7 @@ modules:
       - --with-jpeg
       - --with-webp
       - --with-libraw
+      - --with-fontconfig=no
     sources:
       - type: archive
         url: https://github.com/ImageMagick/ImageMagick/archive/7.1.2-8.tar.gz
