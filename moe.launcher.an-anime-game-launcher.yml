@@ -95,7 +95,7 @@ modules:
       - type: git
         url: https://github.com/mstorsjo/fdk-aac.git
         tag: v2.0.3
-  
+
   # Compiling FFmpeg from source for h264 support, see Kdenlive's manifest for an example.
   - name: ffmpeg
     buildsystem: autotools
@@ -152,8 +152,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/protocolbuffers/protobuf.git
-        commit: a79f2d2e9fadd75e94f3fe40a0399bf0a5d90551
-        tag: v33.0
+        commit: a8d85ffbc7158660b4247f732371d1b07780510e
+        tag: v33.1
         x-checker-data:
           type: json
           url: https://api.github.com/repos/protocolbuffers/protobuf/releases/latest
@@ -181,14 +181,15 @@ modules:
       - type: file
         path: moe.launcher.an-anime-game-launcher.sh
       - cargo-sources.json
-  
+
   # Avoid rebuilding launcher when only metadata is changed
   - name: metadata
     buildsystem: simple
     build-commands:
       - mkdir -p /app/share/icons/hicolor/512x512/apps/
       - cp assets/images/icon.png /app/share/icons/hicolor/512x512/apps/moe.launcher.an-anime-game-launcher.png
-      - desktop-file-install --dir=/app/share/applications --set-key=Exec --set-value=moe.launcher.an-anime-game-launcher --set-key=Icon --set-value=moe.launcher.an-anime-game-launcher assets/anime-game-launcher.desktop
+      - desktop-file-install --dir=/app/share/applications --set-key=Exec --set-value=moe.launcher.an-anime-game-launcher
+        --set-key=Icon --set-value=moe.launcher.an-anime-game-launcher assets/anime-game-launcher.desktop
       - mkdir -p /app/share/metainfo/
       - cp moe.launcher.an-anime-game-launcher.metainfo.xml /app/share/metainfo/
       - mkdir -p /app/utils/
