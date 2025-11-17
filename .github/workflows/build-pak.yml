@@ -41,3 +41,4 @@ jobs:
         repository: stable
         flat-manager-url: ${{ secrets.REPO_URL }}
         token: ${{ secrets.REPO_TOKEN }}
+        end-of-life: "An Anime Game Launcher has moved its home to Flathub, Please install the Flathub release for further updates."
