@@ -3,7 +3,7 @@ command: moe.launcher.sleepy-launcher
 rename-desktop-file: sleepy-launcher.desktop
 
 runtime: org.gnome.Platform
-runtime-version: '49'
+runtime-version: "49"
 sdk: org.gnome.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.rust-stable
@@ -11,13 +11,12 @@ sdk-extensions:
 finish-args:
   - --share=network
   - --share=ipc
-  - --socket=x11
   - --socket=wayland
+  - --socket=fallback-x11
   - --socket=pulseaudio
   - --filesystem=/mnt
   - --filesystem=/media
   - --filesystem=/run/media
-  - --talk-name=org.freedesktop.Notifications
   - --device=all # Controllers
   - --allow=devel # Required to make Wine work
 
@@ -33,8 +32,8 @@ cleanup:
   - /share/man
   - /share/pkgconfig
   - /share/vala
-  - '*.la'
-  - '*.a'
+  - "*.la"
+  - "*.a"
 
 modules:
   - name: gamemode
@@ -43,7 +42,9 @@ modules:
       - -Dwith-examples=false
       - -Dwith-util=false
       - -Dwith-sd-bus-provider=no-daemon
-    sources: &gamemode_sources
+    post-install:
+      - install -Dm775 ../data/gamemoderun -t /app/bin
+    sources:
       - type: archive
         url: https://github.com/FeralInteractive/gamemode/releases/download/1.8.2/gamemode-1.8.2.tar.xz
         sha256: 98cd1bcf6101c92fe87f974c7776af23c7e18f29ce6ecfe572b1c39dcde5c181
@@ -51,12 +52,6 @@ modules:
           type: anitya
           project-id: 17410
           url-template: https://github.com/FeralInteractive/gamemode/releases/download/$version/gamemode-$version.tar.xz
-
-  - name: gamemoderun
-    buildsystem: simple
-    build-commands:
-      - install -Dm755 data/gamemoderun -t /app/bin
-    sources: *gamemode_sources
 
   - name: git
     buildsystem: autotools
@@ -86,77 +81,21 @@ modules:
         url: https://github.com/p7zip-project/p7zip
         tag: v17.05
 
-  - name: imagemagick
+  # Required for layered backgrounds support
+  - name: ImageMagick
     config-opts:
       - --disable-static
       - --disable-docs
-      - --with-modules
-      - --with-threads
-      - --with-png
-      - --with-jpeg
-      - --with-webp
-      - --with-libraw
-      - --with-fontconfig=no
-    sources:
-      - type: archive
-        url: https://github.com/ImageMagick/ImageMagick/archive/7.1.2-8.tar.gz
-        sha256: acf76a9dafbd18f4dd7b24c45ca10c77e31289fc28e4da0ce5cc3929fd0aef16
-
-  # Needed for FFmpeg 7.1.1
-  - name: fdk-aac
-    buildsystem: autotools
-    config-opts:
-      - --disable-static
+      - --with-hdri
+      - --with-pic
     sources:
       - type: git
-        url: https://github.com/mstorsjo/fdk-aac.git
-        tag: v2.0.3
-  
-  # Compiling FFmpeg from source for h264 support, see Kdenlive's manifest for an example.
-  - name: ffmpeg
-    buildsystem: autotools
-    config-opts:
-      - --disable-doc
-      - --disable-static
-      - --enable-shared
-      - --enable-gnutls
-      - --enable-gcrypt
-      - --enable-ladspa
-      - --enable-lcms2
-      - --enable-libaom
-      - --enable-libdav1d
-      - --enable-libmp3lame
-      - --enable-libfontconfig
-      - --enable-libfreetype
-      - --enable-libfribidi
-      - --enable-libopus
-      - --enable-libpulse
-      - --enable-libspeex
-      - --enable-libtheora
-      - --enable-libvorbis
-      - --enable-libvpx
-      - --enable-librsvg
-      - --enable-libwebp
-      - --enable-libxml2
-      - --enable-libopenjpeg
-      - --enable-openal
-      - --enable-opengl
-      - --enable-sdl2
-      - --enable-vulkan
-      - --enable-zlib
-      - --enable-libv4l2
-      - --enable-libxcb
-      - --enable-vdpau
-      - --enable-vaapi
-      - --enable-pthreads
-      - --enable-libfdk-aac
-      - --enable-decoder="h264"
-    cleanup:
-      - /share/ffmpeg/examples
-    sources:
-      - type: git
-        url: https://git.ffmpeg.org/ffmpeg.git
-        tag: n7.1.1
+        url: https://github.com/ImageMagick/ImageMagick
+        tag: 7.1.1-47
+        commit: 82572afc879b439cbf8c9c6f3a9ac7626adf98fb
+        x-checker-data:
+          type: git
+          tag-pattern: ^([\d.]+-[\d]+)$
 
   - name: sleepy
     buildsystem: simple
@@ -166,30 +105,18 @@ modules:
     build-commands:
       - cargo --offline fetch --manifest-path Cargo.toml --verbose
       - cargo --offline build --release --verbose
-      - cp target/release/sleepy-launcher /app/bin/sleepy-launcher
-      - cp moe.launcher.sleepy-launcher.sh /app/bin/moe.launcher.sleepy-launcher
-      - chmod +x /app/bin/moe.launcher.sleepy-launcher
-    sources:
-      - type: git
-        url: https://github.com/an-anime-team/sleepy-launcher
-        tag: &sleepy_tag 1.6.0
-      - type: file
-        path: moe.launcher.sleepy-launcher.sh
-      - cargo-sources.json
-
-  # Avoid rebuilding launcher when only metadata is changed
-  - name: metadata
-    buildsystem: simple
-    build-commands:
-      - mkdir -p /app/share/icons/hicolor/512x512/apps/
-      - cp assets/images/icon.png /app/share/icons/hicolor/512x512/apps/moe.launcher.sleepy-launcher.png
+      - install -Dm775 target/release/sleepy-launcher /app/bin/sleepy-launcher
+      - install -Dm755 moe.launcher.sleepy-launcher.sh /app/bin/moe.launcher.sleepy-launcher
+      - install -Dm644 assets/images/icon.png /app/share/icons/hicolor/512x512/apps/moe.launcher.sleepy-launcher.png
       - desktop-file-install --dir=/app/share/applications --set-key=Exec --set-value=moe.launcher.sleepy-launcher --set-key=Icon --set-value=moe.launcher.sleepy-launcher assets/sleepy-launcher.desktop
-      - mkdir -p /app/share/metainfo/
-      - cp moe.launcher.sleepy-launcher.metainfo.xml /app/share/metainfo/
+      - install -Dm644 moe.launcher.sleepy-launcher.metainfo.xml /app/share/metainfo/moe.launcher.sleepy-launcher.metainfo.xml
       - mkdir -p /app/utils/
     sources:
       - type: git
         url: https://github.com/an-anime-team/sleepy-launcher
-        tag: *sleepy_tag
+        tag: 1.6.0
+      - type: file
+        path: moe.launcher.sleepy-launcher.sh
       - type: file
         path: moe.launcher.sleepy-launcher.metainfo.xml
+      - cargo-sources.json
