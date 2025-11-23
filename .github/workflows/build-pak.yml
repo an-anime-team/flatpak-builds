@@ -41,3 +41,4 @@ jobs:
         repository: stable
         flat-manager-url: ${{ secrets.REPO_URL }}
         token: ${{ secrets.REPO_TOKEN }}
+        end-of-life: "Sleepy Launcher has moved its home to Flathub, please install the Flathub release for further updates. All your current data will be kept upon reinstall of the launcher."
