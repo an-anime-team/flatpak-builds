@@ -28,14 +28,14 @@ jobs:
       with:
         ref: pgr
         submodules: true
-    - uses: flatpak/flatpak-github-actions/flatpak-builder@v5
+    - uses: flatpak/flatpak-github-actions/flatpak-builder@v6.5
       name: "Build"
       with:
         bundle: moe.launcher.an-anime-borb-launcher.flatpak
         build-bundle: false
         manifest-path: moe.launcher.an-anime-borb-launcher.yml
         cache-key: flatpak-builder-${{ github.sha }}
-    - uses: flatpak/flatpak-github-actions/flat-manager@v5
+    - uses: flatpak/flatpak-github-actions/flat-manager@v6.5
       name: "Deploy"
       with:
         repository: stable
