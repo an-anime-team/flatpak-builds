@@ -41,3 +41,4 @@ jobs:
         repository: stable
         flat-manager-url: ${{ secrets.REPO_URL }}
         token: ${{ secrets.REPO_TOKEN }}
+        end-of-life: "An Anime Borb Launcher has not been maintained since 2023, please use https://github.com/ALEZ-DEV/Babylonia-terminal instead"
