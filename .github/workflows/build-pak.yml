@@ -28,16 +28,17 @@ jobs:
       with:
         ref: wavey
         submodules: true
-    - uses: flatpak/flatpak-github-actions/flatpak-builder@v5
+    - uses: flatpak/flatpak-github-actions/flatpak-builder@v6.5
       name: "Build"
       with:
         bundle: moe.launcher.wavey-launcher.flatpak
         build-bundle: false
         manifest-path: moe.launcher.wavey-launcher.yml
         cache-key: flatpak-builder-${{ github.sha }}
-    - uses: flatpak/flatpak-github-actions/flat-manager@v5
+    - uses: flatpak/flatpak-github-actions/flat-manager@v6.5
       name: "Deploy"
       with:
         repository: stable
         flat-manager-url: ${{ secrets.REPO_URL }}
         token: ${{ secrets.REPO_TOKEN }}
+        end-of-life: "Wavey Launcher is no longer maintained, To continue using WuWa install it via Steam"
